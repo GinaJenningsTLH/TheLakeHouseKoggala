@@ -2,6 +2,19 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
+import diningHero from '../assets/images/room1.jpg';
+import freshIcon from '../assets/images/Fresh.svg';
+import noFrozenIcon from '../assets/images/No-Frozen.svg';
+import desireIcon from '../assets/images/desire.svg';
+import freshIngIcon from '../assets/images/Fresh-Ing.svg';
+import preparedIcon from '../assets/images/prepared.svg';
+import servedIcon from '../assets/images/served.svg';
+import bbq1 from '../assets/images/room1.jpg';
+import bbq2 from '../assets/images/room1.jpg';
+import bbq3 from '../assets/images/room1.jpg';
+import vitaminIcon from '../assets/images/room1.jpg';
+import tasteIcon from '../assets/images/room1.jpg';
+import textureIcon from '../assets/images/room1.jpg';
 
 const Dining: React.FC = () => {
   return (
@@ -9,7 +22,10 @@ const Dining: React.FC = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative bg-cover bg-center h-80 text-white" style={{ backgroundImage: 'url("/dining-hero.jpg")' }}>
+      <section
+        className="relative bg-cover bg-center h-80 text-white"
+        style={{ backgroundImage: `url(${diningHero})` }}
+      >
         <div className="bg-black bg-opacity-50 absolute inset-0"></div>
         <div className="relative container mx-auto h-full flex flex-col items-center justify-center text-center">
           <motion.h1
@@ -43,13 +59,23 @@ const Dining: React.FC = () => {
             Only Fresh Food, No Frozen Food
           </motion.h2>
           <div className="flex flex-col md:flex-row items-center justify-center gap-12">
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.2 }} className="infographic-card">
-              <img src="/Fresh.svg" className="mx-auto" alt="Fresh Food" />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="infographic-card"
+            >
+              <img src={freshIcon} className="mx-auto" alt="Fresh Food" />
               <h3 className="text-2xl font-bold mt-4">Fresh Food</h3>
               <p>100% fresh, locally sourced ingredients for every dish.</p>
             </motion.div>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.4 }} className="infographic-card">
-              <img src="/No-Frozen.svg" className="mx-auto" alt="Frozen Food" />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="infographic-card"
+            >
+              <img src={noFrozenIcon} className="mx-auto" alt="Frozen Food" />
               <h3 className="text-2xl font-bold mt-4">Frozen Food</h3>
               <p>We don’t use frozen food at all, ensuring maximum flavor and nutrients.</p>
             </motion.div>
@@ -72,8 +98,14 @@ const Dining: React.FC = () => {
             At Lake House Villa, guests have the freedom to order anything they desire. Whether you choose from our carefully crafted Lake House menu or have something else in mind, the choice is yours! Just inform our chef a few hours in advance, and he will arrange for fresh produce to be delivered quickly, ensuring your culinary wishes are fulfilled.
           </p>
           <div className="flex items-center justify-center gap-12">
-            {["/desire.svg", "/Fresh-Ing.svg", "/prepared.svg", "/served.svg"].map((imgSrc, index) => (
-              <motion.div key={index} initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: index * 0.2 }} className="text-center">
+            {[desireIcon, freshIngIcon, preparedIcon, servedIcon].map((imgSrc, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="text-center"
+              >
                 <div className="mx-auto rounded-full w-fit border bg-white mb-4">
                   <img className="mx-auto my-3 p-4" src={imgSrc} alt={`Step ${index + 1}`} />
                 </div>
@@ -103,8 +135,13 @@ const Dining: React.FC = () => {
           </motion.h2>
           <p className="text-lg mb-8">For a truly unforgettable dining experience, guests can arrange for a private BBQ by the lake...</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {["/bbq1.jpg", "/bbq2.jpg", "/bbq3.jpg"].map((imgSrc, index) => (
-              <motion.div key={index} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: index * 0.2 }}>
+            {[bbq1, bbq2, bbq3].map((imgSrc, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+              >
                 <img src={imgSrc} alt={`BBQ Dish ${index + 1}`} className="rounded-lg shadow-lg w-full h-64 object-cover" />
               </motion.div>
             ))}
@@ -124,8 +161,14 @@ const Dining: React.FC = () => {
             Nutritional Benefits of Fresh Food
           </motion.h2>
           <div className="flex flex-col md:flex-row items-center justify-center gap-12">
-            {["/vitamin-icon.png", "/taste-icon.png", "/texture-icon.png"].map((imgSrc, index) => (
-              <motion.div key={index} initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: index * 0.2 }} className="infographic">
+            {[vitaminIcon, tasteIcon, textureIcon].map((imgSrc, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="infographic"
+              >
                 <img src={imgSrc} alt={`Benefit ${index + 1}`} />
                 <h4 className="text-xl font-semibold">{["Higher Vitamin Content", "Superior Taste", "Better Texture"][index]}</h4>
                 <p>{[

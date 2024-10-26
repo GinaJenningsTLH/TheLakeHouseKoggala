@@ -1,20 +1,23 @@
 import React from 'react';
+import kayakingImg from '../assets/kayaking.jpg';
+import turtleHatcheryImg from '../assets/turtle-hatchery.jpg';
+import museumImg from '../assets/museum.jpg';
 
 const attractions = [
   {
     name: 'Koggala Kayaking',
     description: 'Explore the beautiful Koggala Lake by kayak (Nov - Apr).',
-    image: '/kayaking.jpg',
+    image: kayakingImg,
   },
   {
     name: 'Turtle Hatchery',
     description: 'Visit the nearby turtle hatchery and learn about conservation efforts.',
-    image: '/turtle-hatchery.jpg',
+    image: turtleHatcheryImg,
   },
   {
     name: 'Martin Wickramasinghe Museum',
     description: 'Discover the cultural heritage of Sri Lanka at this famous museum.',
-    image: '/museum.jpg',
+    image: museumImg,
   },
 ];
 
@@ -26,7 +29,12 @@ const AttractionsSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {attractions.map((attraction) => (
             <div key={attraction.name} className="bg-white shadow-lg rounded-lg overflow-hidden">
-              <img className="w-full h-48 object-cover" src={attraction.image} alt={attraction.name} />
+              <img
+                className="w-full h-48 object-cover"
+                src={attraction.image}
+                alt={attraction.name}
+                loading="lazy" // Lazy load images for better performance
+              />
               <div className="p-6">
                 <h3 className="font-bold text-xl mb-2">{attraction.name}</h3>
                 <p className="text-gray-700">{attraction.description}</p>

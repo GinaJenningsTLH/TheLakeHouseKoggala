@@ -9,13 +9,23 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBed, faShower, faWifi, faSnowflake, faGlassMartini, faConciergeBell } from '@fortawesome/free-solid-svg-icons';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
+// Import images directly
+import room1 from '../assets/images/room1.jpg';
+import room2 from '../assets/images/room2.jpg';
+import room3 from '../assets/images/room3.jpg';
+import room4 from '../assets/images/room4.jpg';
+import relatedRoom1 from '../assets/images/room1.jpg';
+import relatedRoom2 from '../assets/images/room1.jpg';
 
 const LakeViewOutdoor: React.FC = () => {
   const images = [
-    { src: '/room1.jpg', alt: 'Room 1' },
-    { src: '/room2.jpg', alt: 'Room 2' },
-    { src: '/room3.jpg', alt: 'Room 3' },
-    { src: '/room4.jpg', alt: 'Room 4' },
+    { src: room1, alt: 'Room 1' },
+    { src: room2, alt: 'Room 2' },
+    { src: room3, alt: 'Room 3' },
+    { src: room4, alt: 'Room 4' },
   ];
 
   const sliderSettings = {
@@ -60,9 +70,9 @@ const LakeViewOutdoor: React.FC = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: 'url(/room1.jpg)' }}>
+      <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: `url(${room1})` }}>
         <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Lake View Room (Indoor Shower)</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Lake View Room (Outdoor Shower)</h1>
           <p className="text-lg md:text-xl text-gray-200 mt-4">Experience luxury and serenity with an exquisite view of Koggala Lake.</p>
           <a href="/book" className="mt-6 bg-yellow-500 hover:bg-yellow-600 text-white py-3 px-6 rounded-lg text-lg md:text-xl transition transform hover:scale-105">
             Book Now
@@ -76,7 +86,12 @@ const LakeViewOutdoor: React.FC = () => {
           <AwesomeSlider animation="foldOutAnimation">
             {images.map((image, index) => (
               <div key={index} data-src={image.src}>
-                <img src={image.src} alt={image.alt} className="w-full h- object-cover rounded" />
+                <LazyLoadImage
+                  src={image.src}
+                  alt={image.alt}
+                  effect="blur"
+                  className="w-full h-auto object-cover rounded"
+                />
               </div>
             ))}
           </AwesomeSlider>
@@ -86,7 +101,7 @@ const LakeViewOutdoor: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           {/* Room Overview */}
           <div className='border border-gray-300 shadow-lg rounded-lg'>
-            <h2 className="px-4 py-3 text-2xl font-bold leading-10 bg-[#FFE8A2] rounded-t-lg">Lake View Room (Indoor Shower)</h2>
+            <h2 className="px-4 py-3 text-2xl font-bold leading-10 bg-[#FFE8A2] rounded-t-lg">Lake View Room (Outdoor Shower)</h2>
             <p className="px-4 py-6 text-lg text-gray-600">
               Our Lake View Room offers a stunning view of Koggala Lake. This room is designed to provide comfort and relaxation with its modern amenities and serene environment. Perfect for couples or solo travelers looking for a peaceful retreat.
             </p>
@@ -106,7 +121,7 @@ const LakeViewOutdoor: React.FC = () => {
               </li>
               <li className="flex items-center">
                 <FontAwesomeIcon icon={faShower} className="text-darkGreen mr-2" />
-                Indoor shower
+                Outdoor shower
               </li>
               <li className="flex items-center">
                 <FontAwesomeIcon icon={faSnowflake} className="text-darkGreen mr-2" />
@@ -128,46 +143,12 @@ const LakeViewOutdoor: React.FC = () => {
           </div>
         </div>
 
-        {/* Amenities Section */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">Amenities</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h4 className="text-xl font-bold mb-3">Swimming Pool</h4>
-              <p className="text-gray-600">Relax in our infinity pool overlooking the lake.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h4 className="text-xl font-bold mb-3">Spa & Wellness</h4>
-              <p className="text-gray-600">Unwind with a range of wellness treatments.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h4 className="text-xl font-bold mb-3">Fine Dining</h4>
-              <p className="text-gray-600">Indulge in fresh, local cuisine with a view.</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Guest Reviews Carousel */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-center">Guest Reviews</h2>
-          <Slider {...sliderSettings}>
-            {reviews.map((review, index) => (
-              <div key={index} className="p-4">
-                <div className="bg-gray-100 p-6 rounded-lg h-48 shadow-md">
-                  <p className="text-gray-600 italic">"{review.text}"</p>
-                  <p className="mt-3 font-bold text-gray-700">- {review.name}</p>
-                </div>
-              </div>
-            ))}
-          </Slider>
-        </div>
-
         {/* Related Rooms */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold mb-6 text-center">Other Rooms You May Like</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-white shadow-md rounded-lg overflow-hidden">
-              <img src="/related-room1.jpg" alt="Garden View Room" className="w-full h-48 object-cover" />
+              <LazyLoadImage src={relatedRoom1} alt="Garden View Room" effect="blur" className="w-full h-48 object-cover" />
               <div className="p-6">
                 <h4 className="text-xl font-bold">Garden View Room</h4>
                 <p className="text-gray-600 mt-2">A tranquil garden view with modern amenities.</p>
@@ -175,7 +156,7 @@ const LakeViewOutdoor: React.FC = () => {
               </div>
             </div>
             <div className="bg-white shadow-md rounded-lg overflow-hidden">
-              <img src="/related-room2.jpg" alt="Lake View Suite" className="w-full h-48 object-cover" />
+              <LazyLoadImage src={relatedRoom2} alt="Lake View Suite" effect="blur" className="w-full h-48 object-cover" />
               <div className="p-6">
                 <h4 className="text-xl font-bold">Lake View Suite</h4>
                 <p className="text-gray-600 mt-2">A luxurious suite with private access to the pool.</p>
@@ -191,4 +172,4 @@ const LakeViewOutdoor: React.FC = () => {
   );
 };
 
-export default LakeViewOutdoor;
+export default LakeViewOutdoor

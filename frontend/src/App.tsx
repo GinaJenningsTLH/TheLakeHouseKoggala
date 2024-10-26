@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ScrollToTop from './components/ScrollTotop'; // Import the component
 import Home from './pages/Home';
 import Rooms from './pages/Rooms';
 import Experiences from './pages/Experiences';
@@ -14,10 +15,10 @@ import ThingsToDo from './pages/ThingsToDo';
 import PlacesToVisit from './pages/PlacesToVisit';
 import Events from './pages/Event';
 
-
 const App: React.FC = () => {
   return (
     <Router>
+      <ScrollToTop /> {/* Add this line */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/rooms" element={<Rooms />} />

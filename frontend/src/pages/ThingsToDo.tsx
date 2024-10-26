@@ -5,19 +5,32 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css'; 
 import { FaSwimmer, FaBicycle, FaGlassCheers, FaFish, FaTree, FaUtensils } from 'react-icons/fa';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import heroImage from '../assets/images/things-to-do.png';
+import poolImage from '../assets/images/Gallery/Pool-overview.jpg';
+import houseboatImage from '../assets/images/Amenities/boat-house.jpeg';
+import surfingImage from '../assets/images/surfing.png';
+import sunbedsImage from '../assets/images/sunbeds.png';
+import cocktailsImage from '../assets/images/cocktails-by-the-lake-koggala.png';
+import servicesImage from '../assets/images/personal-services.png';
+import kayakingImage from '../assets/images/Kayaking.png';
+import turtleHatcheryImage from '../assets/images/turtle-hatchery.png';
+import stickFishermenImage from '../assets/images/stick-fishermen.png';
+import martinMuseumImage from '../assets/images/Martin.png';
+import golfImage from '../assets/images/golf.png';
+import teaPlantImage from '../assets/images/tea-plant.png';
 
 const ThingsToDo: React.FC = () => {
   const { scrollYProgress } = useScroll();
   
   // Create a parallax effect for background image movement
-  const yRange = useTransform(scrollYProgress, [0, 1], [-50, 50]); // Moves background up or down
+  const yRange = useTransform(scrollYProgress, [0, 1], [-50, 50]);
 
   return (
     <>
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative bg-cover bg-center h-screen text-white" style={{ backgroundImage: 'url("/things-to-do.png")' }}>
+      <section className="relative bg-cover bg-center h-screen text-white" style={{ backgroundImage: `url(${heroImage})` }}>
         <div className="bg-black bg-opacity-50 absolute inset-0"></div>
         <div className="relative container mx-auto h-full flex flex-col items-center justify-center text-center">
           <motion.h1 
@@ -48,7 +61,7 @@ const ThingsToDo: React.FC = () => {
             {/* Swimming Pool */}
             <motion.div 
               className="col-span-8 p-8 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg" 
-              style={{ backgroundImage: 'url("Gallery/Pool-overview.jpg")', backgroundPositionY: yRange }} // Apply parallax effect
+              style={{ backgroundImage: `url(${poolImage})`, backgroundPositionY: yRange }} 
               initial={{ opacity: 0, y: 50 }} 
               animate={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.6 }}
@@ -61,7 +74,7 @@ const ThingsToDo: React.FC = () => {
             {/* Houseboat */}
             <motion.div 
               className="col-span-4 p-8 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg" 
-              style={{ backgroundImage: 'url("Amenities/boat-house.jpeg")', backgroundPositionY: yRange }} // Apply parallax effect
+              style={{ backgroundImage: `url(${houseboatImage})`, backgroundPositionY: yRange }}
               initial={{ opacity: 0, y: 50 }} 
               animate={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.6, delay: 0.6 }}
@@ -71,10 +84,10 @@ const ThingsToDo: React.FC = () => {
               <p className="text-white">Experience serenity on a houseboat trip across the tranquil Koggala Lake.</p>
             </motion.div>
 
-            {/* Idle Bikes */}
+            {/* Surfing */}
             <motion.div 
               className="col-span-4 p-8 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg" 
-              style={{ backgroundImage: 'url("surfing.png")', backgroundPositionY: yRange }} // Apply parallax effect
+              style={{ backgroundImage: `url(${surfingImage})`, backgroundPositionY: yRange }}
               initial={{ opacity: 0, y: 50 }} 
               animate={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.6, delay: 0.6 }}
@@ -87,7 +100,7 @@ const ThingsToDo: React.FC = () => {
             {/* Sunbeds */}
             <motion.div 
               className="col-span-8 p-8 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg" 
-              style={{ backgroundImage: 'url("sunbeds.png")', backgroundPositionY: yRange }} // Apply parallax effect
+              style={{ backgroundImage: `url(${sunbedsImage})`, backgroundPositionY: yRange }}
               initial={{ opacity: 0, y: 50 }} 
               animate={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.6, delay: 0.6 }}
@@ -100,7 +113,7 @@ const ThingsToDo: React.FC = () => {
             {/* Cocktails by the Lake */}
             <motion.div 
               className="col-span-8 p-8 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg" 
-              style={{ backgroundImage: 'url("/cocktails-by-the-lake-koggala.png")', backgroundPositionY: yRange }} // Apply parallax effect
+              style={{ backgroundImage: `url(${cocktailsImage})`, backgroundPositionY: yRange }}
               initial={{ opacity: 0, y: 50 }} 
               animate={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.6, delay: 0.8 }}
@@ -113,7 +126,7 @@ const ThingsToDo: React.FC = () => {
             {/* Personalized Services */}
             <motion.div 
               className="col-span-4 p-8 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg" 
-              style={{ backgroundImage: 'url("/personal-services.png")', backgroundPositionY: yRange }} // Apply parallax effect
+              style={{ backgroundImage: `url(${servicesImage})`, backgroundPositionY: yRange }}
               initial={{ opacity: 0, y: 50 }} 
               animate={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.6, delay: 1 }}
@@ -126,7 +139,6 @@ const ThingsToDo: React.FC = () => {
           </div>
         </div>
       </section>
-
 
       {/* Nearby Attractions Section */}
       <section className="py-20 bg-white">
@@ -142,7 +154,7 @@ const ThingsToDo: React.FC = () => {
               transition={{ duration: 0.6 }}
             >
               <LazyLoadImage
-                src="/Kayaking.png"
+                src={kayakingImage}
                 alt="Koggala Kayaking"
                 effect="blur"
                 className="rounded-lg mb-4 h-64 w-full object-cover"
@@ -159,7 +171,7 @@ const ThingsToDo: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <LazyLoadImage
-                src="/turtle-hatchery.png"
+                src={turtleHatcheryImage}
                 alt="Turtle Hatchery"
                 effect="blur"
                 className="rounded-lg mb-4 h-64 w-full object-cover"
@@ -176,7 +188,7 @@ const ThingsToDo: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <LazyLoadImage
-                src="/stick-fishermen.png"
+                src={stickFishermenImage}
                 alt="Stick Fishermen"
                 effect="blur"
                 className="rounded-lg mb-4 h-64 w-full object-cover"
@@ -193,7 +205,7 @@ const ThingsToDo: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               <LazyLoadImage
-                src="/Martin.png"
+                src={martinMuseumImage}
                 alt="Martin Wickramasinghe Museum"
                 effect="blur"
                 className="rounded-lg mb-4 h-64 w-full object-cover"
@@ -210,7 +222,7 @@ const ThingsToDo: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
             >
               <LazyLoadImage
-                src="/golf.png"
+                src={golfImage}
                 alt="Airforce Golf Course"
                 effect="blur"
                 className="rounded-lg mb-4 h-64 w-full object-cover"
@@ -227,7 +239,7 @@ const ThingsToDo: React.FC = () => {
               transition={{ duration: 0.6, delay: 1 }}
             >
               <LazyLoadImage
-                src="/tea-plant.png"
+                src={teaPlantImage}
                 alt="Virgin White Tea Plantations"
                 effect="blur"
                 className="rounded-lg mb-4 h-64 w-full object-cover"

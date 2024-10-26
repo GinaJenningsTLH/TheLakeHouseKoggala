@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
+import eventImage from '../assets/images/events.png'; // Import the image from src
 
 const Events: React.FC = () => {
   return (
@@ -9,7 +10,10 @@ const Events: React.FC = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative bg-cover bg-center h-80 text-white" style={{ backgroundImage: 'url("/events.png")' }}>
+      <section
+        className="relative bg-cover bg-center h-80 text-white"
+        style={{ backgroundImage: `url(${eventImage})` }}
+      >
         <div className="bg-black bg-opacity-50 absolute inset-0"></div>
         <div className="relative container mx-auto h-full flex flex-col items-center justify-center text-center">
           <motion.h1

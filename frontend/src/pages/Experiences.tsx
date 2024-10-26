@@ -54,7 +54,7 @@ const Events: React.FC = () => {
               our event inquiry form, and a member of our team will be in touch to discuss the
               details and help bring your vision to life.
             </p>
-            <a href="/contact" className="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-md">
+            <a href="/contact" className="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-md transition transform hover:scale-105">
               Contact Us for Event Inquiries
             </a>
           </div>
@@ -68,7 +68,7 @@ const Events: React.FC = () => {
               gatherings to larger celebrations. Each event at Lake House is unique, and we’re proud
               to have played a part in so many special occasions.
             </p>
-            <a href="/gallery" className="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-md">
+            <a href="/gallery" className="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-md transition transform hover:scale-105">
               View Event Gallery
             </a>
           </div>

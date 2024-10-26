@@ -14,7 +14,7 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@vitejs/plugin-react": "^4.3.2",
     "@welcome-ui/swiper": "^5.22.1",
-    "framer-motion": "^11.9.0",
+    "framer-motion": "^11.11.10",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-awesome-slider": "^4.1.0",

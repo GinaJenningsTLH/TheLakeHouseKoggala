@@ -5,6 +5,10 @@ import { FaTree, FaWater, FaFish, FaFan, FaBed, FaUtensils, FaWifi } from 'react
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { motion } from 'framer-motion';
+import villaFrontView from '../assets/images/Gallery/villa-front-view-2.jpeg';
+import lakeViewIndoor from '../assets/images/lakeview(indoor).jpg';
+import poolView from '../assets/images/Gallery/pool-view-4.jpeg';
+import villaSittingLounge from '../assets/images/Gallery/villa-sitting-lounge.jpg';
 
 const About: React.FC = () => {
   return (
@@ -12,7 +16,7 @@ const About: React.FC = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative bg-cover bg-center h-80 text-white" style={{ backgroundImage: 'url("Gallery/villa-front-view-2.jpeg")' }}>
+      <section className="relative bg-cover bg-center h-80 text-white" style={{ backgroundImage: `url(${villaFrontView})` }}>
         <div className="bg-black bg-opacity-50 absolute inset-0"></div>
         <div className="relative container mx-auto h-full flex flex-col items-center justify-center text-center">
           <motion.h1 
@@ -47,7 +51,7 @@ const About: React.FC = () => {
               className="md:w-1/2"
             >
               <LazyLoadImage
-                src="Gallery/villa-front-view-2.jpeg" 
+                src={villaFrontView} 
                 alt="British Architect"
                 effect="blur"
                 className="rounded-lg shadow-lg"
@@ -94,7 +98,7 @@ const About: React.FC = () => {
               className="md:w-1/2 order-1 md:order-2"
             >
               <LazyLoadImage
-                src="/lakeview(indoor).jpg" 
+                src={lakeViewIndoor} 
                 alt="Rooms and Facilities"
                 effect="blur"
                 className="rounded-lg shadow-lg"
@@ -106,7 +110,6 @@ const About: React.FC = () => {
           <div className="mb-12">
             <h3 className="text-darkGreen font-bold mb-4">Dining at Lake House</h3>
             <div className="flex items-center space-x-4 mb-4">
-             
               <p className="text-gray-700 ">
                 Our cook prepares European or Sri Lankan dishes, and we don’t charge for food—only for the cost of ingredients. Just inform our chef a few hours in advance, and the freshest local produce will be prepared for your meal.
               </p>
@@ -133,13 +136,13 @@ const About: React.FC = () => {
           <div className="mb-12">
             <h3 className=" text-darkGreen font-bold mb-8 text-center">A Glimpse of Lake House</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {["Gallery/pool-view-4.jpeg", "Gallery/villa-front-view-2.jpeg", "Gallery/villa-sitting-lounge.jpg"].map((imgSrc, index) => (
+              {[poolView, villaFrontView, villaSittingLounge].map((imgSrc, index) => (
                 <motion.div key={index} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: index * 0.2 }}>
                   <LazyLoadImage
                     src={imgSrc}
                     alt={`Lake House ${index + 1}`}
                     effect="blur"
-                    className="rounded-lg min-h-60 md:min-h-96  lg:min-h-96 shadow-lg"
+                    className="rounded-lg min-h-60 md:min-h-96 lg:min-h-96 shadow-lg"
                   />
                 </motion.div>
               ))}
