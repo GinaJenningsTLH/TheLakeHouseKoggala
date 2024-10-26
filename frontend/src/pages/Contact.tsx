@@ -59,7 +59,7 @@ const Contact: React.FC = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative bg-cover bg-center h-80 text-white" style={{ backgroundImage: `url(${contactHero})` }}>
+      <section className="relative bg-cover bg-center h-[500px] md:h-96 lg:h-96  text-white" style={{ backgroundImage: `url(${contactHero})` }}>
         <div className="bg-black bg-opacity-50 absolute inset-0"></div>
         <div className="relative container mx-auto h-full flex flex-col items-center justify-center text-center">
           <motion.h1

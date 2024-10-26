@@ -23,7 +23,7 @@ const Dining: React.FC = () => {
 
       {/* Hero Section */}
       <section
-        className="relative bg-cover bg-center h-80 text-white"
+        className="relative bg-cover bg-center h-[500px] md:h-96 lg:h-96 text-white"
         style={{ backgroundImage: `url(${diningHero})` }}
       >
         <div className="bg-black bg-opacity-50 absolute inset-0"></div>
