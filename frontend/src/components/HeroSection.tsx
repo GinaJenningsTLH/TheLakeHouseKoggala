@@ -30,13 +30,13 @@ const HeroSection: React.FC = () => {
           animate="visible"
           variants={textVariant}
         >
-          <h1 className="text-[50px] sm:text-[60px] lg:text-[90px] mx-auto md:mx-0 text-center md:text-left outfit-lake bg-gradient-to-r from-amber-100 to-lime-50 bg-clip-text text-transparent">
+          <h1 className="text-[50px] sm:text-[60px] lg:text-[90px] mx-auto md:mx-0 text-center md:text-center outfit-lake bg-gradient-to-r from-lime-400 to-lime-200 bg-clip-text text-transparent">
             <br /> THE LAKE HOUSE <br />KOGGALA
           </h1>
         </motion.h1>
 
         <motion.p
-          className="text-lightestGreen alumni-sans-pinstripe-regular mx-auto md:mx-0 justify-center text-center md:text-left text-lg sm:text-2xl px-4 md:px-0 mb-8 max-w-lg"
+          className="text-lightestGreen alumni-sans-pinstripe-regular mx-auto md:mx-20 justify-center text-center md:text-center  text-2xl px-4 md:px-0 mb-8 max-w-lg"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0, transition: { duration: 1.2, delay: 0.5, ease: "easeOut" } }}
         >
@@ -44,16 +44,16 @@ const HeroSection: React.FC = () => {
         </motion.p>
 
         <motion.div
-          className="flex justify-center md:justify-start"
+          className="flex justify-center md:mx-64"
           initial="hidden"
           animate="visible"
           variants={buttonVariant}
         >
           <a
             href="/rooms"
-            className="mx-auto md:mx-0 bg-gradient-to-r from-amber-100 to-lime-50 hover:bg-darkGreen text-darkGreen py-3 px-6 rounded-md transition duration-300 ease-in-out transform hover:scale-105"
+            className="mx-auto md: lg:mx bg-gradient-to-r from-teal-400 to-teal-500 hover:bg-darkGreen text-white text-2xl py-3 px-6 rounded-md transition duration-300 ease-in-out transform hover:scale-105"
           >
-            Explore Our Rooms
+            Explore 
           </a>
         </motion.div>
       </div>

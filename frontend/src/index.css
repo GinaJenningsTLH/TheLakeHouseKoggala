@@ -37,7 +37,7 @@
   font-family: "Alumni Sans Pinstripe", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size:46px;
+  font-size:48px;
 }
 
 .alumni-sans-pinstripe-nav {
@@ -79,7 +79,7 @@ p {
   font-family: "Alumni Sans Pinstripe", sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size:22px;
+  font-size:30px;
 }
 
 h1{
@@ -109,4 +109,9 @@ h3{
   
 }
 
-
+.nav {
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size:30px;
+}

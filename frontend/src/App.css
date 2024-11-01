@@ -15,14 +15,14 @@ body, html {
 
 /* Padding adjustments for responsiveness */
 .container {
-  padding-left: 1rem; /* Reduce padding on smaller screens */
-  padding-right: 1rem; /* Reduce padding on smaller screens */
+  padding-left: 0rem; /* Reduce padding on smaller screens */
+  padding-right: 0rem; /* Reduce padding on smaller screens */
 }
 
 @media (max-width: 768px) {
   .container {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding-left: 0.0rem;
+    padding-right: 0.0rem;
   }
 }
 #root {
@@ -131,4 +131,17 @@ body, html {
 .react-datepicker__header {
   background-color: #2f4f4f;
   border-bottom: none;
+}
+
+.Hero-home {
+
+  color:red
+  te
+}
+
+.rethink-sans-lake {
+  font-family: "Rethink Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }

@@ -14,6 +14,7 @@ import GardenViewOutdoor from './pages/GardenViewOutdoor';
 import ThingsToDo from './pages/ThingsToDo';
 import PlacesToVisit from './pages/PlacesToVisit';
 import Events from './pages/Event';
+import AllRoomsPage from './pages/Villa';
 
 const App: React.FC = () => {
   return (
@@ -28,6 +29,7 @@ const App: React.FC = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About/>}/>
         <Route path="/events" element={<Events/>}/>
+        <Route path="/villa" element={<AllRoomsPage/>}/>
         <Route path="/places-to-visit" element={<PlacesToVisit/>}/>
         <Route path="/lake-view-indoor" element={<LakeViewIndoor/>}/>
         <Route path="/lake-view-outdoor" element={<LakeViewOutdoor/>}/>

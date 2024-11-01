@@ -8,16 +8,16 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import heroImage from '../assets/images/things-to-do.png';
 import poolImage from '../assets/images/Gallery/Pool-overview.jpg';
 import houseboatImage from '../assets/images/Amenities/boat-house.jpeg';
-import surfingImage from '../assets/images/surfing.png';
+import surfingImage from '../assets/images/massage-room.png';
 import sunbedsImage from '../assets/images/sunbeds.png';
 import cocktailsImage from '../assets/images/cocktails-by-the-lake-koggala.png';
 import servicesImage from '../assets/images/personal-services.png';
-import kayakingImage from '../assets/images/Kayaking.png';
+import kayakingImage from '../assets/images/canoeing.png';
 import turtleHatcheryImage from '../assets/images/turtle-hatchery.png';
 import stickFishermenImage from '../assets/images/stick-fishermen.png';
 import martinMuseumImage from '../assets/images/Martin.png';
-import golfImage from '../assets/images/golf.png';
-import teaPlantImage from '../assets/images/tea-plant.png';
+import surfImage from '../assets/images/surfing.png';
+import teaPlantImage from '../assets/images/whale-watching.png';
 
 const ThingsToDo: React.FC = () => {
   const { scrollYProgress } = useScroll();
@@ -39,7 +39,7 @@ const ThingsToDo: React.FC = () => {
             transition={{ duration: 0.6 }} 
             className="text-5xl font-bold mb-4"
           >
-            Explore Things to Do at Lake House
+            Things to Do at The Lake House
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 50 }} 
@@ -55,7 +55,7 @@ const ThingsToDo: React.FC = () => {
       {/* Facilities & Amenities Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
-          <h2 className="text-4xl font-bold text-darkGreen mb-8 text-center">Facilities & Amenities</h2>
+          <h2 className="text-4xl font-bold text-darkGreen mb-8 text-center">Facilities & Amenities at The Lake House</h2>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
             
             {/* Swimming Pool */}
@@ -80,7 +80,7 @@ const ThingsToDo: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               <FaFish className="text-6xl text-white mb-4" />
-              <h3 className="text-2xl font-semibold mb-2 text-white">Houseboat</h3>
+              <h3 className="text-2xl font-semibold mb-2 text-white">Boat Ride</h3>
               <p className="text-white">Experience serenity on a houseboat trip across the tranquil Koggala Lake.</p>
             </motion.div>
 
@@ -93,8 +93,8 @@ const ThingsToDo: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               <FaBicycle className="text-6xl text-white mb-4" />
-              <h3 className="text-2xl font-semibold mb-2 text-white">Surfing</h3>
-              <p className="text-white">Surrounded by many beaches for you to enjoy a quick Surf.</p>
+              <h3 className="text-2xl font-semibold mb-2 text-white">Massage Room</h3>
+              <p className="text-white">Experience an ayuredic massage by the Lake</p>
             </motion.div>
 
             {/* Sunbeds */}
@@ -143,7 +143,7 @@ const ThingsToDo: React.FC = () => {
       {/* Nearby Attractions Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
-          <h2 className="text-4xl font-bold text-darkGreen mb-8 text-center">Nearby Attractions</h2>
+          <h2 className="text-4xl font-bold text-darkGreen mb-8 text-center">Activities Neary By</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             
             {/* Koggala Kayaking */}
@@ -159,7 +159,7 @@ const ThingsToDo: React.FC = () => {
                 effect="blur"
                 className="rounded-lg mb-4 h-64 w-full object-cover"
               />
-              <h3 className="text-2xl font-semibold mb-2">Koggala Kayaking</h3>
+              <h3 className="text-2xl font-semibold mb-2">Koggala Canoeing</h3>
               <p className="text-gray-600">From November to April, explore the scenic beauty of Koggala Lake by kayak.</p>
             </motion.div>
 
@@ -222,12 +222,12 @@ const ThingsToDo: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
             >
               <LazyLoadImage
-                src={golfImage}
+                src={surfImage}
                 alt="Airforce Golf Course"
                 effect="blur"
                 className="rounded-lg mb-4 h-64 w-full object-cover"
               />
-              <h3 className="text-2xl font-semibold mb-2">Airforce Golf Course</h3>
+              <h3 className="text-2xl font-semibold mb-2">Surfing</h3>
               <p className="text-gray-600">Enjoy a round of golf at the nearby Airforce Golf Course, just 10 minutes away.</p>
             </motion.div>
 
@@ -244,8 +244,8 @@ const ThingsToDo: React.FC = () => {
                 effect="blur"
                 className="rounded-lg mb-4 h-64 w-full object-cover"
               />
-              <h3 className="text-2xl font-semibold mb-2">Virgin White Tea Plantations</h3>
-              <p className="text-gray-600">Visit Sri Lanka’s famous tea plantations and enjoy a guided tour.</p>
+              <h3 className="text-2xl font-semibold mb-2">Whale Watching</h3>
+              <p className="text-gray-600">Whale watching at Mirissa with a group</p>
             </motion.div>
               
           </div>
