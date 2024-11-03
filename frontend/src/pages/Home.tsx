@@ -133,25 +133,20 @@ const Home: React.FC = () => {
         <section
           id="overview"
           className={`relative min-h-screen bg-cover bg-center py-20 transition-opacity duration-1000 ease-in-out ${isVisible.overview ? 'animate-fadeIn' : 'opacity-0'}`}
-          style={{
-            width: "100vw",
-            backgroundImage: "url('/assets/images/tree.png')",
-            backgroundAttachment: "fixed",
-          }}>
-          <div className="container  px-6 md:px-12 lg:px-24 text-center">
-            {/* Why Book With Us Component */}
-            <WhyBookWithUs />
-
-            {/* Main Heading (h1 for SEO) */}
+          style={{ backgroundImage: "url('/assets/images/tree.png')", backgroundAttachment: "fixed" }}
+        >
+          <div className="container px-6 md:px-12 lg:px-24 text-center">
+            <Suspense fallback={<div>Loading...</div>}>
+              {isVisible.overview && <WhyBookWithUs />}
+            </Suspense>
             <motion.h1
-              className="font-bold text-[#9ABA12] mb-6  text-4xl md:text-5xl"
+              className="font-bold text-[#9ABA12] mb-6 text-4xl md:text-5xl"
               initial={{ y: -50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1 }}>
+              transition={{ duration: 1 }}
+            >
               The Lake House Villa
             </motion.h1>
-
-            {/* Description Paragraph */}
             <motion.p
               className="text-darkGreen mb-8 max-w-2xl mx-auto text-lg md:text-3xl"
               initial={{ opacity: 0 }}
@@ -160,8 +155,6 @@ const Home: React.FC = () => {
             >
               Built in 2010 by a British architect, The Lake House is a peaceful, architect-designed, contemporary, and environmentally sustainable villa located on the serene shores of Koggala Lake.
             </motion.p>
-
-            {/* Read More Button */}
             <motion.a
               href="/about"
               className="inline-block bg-gradient-to-r from-teal-400 to-teal-500 hover:bg-lightGreen text-white text-2xl mb-10 py-3 px-6 rounded-md transition-transform duration-500 hover:scale-110"
@@ -172,14 +165,8 @@ const Home: React.FC = () => {
             </motion.a>
           </div>
 
-          {/* Image and Text Section */}
           <div className="mb-16 md:flex items-center justify-center">
-            {/* Villa Front View Image */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6 }}
-              className="md:w-1/2">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }} className="md:w-1/2">
               <LazyLoadImage
                 src={villaFrontView}
                 alt="Front view of the Lake House Villa, designed by a British architect"
@@ -188,25 +175,19 @@ const Home: React.FC = () => {
                 loading="lazy"
               />
             </motion.div>
-
-            {/* Sustainability Description */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="md:w-1/2 md:pl-8 mt-12 md:mt-0">
+              className="md:w-1/2 md:pl-8 mt-12 md:mt-0"
+            >
               <h2 className="text-[#9ABA12] font-bold mb-6 text-2xl">Built for Sustainability</h2>
               <p className="text-gray-700 mb-6">
                 The Lake House is a contemporary home built using local Sri Lankan materials, designed to be as energy-efficient and low-impact as possible.
                 It relies on natural sea and lake breezes for cooling, supplemented with ceiling fans, and most of the hot water is heated using solar power.
               </p>
-              <p className="text-gray-700 mb-6">
-                This ensures that the house stays cool without the need for air conditioning, offering a sustainable and comfortable stay for all guests.
-              </p>
             </motion.div>
           </div>
-
-          {/* Rooms and Amenities Section */}
           <div className="mb-16 md:flex items-center justify-center">
             {/* Amenities Description */}
             <motion.div
@@ -240,6 +221,7 @@ const Home: React.FC = () => {
             </motion.div>
           </div>
         </section>
+
 
         {/* Rooms & Suites Section */}
         <section

@@ -1,17 +1,29 @@
+import poolView from '../assets/images/Gallery/Pool-overview.jpg';
+import villaFrontView from '../assets/images/Gallery/villa-front-view-2.jpeg';
+import sittingArea from '../assets/images/Gallery/sitting-area.jpeg';
+import droneView from '../assets/images/Gallery/drone-view-3.jpg';
+import centerVilla from '../assets/images/Gallery/center-villa.jpeg';
+import entrance from '../assets/images/Gallery/entrance.jpg';
+import sittingLounge from '../assets/images/Gallery/villa-sitting-lounge.jpg';
+import scenery3 from '../assets/images/Gallery/scenery3.jpg';
+import scenicView from '../assets/images/Gallery/scenery.jpg';
+import treeView from '../assets/images/Gallery/Tree.jpg';
+import servingDrinks from '../assets/images/Gallery/serving-drinks.jpg';
+import villaDroneView from '../assets/images/Gallery/villa-drone-view.jpg';
+
 const galleryImages = [
-    { src: 'Gallery/pool-view-4.jpeg', alt: 'Pool View' },
-    { src: 'Gallery/villa-front-view-2.jpeg', alt: 'Villa Front View' },
-    { src: 'Gallery/sitting-area.jpeg', alt: 'Sitting Area' },
-    { src: 'Gallery/drone-view-3.jpg', alt: 'Drone View' },
-    { src: 'Gallery/center-villa.jpeg', alt: 'Center of Villa' },
-    { src: 'Gallery/entrance.jpg', alt: 'Villa Entrance' },
-    { src: 'Gallery/villa-sitting-lounge.jpg', alt: 'Sitting Lounge' },
-    { src: 'Gallery/scenery3.jpg', alt: 'Beautiful Scenery' },
-    { src: 'Gallery/scenery.jpg', alt: 'Scenic View' },
-    { src: 'Gallery/Tree.jpg', alt: 'Tree by the Villa' },
-    { src: 'Gallery/serving-drinks.jpg', alt: 'Serving Drinks' },
-    { src: 'Gallery/villa-drone-view.jpg', alt: 'Villa Drone View' },
-  ];
-  
-  export default galleryImages;
-  
+  { src: poolView, alt: 'Pool View' },
+  { src: villaFrontView, alt: 'Villa Front View' },
+  { src: sittingArea, alt: 'Sitting Area' },
+  { src: droneView, alt: 'Drone View' },
+  { src: centerVilla, alt: 'Center of Villa' },
+  { src: entrance, alt: 'Villa Entrance' },
+  { src: sittingLounge, alt: 'Sitting Lounge' },
+  { src: scenery3, alt: 'Beautiful Scenery' },
+  { src: scenicView, alt: 'Scenic View' },
+  { src: treeView, alt: 'Tree by the Villa' },
+  { src: servingDrinks, alt: 'Serving Drinks' },
+  { src: villaDroneView, alt: 'Villa Drone View' },
+];
+
+export default galleryImages;
