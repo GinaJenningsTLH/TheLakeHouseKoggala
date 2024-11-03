@@ -1,5 +1,3 @@
-// Home.tsx
-
 import React, { useEffect, useRef, useState, Suspense, lazy } from 'react';
 import { Helmet } from 'react-helmet';
 import Navbar from '../components/Navbar';
@@ -7,8 +5,7 @@ import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
 import { motion } from 'framer-motion';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-import WhyBookWithUs from '../components/WhyBookWithUs';
-import roomData from '../data/roomData'; // Import the data
+import roomData from '../data/roomData';
 import { AiOutlineMail } from "react-icons/ai";
 import { IoCallSharp, IoArrowUpSharp } from "react-icons/io5";
 import '../App.css';
@@ -17,47 +14,31 @@ import villaFrontView from '../assets/images/Gallery/villa-front-view-2.jpeg';
 import lakeViewIndoor from '../assets/images/lakeview(indoor).jpg';
 import galleryImages from '../data/galleryData';
 import RoomsTypeCard from '../components/RoomTypeCard';
-// import Testimonials from '../components/Testimonials'; // New Component (commented out)
-// import VideoTour from '../components/VideoTour'; // New Component (commented out)
-import BookingForm from '../components/BookingForm'; // New Component
-// import Newsletter from '../components/Newsletter'; // New Component (commented out)
+import BookingForm from '../components/BookingForm';
 
-// Lazy load Gallery component for performance optimization
 const Gallery = lazy(() => import('../components/Gallery'));
-// You can similarly lazy load other non-critical components if needed
+const WhyBookWithUs = lazy(() => import('../components/WhyBookWithUs'));
 
 const Home: React.FC = () => {
-  // Initialize observer with null
   const observer = useRef<IntersectionObserver | null>(null);
 
   const [isVisible, setIsVisible] = useState({
+    whychooseus: true,
     overview: false,
     rooms: false,
     booking: false,
     gallery: false,
-    'booking-form': false, // Changed to kebab-case
-    // testimonials: false, // Commented out
-    // videoTour: false, // Commented out
-    // bookingForm: false, // Removed
-    // newsletter: false, // Commented out
+    'booking-form': false,
   });
 
-  // State for Back to Top Button visibility
   const [showTopBtn, setShowTopBtn] = useState(false);
 
   useEffect(() => {
-    // Handle Back to Top Button visibility
     const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setShowTopBtn(true);
-      } else {
-        setShowTopBtn(false);
-      }
+      setShowTopBtn(window.scrollY > 300);
     };
 
     window.addEventListener('scroll', handleScroll);
-
-    // Smooth scrolling behavior
     document.documentElement.style.scrollBehavior = 'smooth';
 
     return () => {
@@ -67,11 +48,8 @@ const Home: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    const options = {
-      threshold: 0.4, // Trigger when 40% of the section is in view
-    };
+    const options = { threshold: 0.4 };
 
-    // Initialize the IntersectionObserver
     observer.current = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting && entry.target.id in isVisible) {
@@ -79,37 +57,24 @@ const Home: React.FC = () => {
             ...prevState,
             [entry.target.id]: true,
           }));
-          // Stop observing once the section is visible
-          if (observer.current) {
-            observer.current.unobserve(entry.target);
-          }
+          observer.current?.unobserve(entry.target);
         }
       });
     }, options);
 
     const sections = document.querySelectorAll('section');
-    sections.forEach((section) => {
-      observer.current?.observe(section);
-    });
+    sections.forEach((section) => observer.current?.observe(section));
 
     return () => {
-      if (observer.current) {
-        sections.forEach((section) => {
-          observer.current?.unobserve(section);
-        });
-        observer.current.disconnect(); // Disconnect the observer on cleanup
-      }
+      sections.forEach((section) => observer.current?.unobserve(section));
+      observer.current?.disconnect();
     };
   }, [isVisible]);
 
-  // Function to scroll to top
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
     <>
-      {/* SEO Optimization with React Helmet */}
       <Helmet>
         <title>Lake House Villa - Luxury Stay by Koggala Lake</title>
         <meta name="description" content="Experience the serene beauty of Koggala Lake at the Lake House Villa. A contemporary, sustainable villa with luxurious amenities and stunning views." />
@@ -119,26 +84,26 @@ const Home: React.FC = () => {
         <meta property="og:image" content="/assets/images/Gallery/villa-front-view-2.jpeg" />
         <meta property="og:url" content="https://yourwebsite.com/" />
         <meta name="twitter:card" content="summary_large_image" />
-        {/* Add additional meta tags as needed */}
       </Helmet>
 
-      {/* Navigation Bar */}
       <Navbar />
-
-      {/* Hero Section (Above the Fold Content) */}
       <HeroSection />
 
       <main>
-        {/* Property Overview Section */}
+        <section
+          id="whychooseus"
+          className={`relative min-h-vh bg-center mt-20 transition-opacity duration-1000 ease-in-out ${isVisible.whychooseus ? 'animate-fadeIn' : 'opacity-0'}`}
+        >
+          <Suspense fallback={<div>Loading...</div>}>
+            {isVisible.whychooseus && <WhyBookWithUs />}
+          </Suspense>
+        </section>
+
         <section
           id="overview"
-          className={`relative min-h-screen bg-cover bg-center py-20 transition-opacity duration-1000 ease-in-out ${isVisible.overview ? 'animate-fadeIn' : 'opacity-0'}`}
-         
+          className={`relative min-h-vh bg-cover bg-center py-20 transition-opacity duration-1000 ease-in-out ${isVisible.overview ? 'animate-fadeIn' : 'opacity-0'}`}
         >
           <div className="container px-6 md:px-12 lg:px-24 text-center">
-            <Suspense fallback={<div>Loading...</div>}>
-              {isVisible.overview && <WhyBookWithUs />}
-            </Suspense>
             <motion.h1
               className="font-bold text-[#9ABA12] mb-6 text-4xl md:text-5xl"
               initial={{ y: -50, opacity: 0 }}
@@ -183,8 +148,7 @@ const Home: React.FC = () => {
             >
               <h2 className="text-[#9ABA12] font-bold mb-6 text-2xl">Built for Sustainability</h2>
               <p className="text-gray-700 mb-6">
-                The Lake House is a contemporary home built using local Sri Lankan materials, designed to be as energy-efficient and low-impact as possible.
-                It relies on natural sea and lake breezes for cooling, supplemented with ceiling fans, and most of the hot water is heated using solar power.
+                The Lake House is a contemporary home built using local Sri Lankan materials, designed to be as energy-efficient and low-impact as possible. It relies on natural sea and lake breezes for cooling, supplemented with ceiling fans, and most of the hot water is heated using solar power.
               </p>
             </motion.div>
           </div>
@@ -222,22 +186,20 @@ const Home: React.FC = () => {
           </div>
         </section>
 
-
-        {/* Rooms & Suites Section */}
         <section
           id="rooms"
           className={`py-20 bg-[#57DDF3]/30 transition-opacity duration-1000 ease-in-out ${isVisible.rooms ? 'animate-fadeIn' : 'opacity-0'}`}
-          style={{ backgroundImage: "url('/assets/images/leaf-pattern.png') repeat" }}>
+          style={{ backgroundImage: "url('/assets/images/leaf-pattern.png') repeat" }}
+        >
           <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
             <h2 className="text-3xl font-bold text-[#9ABA12] mb-4">Room Types</h2>
-            <p className="text-darkGreen mb-10 max-w-2xl mx-auto">
-              Enjoy luxurious accommodations with stunning views.
-            </p>
+            <p className="text-darkGreen mb-10 max-w-2xl mx-auto">Enjoy luxurious accommodations with stunning views.</p>
             <motion.div
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.4, duration: 1 }}>
+              transition={{ delay: 0.4, duration: 1 }}
+            >
               {roomData.map((room, idx) => (
                 <RoomsTypeCard
                   key={idx}
@@ -252,59 +214,30 @@ const Home: React.FC = () => {
           </div>
         </section>
 
-        {/* Testimonials Section */}
-        {/* <section
-          id="testimonials"
-          className={`py-20 bg-white transition-opacity duration-1000 ease-in-out ${isVisible.testimonials ? 'animate-fadeIn' : 'opacity-0'}`}>
-          <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
-            <h2 className="text-3xl font-bold text-darkGreen mb-4">What Our Guests Say</h2>
-            <p className="text-darkGreen mb-10 max-w-2xl mx-auto">
-              Hear from our satisfied guests about their experiences at Lake House Villa.
-            </p>
-            <Testimonials />
-          </div>
-        </section> */}
-
-        {/* Video Tour Section */}
-        {/* <section
-          id="video-tour"
-          className={`py-20 bg-lightGray transition-opacity duration-1000 ease-in-out ${isVisible.videoTour ? 'animate-fadeIn' : 'opacity-0'}`}>
-          <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
-            <h2 className="text-3xl font-bold text-darkGreen mb-4">Take a Virtual Tour</h2>
-            <p className="text-darkGreen mb-10 max-w-2xl mx-auto">
-              Watch our video tour to explore the beauty and luxury of Lake House Villa.
-            </p>
-            <VideoTour videoUrl="https://www.youtube.com/embed/your-video-id" />
-          </div>
-        </section> */}
-
-        {/* Gallery Section (Lazy Loaded) */}
         <Suspense fallback={<div className="text-center py-20">Loading gallery...</div>}>
           <section id="gallery" className={`py-20 bg-[#14C2DD]/70 ${isVisible.gallery ? 'animate-fadeIn' : 'opacity-0'}`}>
             <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
               <div className='w-fit mx-auto px-2 mb-8'>
                 <h2 className="text-3xl font-bold text-white mb-2">Gallery</h2>
-                <p className="text-white mb-10 max-w-2xl mx-auto">
-                  Explore beautiful moments captured at The Lake House.
-                </p>
+                <p className="text-white mb-10 max-w-2xl mx-auto">Explore beautiful moments captured at The Lake House.</p>
               </div>
               <Gallery images={galleryImages} />
             </div>
           </section>
         </Suspense>
 
-        {/* Booking Call to Action Section */}
         <section
           id="booking"
-          className={`py-20 bg-white transition-opacity duration-1000 ease-in-out ${isVisible.booking ? 'animate-fadeIn' : 'opacity-0'}`}>
+          className={`py-20 bg-white transition-opacity duration-1000 ease-in-out ${isVisible.booking ? 'animate-fadeIn' : 'opacity-0'}`}
+        >
           <div className="container py-8 mx-auto px-6 md:px-12 lg:px-24">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
-              {/* Email CTA */}
               <motion.div
                 className="bg-white shadow-md p-6 rounded-lg flex flex-col items-center justify-center transition-transform duration-300"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.3, duration: 1 }}>
+                transition={{ delay: 0.3, duration: 1 }}
+              >
                 <div className="mb-6">
                   <AiOutlineMail className="w-12 h-12 mx-auto" aria-hidden="true" />
                 </div>
@@ -313,17 +246,17 @@ const Home: React.FC = () => {
                 <a
                   href="mailto:your-email@example.com"
                   className="inline-block bg-lightGreen hover:bg-darkGreen text-white py-3 px-6 rounded-md transition-transform duration-300 hover:scale-105"
-                  aria-label="Send us an email to book your stay">
+                  aria-label="Send us an email to book your stay"
+                >
                   Get in touch!
                 </a>
               </motion.div>
-
-              {/* Call CTA */}
               <motion.div
                 className="bg-white shadow-md p-6 rounded-lg flex flex-col items-center justify-center transition-transform duration-300"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.5, duration: 1 }}>
+                transition={{ delay: 0.5, duration: 1 }}
+              >
                 <div className="mb-6">
                   <IoCallSharp className="w-12 h-12 mx-auto" aria-hidden="true" />
                 </div>
@@ -332,7 +265,8 @@ const Home: React.FC = () => {
                 <a
                   href="tel:+1234567890"
                   className="inline-block bg-lightGreen hover:bg-darkGreen text-white py-3 px-6 rounded-md transition-transform duration-300 hover:scale-105"
-                  aria-label="Call us now to book your stay">
+                  aria-label="Call us now to book your stay"
+                >
                   Call Us Now
                 </a>
               </motion.div>
@@ -340,10 +274,10 @@ const Home: React.FC = () => {
           </div>
         </section>
 
-        {/* Booking Form Section */}
         <section
           id="booking-form"
-          className={`py-20 bg-lightestGreen transition-opacity  duration-1000 ease-in-out ${isVisible['booking-form'] ? 'animate-fadeIn' : 'opacity-0'}`}>
+          className={`py-20 bg-lightestGreen transition-opacity duration-1000 ease-in-out ${isVisible['booking-form'] ? 'animate-fadeIn' : 'opacity-0'}`}
+        >
           <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
             <h2 className="text-3xl font-bold text-[#9ABA12] mb-4">Book Your Stay</h2>
             <p className="text-darkGreen mb-10 max-w-2xl mx-auto">
@@ -352,32 +286,18 @@ const Home: React.FC = () => {
             <BookingForm />
           </div>
         </section>
-
-        {/* Newsletter Subscription Section */}
-        {/* <section
-          id="newsletter"
-          className={`py-20 bg-white transition-opacity duration-1000 ease-in-out ${isVisible.newsletter ? 'animate-fadeIn' : 'opacity-0'}`}>
-          <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
-            <h2 className="text-3xl font-bold text-darkGreen mb-4">Stay Updated</h2>
-            <p className="text-darkGreen mb-10 max-w-2xl mx-auto">
-              Subscribe to our newsletter to receive the latest updates and exclusive offers.
-            </p>
-            <Newsletter />
-          </div>
-        </section> */}
       </main>
 
-      {/* Back to Top Button */}
       {showTopBtn && (
         <button
           onClick={scrollToTop}
           className="fixed bottom-8 right-8 bg-[#14C2DD] text-white p-3 rounded-full shadow-lg hover:bg-darkGreen transition-colors duration-300 z-50"
-          aria-label="Scroll to top">
+          aria-label="Scroll to top"
+        >
           <IoArrowUpSharp className="w-6 h-6" />
         </button>
       )}
 
-      {/* Footer Section */}
       <Footer />
     </>
   );
