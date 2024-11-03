@@ -133,7 +133,7 @@ const Home: React.FC = () => {
         <section
           id="overview"
           className={`relative min-h-screen bg-cover bg-center py-20 transition-opacity duration-1000 ease-in-out ${isVisible.overview ? 'animate-fadeIn' : 'opacity-0'}`}
-          style={{ backgroundImage: "url('/assets/images/tree.png')", backgroundAttachment: "fixed" }}
+         
         >
           <div className="container px-6 md:px-12 lg:px-24 text-center">
             <Suspense fallback={<div>Loading...</div>}>
