@@ -6,21 +6,21 @@ const roomData = [
   {
     imageSrc: lakeViewIndoor,
     altText: 'Lake View Room with Indoor Shower',
-    title: 'Lake View Room (Indoor)',
+    title: 'LAKE VIEW ROOM',
     description: 'A serene room with a stunning view of Koggala Lake and modern amenities.',
     link: '/lake-view-indoor'
   },
   {
     imageSrc: gardenViewRoom,
     altText: 'Garden View Room',
-    title: 'Garden View Room',
+    title: 'GARDEN VIEW ROOM',
     description: 'Enjoy the tranquility of a lush garden with comfortable and stylish settings.',
     link: '/garden-view-indoor'
   },
   {
     imageSrc: gardenViewRoom2,
     altText: 'Garden View Room with Extra Comfort',
-    title: 'Garden View Room (Deluxe)',
+    title: 'TWIN ROOM',
     description: 'An upgraded garden room offering more space and luxury features.',
     link: '/garden-view-outdoor'
   },
