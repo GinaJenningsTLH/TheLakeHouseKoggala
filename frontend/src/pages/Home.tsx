@@ -90,18 +90,18 @@ const Home: React.FC = () => {
       <HeroSection />
 
       <main>
-        <section
+        {/* <section
           id="whychooseus"
           className={`relative min-h-screen md:min-h-full  bg-center mt-20 transition-opacity duration-1000 ease-in-out ${isVisible.whychooseus ? 'animate-fadeIn' : 'opacity-0'}`}
         >
-          {/* <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<div>Loading...</div>}>
             {isVisible.whychooseus && <WhyBookWithUs />}
-          </Suspense> */}
-        </section>
+          </Suspense>
+        </section> */}
 
         <section
           id="overview"
-          className={`relative min-h-screen bg-cover bg-center py-20 transition-opacity duration-1000 ease-in-out ${isVisible.overview ? 'animate-fadeIn' : 'opacity-0'}`}
+          className={`relative min-h-screen bg-cover bg-center py-10 transition-opacity duration-1000 ease-in-out ${isVisible.overview ? 'animate-fadeIn' : 'opacity-0'}`}
         >
           <div className="container px-6 md:px-12 lg:px-24 text-center">
             <motion.h1
