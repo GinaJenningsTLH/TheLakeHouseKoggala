@@ -20,44 +20,46 @@ const HeroSection: React.FC = () => {
       style={{ backgroundImage: `url(${sittingView})` }}
     >
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-darkGreen bg-opacity-60"></div>
+      <div className="absolute inset-0  bg-opacity-60"></div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-center mx-auto md:items-start h-full px-4 sm:px-6 md:px-12 text-left">
-        {/* Animated Text */}
-        <motion.h1
-          className="text-white text-4xl sm:text-6xl rethink-sans-lake font-bold mb-4"
-          initial="hidden"
-          animate="visible"
-          variants={textVariant}
-        >
-          <h1 className="text-[50px] sm:text-[60px] lg:text-[90px] mx-auto md:mx-0 text-center md:text-center outfit-lake text-white bg-clip-text text-transparent">
-            <br /> THE LAKE HOUSE <br />KOGGALA
-          </h1>
-        </motion.h1>
+      <div
+  className="relative bg-black-500 z-10 flex flex-col justify-center mx-auto md:items-start h-full px-4 sm:px-6 md:px-12 text-left"
+>
+  {/* Animated Text with Gradient Background */}
+  <motion.h1
+    className="text-white text-4xl sm:text-6xl rethink-sans-lake font-bold mb-4"
+    initial="hidden"
+    animate="visible"
+    variants={textVariant}
+    style={{
+      background: "linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent)",
+      padding: "10px",
+      borderRadius: "8px",
+      boxShadow: "0px 4px 10px rgba(0, 0, 0, 0)",
+    }}
+  >
+    <h1 className="text-[50px] sm:text-[60px] lg:text-[90px] mx-auto md:mx-0 -mt-20 text-center md:text-center  outfit-lake text-white bg-clip-text text-transparent">
+      <br /> THE LAKE HOUSE <br /> KOGGALA
+    </h1>
+  </motion.h1>
 
-        {/* <motion.p
-          className="text-lightestGreen alumni-sans-pinstripe-regular mx-auto md:mx-20 justify-center text-center md:text-center  text-2xl px-4 md:px-0 mb-8 max-w-lg"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0, transition: { duration: 1.2, delay: 0.5, ease: "easeOut" } }}
-        >
-          Escape to our serene villa surrounded by nature, overlooking the stunning Koggala Lake.
-        </motion.p> */}
+  {/* Explore Button */}
+  <motion.div
+    className="flex justify-center md:mx-64"
+    initial="hidden"
+    animate="visible"
+    variants={buttonVariant}
+  >
+    <a
+      href="/rooms"
+      className="mx-auto md: lg:mx bg-gradient-to-r from-teal-400 to-teal-500 hover:bg-darkGreen text-white text-2xl py-3 px-6 rounded-md transition duration-300 ease-in-out transform hover:scale-105"
+    >
+      Explore
+    </a>
+  </motion.div>
+</div>
 
-        <motion.div
-          className="flex justify-center md:mx-64"
-          initial="hidden"
-          animate="visible"
-          variants={buttonVariant}
-        >
-          <a
-            href="/rooms"
-            className="mx-auto md: lg:mx bg-gradient-to-r from-teal-400 to-teal-500 hover:bg-darkGreen text-white text-2xl py-3 px-6 rounded-md transition duration-300 ease-in-out transform hover:scale-105"
-          >
-            Explore 
-          </a>
-        </motion.div>
-      </div>
     </section>
   );
 };
