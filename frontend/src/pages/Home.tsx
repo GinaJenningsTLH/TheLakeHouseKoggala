@@ -124,7 +124,7 @@ const Home: React.FC = () => {
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="md:w-1/2 md:pl-8 mt-12 md:mt-0">
               <h2 className="text-gray-500 font-bold mb-6 text-2xl">BUILT FOR SUSTAINABILITY</h2>
-              <p className="text-gray-700 mb-6">
+              <p className="text-gray-700 mb-6 mx-10">
                 The Lake House is a contemporary home built using local Sri Lankan materials, designed to be as energy-efficient and low-impact as possible. It relies on natural sea and lake breezes for cooling, supplemented with ceiling fans, and most of the hot water is heated using solar power.
               </p>
             </motion.div>
@@ -136,11 +136,11 @@ const Home: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="md:w-1/2 order-2 md:order-1 md:pr-8">
               <h2 className="text-gray-500 font-bold mb-6 text-2xl">LUXURIOUS ROOMS & AMENITIES</h2>
-              <p className="text-gray-700 mb-6">
+              <p className="text-gray-700 mx-10 mb-6">
                 The villa includes 4 double bedrooms with en-suite bathrooms, 3 of which have outdoor showers, and an additional twin room on request.
                 The open-plan dining, sitting, and games area offers stunning views of the pool and lake.
               </p>
-              <p className="text-gray-700 mb-6">
+              <p className="text-gray-700 mx-10 mb-6">
                 Relax in the large swimming pool or sunbathe by the water. Private yoga lessons, massages in the garden, and table tennis are also available.
               </p>
             </motion.div>
@@ -165,7 +165,7 @@ const Home: React.FC = () => {
           className={`section-padding transition-opacity duration-1000 ease-in-out ${isVisible.rooms ? 'animate-fadeIn' : 'opacity-0'}`}
           style={{ backgroundImage: "url('/assets/images/leaf-pattern.png') repeat" }}
         >
-          <div className="py-20 bg-gray-100 mx-auto px-6 md:px-12 lg:px-24 text-center">
+          <div className="py-20 bg-gray-100 mx-auto px-10 md:px-12 lg:px-24 text-center">
             <h2 className="text-3xl font-bold text-gray-500 mb-4">ROOM TYPES</h2>
             <p className="text-darkGreen mb-10 max-w-2xl mx-auto">Enjoy luxurious accommodations with stunning views.</p>
             <motion.div

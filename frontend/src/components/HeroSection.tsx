@@ -20,11 +20,11 @@ const HeroSection: React.FC = () => {
       style={{ backgroundImage: `url(${sittingView})` }}
     >
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-0"></div>
+      <div className="absolute inset-0 bg-black bg-opacity-0 "></div>
 
       {/* Content */}
       <div
-        className="relative z-10 flex flex-col justify-center items-center md:items-start h-full px-4 sm:px-6 md:px-12 text-left"
+        className="relative z-10 flex flex-col justify-center items-center  md:items-center h-full px-4 sm:px-6 md:px-12 text-left"
       >
         {/* Animated Text with Gradient Background */}
         <motion.h1
@@ -41,9 +41,9 @@ const HeroSection: React.FC = () => {
         >
           <h1 className="text-[50px] sm:text-[60px] sm:pb-20 sm:mb-6 lg:text-[90px] mx-auto md:mx-0 -mt-10 lg:-mt-20 md:-mt-20 text-center outfit-lake text-white bg-clip-text text-transparent">
             <br /> THE LAKE HOUSE <br />
-            <span className='md:text-left lg:text-left pb-20 md:pb-2 lg:flex md:flex'>
+          
               KOGGALA
-            </span>
+          
           </h1>
         </motion.h1>
 
