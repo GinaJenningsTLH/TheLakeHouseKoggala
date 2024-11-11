@@ -94,9 +94,9 @@ const Home: React.FC = () => {
           id="whychooseus"
           className={`relative min-h-screen md:min-h-full  bg-center mt-20 transition-opacity duration-1000 ease-in-out ${isVisible.whychooseus ? 'animate-fadeIn' : 'opacity-0'}`}
         >
-          <Suspense fallback={<div>Loading...</div>}>
+          {/* <Suspense fallback={<div>Loading...</div>}>
             {isVisible.whychooseus && <WhyBookWithUs />}
-          </Suspense>
+          </Suspense> */}
         </section>
 
         <section
@@ -105,12 +105,12 @@ const Home: React.FC = () => {
         >
           <div className="container px-6 md:px-12 lg:px-24 text-center">
             <motion.h1
-              className="font-bold text-[#9ABA12] mb-6 text-4xl md:text-5xl"
+              className="font-bold text-gray-500 mb-6 text-4xl md:text-5xl"
               initial={{ y: -50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              The Lake House Villa
+              THE LAKE HOUSE VILLA
             </motion.h1>
             <motion.p
               className="text-darkGreen mb-8 max-w-2xl mx-auto text-lg md:text-3xl"
@@ -120,14 +120,14 @@ const Home: React.FC = () => {
             >
               Built in 2010 by a British architect, The Lake House is a peaceful, architect-designed, contemporary, and environmentally sustainable villa located on the serene shores of Koggala Lake.
             </motion.p>
-            <motion.a
+            {/* <motion.a
               href="/about"
               className="inline-block bg-gradient-to-r from-teal-400 to-teal-500 hover:bg-lightGreen text-white text-2xl mb-10 py-3 px-6 rounded-md transition-transform duration-500 hover:scale-110"
               whileHover={{ scale: 1.05 }}
               aria-label="Read more about Lake House Villa"
             >
               Read More
-            </motion.a>
+            </motion.a> */}
           </div>
 
           <div className="mb-16 md:flex items-center justify-center">
@@ -146,7 +146,7 @@ const Home: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="md:w-1/2 md:pl-8 mt-12 md:mt-0"
             >
-              <h2 className="text-[#9ABA12] font-bold mb-6 text-2xl">Built for Sustainability</h2>
+              <h2 className="text-gray-500 font-bold mb-6 text-2xl">BUILT FOR SUSAINABILITY </h2>
               <p className="text-gray-700 mb-6">
                 The Lake House is a contemporary home built using local Sri Lankan materials, designed to be as energy-efficient and low-impact as possible. It relies on natural sea and lake breezes for cooling, supplemented with ceiling fans, and most of the hot water is heated using solar power.
               </p>
@@ -159,7 +159,7 @@ const Home: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="md:w-1/2 order-2 md:order-1 md:pr-8">
-              <h2 className="text-[#9ABA12] font-bold mb-6 text-2xl">Luxurious Rooms & Amenities</h2>
+              <h2 className="text-gray-500 font-bold mb-6 text-2xl">LUXURIOUS ROOMS & AMENITIES </h2>
               <p className="text-gray-700 mb-6">
                 The villa includes 4 double bedrooms with en-suite bathrooms, 3 of which have outdoor showers, and an additional twin room on request.
                 The open-plan dining, sitting, and games area offers stunning views of the pool and lake.
@@ -188,11 +188,11 @@ const Home: React.FC = () => {
 
         <section
           id="rooms"
-          className={`py-20 bg-[#57DDF3]/30 transition-opacity duration-1000 ease-in-out ${isVisible.rooms ? 'animate-fadeIn' : 'opacity-0'}`}
+          className={`py-20  transition-opacity duration-1000 ease-in-out ${isVisible.rooms ? 'animate-fadeIn' : 'opacity-0'}`}
           style={{ backgroundImage: "url('/assets/images/leaf-pattern.png') repeat" }}
         >
           <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
-            <h2 className="text-3xl font-bold text-[#9ABA12] mb-4">Room Types</h2>
+            <h2 className="text-3xl font-bold text-gray-500 mb-4">ROOM TYPES</h2>
             <p className="text-darkGreen mb-10 max-w-2xl mx-auto">Enjoy luxurious accommodations with stunning views.</p>
             <motion.div
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -215,10 +215,10 @@ const Home: React.FC = () => {
         </section>
 
         <Suspense fallback={<div className="text-center py-20">Loading gallery...</div>}>
-          <section id="gallery" className={`py-20 bg-[#14C2DD]/70 ${isVisible.gallery ? 'animate-fadeIn' : 'opacity-0'}`}>
+          <section id="gallery" className={`py-20  ${isVisible.gallery ? 'animate-fadeIn' : 'opacity-0'}`}>
             <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
               <div className='w-fit mx-auto px-2 mb-8'>
-                <h2 className="text-3xl font-bold text-white mb-2">Gallery</h2>
+                <h2 className="text-3xl font-bold text-gray-500 mb-2">GALLERY</h2>
                 <p className="text-white mb-10 max-w-2xl mx-auto">Explore beautiful moments captured at The Lake House.</p>
               </div>
               <Gallery images={galleryImages} />
@@ -279,7 +279,7 @@ const Home: React.FC = () => {
           className={`py-20 bg-lightestGreen transition-opacity duration-1000 ease-in-out ${isVisible['booking-form'] ? 'animate-fadeIn' : 'opacity-0'}`}
         >
           <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
-            <h2 className="text-3xl font-bold text-[#9ABA12] mb-4">Book Your Stay</h2>
+            <h2 className="text-3xl font-bold text-gray-500 mb-4">Book Your Stay</h2>
             <p className="text-darkGreen mb-10 max-w-2xl mx-auto">
               Fill out the form below to reserve your stay at The Lake House Villa.
             </p>

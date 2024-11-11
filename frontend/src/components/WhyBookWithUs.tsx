@@ -46,11 +46,11 @@ const WhyBookWithUs: React.FC = () => {
   return (
     <div className="mb-12 -mt-20 bg-[#DEE64C]/70 h-auto pb-20 pt-6 w-screen md:px-0">
       <div className="grid grid-cols-1 md:grid-cols-1 flex -rows-1 gap-4 md:gap-2 items-center justify-center">
-        <h3 className="md:text-lx2 text-[#66930C] font-bold flex justify-center items-start text-center">
+        <h3 className="md:text-lx2 h-max-10 text-[#66930C] font-bold flex justify-center items-start text-center">
           <TypingEffect
             text="Everything you need, to elevate your retreat..."
             speed={100} // Typing speed in ms
-            eraseDelay={3000} // Delay before erasing text
+            eraseDelay={10000} // Delay before erasing text
           />
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-4 mt-10 gap-4">

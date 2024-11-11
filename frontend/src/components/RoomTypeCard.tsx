@@ -14,7 +14,7 @@ interface RoomProps {
 const RoomsTypeCard: React.FC<RoomProps> = ({ imageSrc, altText, title, description, link }) => {
   return (
     <motion.div
-      className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-500 hover:scale-105 hover:shadow-2xl"
+      className="bg-gray-200 shadow-lg rounded-lg overflow-hidden transition-transform duration-500 hover:scale-105 hover:shadow-2xl"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.3, duration: 0.8 }}
