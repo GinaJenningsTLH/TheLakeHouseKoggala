@@ -49,7 +49,7 @@ const HeroSection: React.FC = () => {
 
         {/* Explore Button */}
         <motion.div
-          className="flex justify-center md:justify-start mt-4 md:-mt-20 md:mx-72 absolute bottom-10 md:static" // Positioned at bottom for mobile, normal for desktop
+          className="flex justify-center md:justify-start mt-4 md:mb-19 md:mx-72 absolute bottom-10 md:static" // Positioned at bottom for mobile, normal for desktop
           initial="hidden"
           animate="visible"
           variants={buttonVariant}
