@@ -115,7 +115,7 @@ const BookingForm: React.FC = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-[#14C2DD] text-white py-3 px-6 rounded-md hover:bg-lightGreen transition-colors duration-300">
+            className="w-full bg-lightGreen text-white py-3 px-6 rounded-md hover:bg-lightGreen transition-colors duration-300">
             Submit Inquiry
           </button>
         </>

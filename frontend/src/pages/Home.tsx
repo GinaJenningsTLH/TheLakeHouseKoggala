@@ -19,6 +19,12 @@ import BookingForm from '../components/BookingForm';
 const Gallery = lazy(() => import('../components/Gallery'));
 const WhyBookWithUs = lazy(() => import('../components/WhyBookWithUs'));
 
+// Animation Variants for Reusability
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+};
+
 const Home: React.FC = () => {
   const observer = useRef<IntersectionObserver | null>(null);
 
@@ -49,7 +55,6 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     const options = { threshold: 0.4 };
-
     observer.current = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting && entry.target.id in isVisible) {
@@ -90,25 +95,16 @@ const Home: React.FC = () => {
       <HeroSection />
 
       <main>
-        {/* <section
-          id="whychooseus"
-          className={`relative min-h-screen md:min-h-full  bg-center mt-20 transition-opacity duration-1000 ease-in-out ${isVisible.whychooseus ? 'animate-fadeIn' : 'opacity-0'}`}
-        >
-          <Suspense fallback={<div>Loading...</div>}>
-            {isVisible.whychooseus && <WhyBookWithUs />}
-          </Suspense>
-        </section> */}
-
         <section
           id="overview"
-          className={`relative min-h-screen bg-cover bg-center py-10 transition-opacity duration-1000 ease-in-out ${isVisible.overview ? 'animate-fadeIn' : 'opacity-0'}`}
+          className={`section-padding transition-opacity duration-1000 ease-in-out ${isVisible.overview ? 'animate-fadeIn' : 'opacity-0'}`}
         >
           <div className="container px-6 md:px-12 lg:px-24 text-center">
             <motion.h1
               className="font-bold text-gray-500 mb-6 text-4xl md:text-5xl"
-              initial={{ y: -50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1 }}
+              variants={fadeInUp}
+              initial="initial"
+              animate="animate"
             >
               THE LAKE HOUSE VILLA
             </motion.h1>
@@ -120,46 +116,26 @@ const Home: React.FC = () => {
             >
               Built in 2010 by a British architect, The Lake House is a peaceful, architect-designed, contemporary, and environmentally sustainable villa located on the serene shores of Koggala Lake.
             </motion.p>
-            {/* <motion.a
-              href="/about"
-              className="inline-block bg-gradient-to-r from-teal-400 to-teal-500 hover:bg-lightGreen text-white text-2xl mb-10 py-3 px-6 rounded-md transition-transform duration-500 hover:scale-110"
-              whileHover={{ scale: 1.05 }}
-              aria-label="Read more about Lake House Villa"
-            >
-              Read More
-            </motion.a> */}
           </div>
-
+          {/* Image and Description Section */}
           <div className="mb-16 md:flex items-center justify-center">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }} className="md:w-1/2">
-              <LazyLoadImage
-                src={villaFrontView}
-                alt="Front view of the Lake House Villa, designed by a British architect"
-                effect="blur"
-                className="rounded-lg shadow-lg w-full h-auto"
-                loading="lazy"
-              />
+              <LazyLoadImage src={villaFrontView} alt="Front view of the Lake House Villa" effect="blur" className="rounded-lg shadow-lg w-full h-auto" loading="lazy" />
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="md:w-1/2 md:pl-8 mt-12 md:mt-0"
-            >
-              <h2 className="text-gray-500 font-bold mb-6 text-2xl">BUILT FOR SUSAINABILITY </h2>
+            <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="md:w-1/2 md:pl-8 mt-12 md:mt-0">
+              <h2 className="text-gray-500 font-bold mb-6 text-2xl">BUILT FOR SUSTAINABILITY</h2>
               <p className="text-gray-700 mb-6">
                 The Lake House is a contemporary home built using local Sri Lankan materials, designed to be as energy-efficient and low-impact as possible. It relies on natural sea and lake breezes for cooling, supplemented with ceiling fans, and most of the hot water is heated using solar power.
               </p>
             </motion.div>
           </div>
           <div className="mb-16 md:flex items-center justify-center">
-            {/* Amenities Description */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="md:w-1/2 order-2 md:order-1 md:pr-8">
-              <h2 className="text-gray-500 font-bold mb-6 text-2xl">LUXURIOUS ROOMS & AMENITIES </h2>
+              <h2 className="text-gray-500 font-bold mb-6 text-2xl">LUXURIOUS ROOMS & AMENITIES</h2>
               <p className="text-gray-700 mb-6">
                 The villa includes 4 double bedrooms with en-suite bathrooms, 3 of which have outdoor showers, and an additional twin room on request.
                 The open-plan dining, sitting, and games area offers stunning views of the pool and lake.
@@ -168,8 +144,6 @@ const Home: React.FC = () => {
                 Relax in the large swimming pool or sunbathe by the water. Private yoga lessons, massages in the garden, and table tennis are also available.
               </p>
             </motion.div>
-
-            {/* Lake View Indoor Image */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -188,10 +162,10 @@ const Home: React.FC = () => {
 
         <section
           id="rooms"
-          className={`py-20  transition-opacity duration-1000 ease-in-out ${isVisible.rooms ? 'animate-fadeIn' : 'opacity-0'}`}
+          className={`section-padding transition-opacity duration-1000 ease-in-out ${isVisible.rooms ? 'animate-fadeIn' : 'opacity-0'}`}
           style={{ backgroundImage: "url('/assets/images/leaf-pattern.png') repeat" }}
         >
-          <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
+          <div className="py-20 bg-gray-100 mx-auto px-6 md:px-12 lg:px-24 text-center">
             <h2 className="text-3xl font-bold text-gray-500 mb-4">ROOM TYPES</h2>
             <p className="text-darkGreen mb-10 max-w-2xl mx-auto">Enjoy luxurious accommodations with stunning views.</p>
             <motion.div
@@ -215,7 +189,7 @@ const Home: React.FC = () => {
         </section>
 
         <Suspense fallback={<div className="text-center py-20">Loading gallery...</div>}>
-          <section id="gallery" className={`py-20  ${isVisible.gallery ? 'animate-fadeIn' : 'opacity-0'}`}>
+          <section id="gallery" className={`section-padding ${isVisible.gallery ? 'animate-fadeIn' : 'opacity-0'}`}>
             <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
               <div className='w-fit mx-auto px-2 mb-8'>
                 <h2 className="text-3xl font-bold text-gray-500 mb-2">GALLERY</h2>
@@ -228,12 +202,12 @@ const Home: React.FC = () => {
 
         <section
           id="booking"
-          className={`py-20 bg-white transition-opacity duration-1000 ease-in-out ${isVisible.booking ? 'animate-fadeIn' : 'opacity-0'}`}
+          className={`section-padding bg-white transition-opacity duration-1000 ease-in-out ${isVisible.booking ? 'animate-fadeIn' : 'opacity-0'}`}
         >
           <div className="container py-8 mx-auto px-6 md:px-12 lg:px-24">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
               <motion.div
-                className="bg-white shadow-md p-6 rounded-lg flex flex-col items-center justify-center transition-transform duration-300"
+                className="bg-gray-100 shadow-md p-6 rounded-lg flex flex-col items-center justify-center transition-transform duration-300"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 1 }}
@@ -252,7 +226,7 @@ const Home: React.FC = () => {
                 </a>
               </motion.div>
               <motion.div
-                className="bg-white shadow-md p-6 rounded-lg flex flex-col items-center justify-center transition-transform duration-300"
+                className="bg-gray-100 shadow-md p-6 rounded-lg flex flex-col items-center justify-center transition-transform duration-300"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 1 }}
@@ -276,7 +250,7 @@ const Home: React.FC = () => {
 
         <section
           id="booking-form"
-          className={`py-20 bg-lightestGreen transition-opacity duration-1000 ease-in-out ${isVisible['booking-form'] ? 'animate-fadeIn' : 'opacity-0'}`}
+          className={`section-padding bg-lightestGreen transition-opacity duration-1000 ease-in-out ${isVisible['booking-form'] ? 'animate-fadeIn' : 'opacity-0'}`}
         >
           <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
             <h2 className="text-3xl font-bold text-gray-500 mb-4">Book Your Stay</h2>
