@@ -80,16 +80,19 @@ const AllRoomsPage: React.FC = () => {
           ))}
         </AwesomeSlider>
         <div className="mt-8 text-center">
-          <h3 className="text-2xl font-semibold text-gray-800">Available Rooms</h3>
-          <ul className="mt-4 text-lg text-gray-600">
-            {roomNames.map((name, index) => (
-              <li key={index} className="mb-2">
-                <FontAwesomeIcon icon={faBed} className="text-[#9ABA12] mr-2" />
-                {name}
-              </li>
-            ))}
-          </ul>
-        </div>
+  <h3 className="text-2xl font-semibold text-gray-800 pt-6 mb-8">Available Rooms</h3>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+    {roomNames.map((name, index) => (
+      <div
+        key={index}
+        className="flex items-center justify-center p-6 bg-gray-100 rounded-lg shadow-lg border border-gray-200"
+      >
+        <FontAwesomeIcon icon={faBed} className="text-[#9ABA12] mr-2" />
+        <span className="text-lg text-gray-600">{name}</span>
+      </div>
+    ))}
+  </div>
+</div>
       </section>
 
       {/* Villa Facilities Section */}

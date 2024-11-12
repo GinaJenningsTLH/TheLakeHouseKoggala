@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-2 grid grid-cols-2">
               <li>
                 <a href="/" className="text-gray-300 hover:text-yellow-100">
-                  Home
+                  About Us
                 </a>
               </li>
               {/* <li>
@@ -48,12 +48,12 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="/dining" className="text-gray-300 hover:text-yellow-100">
-                  Meals
+                  Dining
                 </a>
               </li>
               <li>
-                <a href="/events" className="text-gray-300 hover:text-yellow-100">
-                  Events
+                <a href="/gallery" className="text-gray-300 hover:text-yellow-100">
+                  Gallery
                 </a>
               </li>
               <li>
@@ -61,11 +61,11 @@ const Footer: React.FC = () => {
                   Contact
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="/about" className="text-gray-300 hover:text-yellow-100">
                   About
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 
