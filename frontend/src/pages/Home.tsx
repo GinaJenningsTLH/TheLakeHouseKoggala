@@ -99,7 +99,7 @@ const Home: React.FC = () => {
           id="overview"
           className={`section-padding transition-opacity duration-1000 ease-in-out ${isVisible.overview ? 'animate-fadeIn' : 'opacity-0'}`}
         >
-          <div className="container px-6 md:px-12 lg:px-24 text-center">
+          <div className=" px-6 md:px-12 lg:px-24 text-center">
             <motion.h1
               className="font-bold text-gray-500 mb-6 text-4xl md:text-5xl"
               variants={fadeInUp}

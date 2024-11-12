@@ -8,7 +8,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBed, faShower, faWifi, faSnowflake, faGlassMartini, faConciergeBell, faFan, faUtensils, faCocktail, faTableTennis, faSpa, faSwimmer } from '@fortawesome/free-solid-svg-icons';
+import { faBed, faShower, faWifi, faSnowflake, faGlassMartini, faConciergeBell, faFan, faCocktail, faUtensils, faTableTennis, faSpa, faSwimmer } from '@fortawesome/free-solid-svg-icons';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
@@ -21,7 +21,7 @@ import relatedRoom1 from '../assets/images/room1.jpg';
 import relatedRoom2 from '../assets/images/room1.jpg';
 import BookingForm from '../components/BookingForm';
 
-const LakeViewIndoor: React.FC = () => {
+const GardenViewIndoor: React.FC = () => {
   const images = [
     { src: room1, alt: 'Room 1' },
     { src: room2, alt: 'Room 2' },
@@ -73,7 +73,7 @@ const LakeViewIndoor: React.FC = () => {
       {/* Hero Section */}
       <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: `url(${room1})` }}>
         <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-center">
-          <h1 className="text-4xl md:text-5xl   font-bold text-white mb-4">Lake View Room (Indoor Shower)</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Garden View Room (Indoor Shower)</h1>
           <p className="text-lg md:text-xl text-gray-200 mt-4">Experience luxury and serenity with an exquisite view of Koggala Lake.</p>
           <a href="/book" className="mt-6 bg-yellow-500 hover:bg-yellow-600 text-white py-3 px-6 rounded-lg text-lg md:text-xl transition transform hover:scale-105">
             Book Now
@@ -82,7 +82,7 @@ const LakeViewIndoor: React.FC = () => {
       </div>
 
       <div className="container mx-auto py-16 px-4">
-        {/* Room Image Slider Using AwesomeSlider */}
+        {/* Room Image Slider */}
         <div className="mb-12">
           <AwesomeSlider animation="foldOutAnimation">
             {images.map((image, index) => (
@@ -102,9 +102,9 @@ const LakeViewIndoor: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           {/* Room Overview */}
           <div className='border border-gray-300 shadow-lg rounded-lg'>
-            <h2 className="px-4 py-3 text-2xl font-bold text-[#5F9540] leading-10 bg-gray-200 rounded-t-lg">Lake View Room (Indoor Shower)</h2>
+            <h2 className="px-4 py-3 text-2xl font-bold text-[#5F9540] leading-10 bg-gray-200 rounded-t-lg">Garden View Room (Indoor Shower)</h2>
             <p className="px-4 py-6 text-lg text-gray-600">
-              Our Lake View Room offers a stunning view of Koggala Lake. This room is designed to provide comfort and relaxation with its modern amenities and serene environment. Perfect for couples or solo travelers looking for a peaceful retreat.
+              Our Garden View Room offers a tranquil view with modern amenities. Perfect for those looking for a peaceful retreat surrounded by greenery.
             </p>
             <div className="px-4 py-2 border-t border-gray-200 flex items-center">
               <span className="text-xl font-semibold">Room Size:</span>
@@ -125,7 +125,7 @@ const LakeViewIndoor: React.FC = () => {
                 Indoor shower
               </li>
               <li className="flex items-center">
-              <FontAwesomeIcon icon={faFan} style={{color: "#669c35",}}  className="text-darkGreen mr-2"  />
+              <FontAwesomeIcon icon={faFan} style={{color: "#669c35",}} className="text-darkGreen mr-2"  />
                 Ceiling Fan
               </li>
               <li className="flex items-center">
@@ -205,35 +205,37 @@ const LakeViewIndoor: React.FC = () => {
         </section>
         {/* Related Rooms */}
         <div className="mb-16">
-          <h2 className="text-3xl text-gray-500 font-bold mb-6 text-center">Other Rooms You May Like</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white shadow-md rounded-lg overflow-hidden">
-              <LazyLoadImage src={relatedRoom1} alt="Garden View Indoor" effect="blur" className="w-full h-48 object-cover" />
-              <div className="p-6">
-                <h4 className="font-bold text-h3 text-[#5F9540] drop-shadow-lg mb-2">Garden View (Indoor Shower)</h4>
-                <p className="text-gray-600 mt-2">A tranquil garden view with modern amenities.</p>
-                <a href="/garden-view-indoor" className="block mt-4 bg-darkGreen hover:bg-lightGreen text-white py-2 px-4 rounded-lg transition transform hover:scale-105">View Details</a>
-              </div>
-            </div>
-            <div className="bg-white shadow-md rounded-lg overflow-hidden">
-              <LazyLoadImage src={relatedRoom2} alt="Lake View Outdoor" effect="blur" className="w-full h-48 object-cover" />
-              <div className="p-6">
-                <h4 className="font-bold text-h3 text-[#5F9540] drop-shadow-lg mb-2">Lake View (Outdoor Shower)</h4>
-                <p className="text-gray-600 mt-2">Experience luxury with our outdoor shower suite.</p>
-                <a href="/lake-view-outdoor" className="block mt-4 bg-darkGreen hover:bg-lightGreen text-white py-2 px-4 rounded-lg transition transform hover:scale-105">View Details</a>
-              </div>
-            </div>
-            <div className="bg-white shadow-md rounded-lg overflow-hidden">
-              <LazyLoadImage src={relatedRoom2} alt="Garden View Outdoor" effect="blur" className="w-full h-48 object-cover" />
-              <div className="p-6">
-                <h4 className="font-bold text-h3 text-[#5F9540] drop-shadow-lg mb-2">Garden View (Outdoor Shower)</h4>
-                <p className="text-gray-600 mt-2">A garden view with outdoor shower experience.</p>
-                <a href="/garden-view-outdoor" className="block mt-4 bg-darkGreen hover:bg-lightGreen text-white py-2 px-4 rounded-lg transition transform hover:scale-105">View Details</a>
-              </div>
-            </div>
-          </div>
-        </div>
-       
+  <h2 className="text-3xl text-gray-500 font-bold mb-6 text-center">Other Rooms You May Like</h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="bg-white shadow-md rounded-lg overflow-hidden">
+      <LazyLoadImage src={relatedRoom1} alt="Lake View Indoor" effect="blur" className="w-full h-48 object-cover" />
+      <div className="p-6">
+        <h4 className="font-bold text-h3 text-[#5F9540] drop-shadow-lg mb-2">Lake View (Indoor Shower)</h4>
+        <p className="text-gray-600 mt-2">Luxurious room with stunning lake views.</p>
+        <a href="/lake-view-indoor" className="block mt-4 bg-darkGreen hover:bg-lightGreen text-white py-2 px-4 rounded-lg transition transform hover:scale-105">View Details</a>
+      </div>
+    </div>
+    <div className="bg-white shadow-md rounded-lg overflow-hidden">
+      <LazyLoadImage src={relatedRoom2} alt="Lake View Outdoor" effect="blur" className="w-full h-48 object-cover" />
+      <div className="p-6">
+        <h4 className="font-bold text-h3 text-[#5F9540] drop-shadow-lg mb-2">Lake View (Outdoor Shower)</h4>
+        <p className="text-gray-600 mt-2">Experience luxury with our outdoor shower suite.</p>
+        <a href="/lake-view-outdoor" className="block mt-4 bg-darkGreen hover:bg-lightGreen text-white py-2 px-4 rounded-lg transition transform hover:scale-105">View Details</a>
+      </div>
+    </div>
+    <div className="bg-white shadow-md rounded-lg overflow-hidden">
+      <LazyLoadImage src={relatedRoom2} alt="Garden View Outdoor" effect="blur" className="w-full h-48 object-cover" />
+      <div className="p-6">
+        <h4 className="font-bold text-h3 text-[#5F9540] drop-shadow-lg mb-2">Garden View (Outdoor Shower)</h4>
+        <p className="text-gray-600 mt-2">A garden view with outdoor shower experience.</p>
+        <a href="/garden-view-outdoor" className="block mt-4 bg-darkGreen hover:bg-lightGreen text-white py-2 px-4 rounded-lg transition transform hover:scale-105">View Details</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
       </div>
 
@@ -242,4 +244,4 @@ const LakeViewIndoor: React.FC = () => {
   );
 };
 
-export default LakeViewIndoor;
+export default GardenViewIndoor;

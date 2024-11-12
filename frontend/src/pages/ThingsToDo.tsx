@@ -55,7 +55,7 @@ const ThingsToDo: React.FC = () => {
       {/* Facilities & Amenities Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
-          <h2 className="text-4xl font-bold text-darkGreen mb-8 text-center">Facilities & Amenities at The Lake House</h2>
+          <h2 className="text-4xl font-bold text-gray-500 mb-8 text-center">Facilities & Amenities at The Lake House</h2>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
             
             {/* Swimming Pool */}
@@ -143,7 +143,7 @@ const ThingsToDo: React.FC = () => {
       {/* Nearby Attractions Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
-          <h2 className="text-4xl font-bold text-darkGreen mb-8 text-center">Activities Neary By</h2>
+          <h2 className="text-4xl font-bold text-gray-500 mb-8 text-center">Activities Neary By</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             
             {/* Koggala Kayaking */}
@@ -228,7 +228,8 @@ const ThingsToDo: React.FC = () => {
                 className="rounded-lg mb-4 h-64 w-full object-cover"
               />
               <h3 className="text-2xl font-semibold mb-2">Surfing</h3>
-              <p className="text-gray-600">Enjoy a round of golf at the nearby Airforce Golf Course, just 10 minutes away.</p>
+              <p className="text-gray-600">Catch some waves at nearby beaches, perfect for both beginners and experienced surfers.
+              </p>
             </motion.div>
 
             {/* Virgin White Tea Plantations */}

@@ -61,11 +61,11 @@ const Navbar: React.FC = () => {
           </button>
           <div className="hidden md:flex space-x-8">
             <ul className="flex items-center nav space-x-6 text-xl font-medium">
-              <li><Link to="/" className="hover:text-yellow-100 text-lightestGreen">ABOUT US</Link></li>
+              <li><Link to="/" className="hover:text-yellow-100 text-white">ABOUT US</Link></li>
 
               {/* Villa Dropdown */}
               <li className="relative group">
-                <Link to="/villa" className="hover:text-yellow-100 text-lightestGreen">
+                <Link to="/villa" className="hover:text-yellow-100 text-white">
                   VILLA
                 </Link>
                 <div className="absolute left-0 mt-2 w-72 bg-white rounded-md shadow-lg z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -78,7 +78,7 @@ const Navbar: React.FC = () => {
 
               {/* Experiences Dropdown */}
               <li className="relative group">
-                <Link to="#" className="hover:text-yellow-100 text-lightestGreen">
+                <Link to="#" className="hover:text-yellow-100 text-white">
                   EXPERIENCES
                 </Link>
                 <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -87,8 +87,16 @@ const Navbar: React.FC = () => {
                 </div>
               </li>
 
-              <li><Link to="/dining" className="hover:text-yellow-100 text-lightestGreen">DINING</Link></li>
-              <li><Link to="/contact" className="hover:text-yellow-100 text-lightestGreen">CONTACT</Link></li>
+              <li><Link to="/dining" className="hover:text-yellow-100 text-white">DINING</Link></li>
+              <li><Link to="/contact" className="hover:text-yellow-100 text-white">CONTACT</Link></li>
+              <li>
+                <Link 
+                  to="/gallery" 
+                  className="hover:text-yellow-100 text-white"
+                >
+                  GALLERY
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -149,6 +157,14 @@ const Navbar: React.FC = () => {
 
           <li><Link to="/dining" className="hover:text-yellow-100" onClick={toggleMenu}>DINING</Link></li>
           <li><Link to="/contact" className="hover:text-yellow-100" onClick={toggleMenu}>CONTACT</Link></li>
+          <li>
+            <Link 
+              to="/gallery" 
+              className="text-gray-600 hover:text-darkGreen transition-colors"
+            >
+              Gallery
+            </Link>
+          </li>
         </ul>
       </div>
     </>

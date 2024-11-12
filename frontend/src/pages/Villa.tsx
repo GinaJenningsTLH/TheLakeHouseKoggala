@@ -42,7 +42,7 @@ const AllRoomsPage: React.FC = () => {
 
       {/* About the Villa */}
       <section className="container mx-auto py-16 px-6 text-center">
-        <h2 className="text-3xl font-bold text-[#9ABA12] mb-4">About Our Villa</h2>
+        <h2 className="text-3xl font-bold text-gray-500 mb-4">About Our Villa</h2>
         <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
           Discover ultimate luxury and relaxation with our exclusive villa. With 4 unique rooms offering lake and garden views,
           and 6 staff members ready to attend to your every need, this is the perfect retreat for families, groups, or couples seeking privacy and elegance.
@@ -66,7 +66,7 @@ const AllRoomsPage: React.FC = () => {
 
       {/* Rooms Gallery Section */}
       <section className="container mx-auto py-16 px-6">
-        <h2 className="text-3xl font-bold text-[#9ABA12] text-center mb-8">Our Rooms</h2>
+        <h2 className="text-3xl font-bold text-gray-500 text-center mb-8">Our Rooms</h2>
         <AwesomeSlider animation="foldOutAnimation">
           {[room1, room2, room3, room4].map((image, idx) => (
             <div key={idx} data-src={image}>

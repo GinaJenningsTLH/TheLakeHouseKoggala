@@ -8,7 +8,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBed, faShower, faWifi, faSnowflake, faGlassMartini, faConciergeBell } from '@fortawesome/free-solid-svg-icons';
+import { faBed, faShower, faWifi, faSnowflake, faGlassMartini, faConciergeBell, faFan, faCocktail, faSpa, faSwimmer, faTableTennis, faUtensils } from '@fortawesome/free-solid-svg-icons';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
@@ -19,6 +19,7 @@ import room3 from '../assets/images/room3.jpg';
 import room4 from '../assets/images/room4.jpg';
 import relatedRoom1 from '../assets/images/room1.jpg';
 import relatedRoom2 from '../assets/images/room1.jpg';
+import BookingForm from '../components/BookingForm';
 
 const GardenViewOutdoor: React.FC = () => {
   const images = [
@@ -98,10 +99,10 @@ const GardenViewOutdoor: React.FC = () => {
         </div>
 
         {/* Room Details Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           {/* Room Overview */}
           <div className='border border-gray-300 shadow-lg rounded-lg'>
-            <h2 className="px-4 py-3 text-2xl font-bold leading-10 bg-[#FFE8A2] rounded-t-lg">Garden View Room (Outdoor Shower)</h2>
+            <h2 className="px-4 py-3 text-2xl text-[#5F9540] font-bold leading-10 bg-gray-200 rounded-t-lg">Garden View Room (Outdoor Shower)</h2>
             <p className="px-4 py-6 text-lg text-gray-600">
               Our Garden View Room offers a tranquil setting with modern amenities. Perfect for couples or solo travelers looking for a serene retreat.
             </p>
@@ -113,58 +114,130 @@ const GardenViewOutdoor: React.FC = () => {
 
           {/* Facilities */}
           <div className='border border-gray-300 shadow-lg rounded-lg'>
-            <h3 className="px-4 py-3 text-2xl font-bold leading-10 bg-[#FFE8A2] rounded-t-lg">Room Facilities</h3>
+            <h3 className="px-4 py-3 text-2xl font-bold text-[#5F9540] leading-10 bg-gray-200 rounded-t-lg">Room Facilities</h3>
             <ul className="px-4 py-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-600">
               <li className="flex items-center">
-                <FontAwesomeIcon icon={faBed} className="text-darkGreen mr-2" />
+                <FontAwesomeIcon icon={faBed} style={{color: "#669c35",}} className="text-darkGreen mr-2" />
                 King-size bed
               </li>
               <li className="flex items-center">
-                <FontAwesomeIcon icon={faShower} className="text-darkGreen mr-2" />
+                <FontAwesomeIcon icon={faShower}  style={{color: "#669c35",}} className="text-darkGreen mr-2" />
                 Outdoor shower
               </li>
               <li className="flex items-center">
-                <FontAwesomeIcon icon={faSnowflake} className="text-darkGreen mr-2" />
-                Air conditioning
+              <FontAwesomeIcon icon={faFan} style={{color: "#669c35",}} className="text-darkGreen mr-2"  />
+                Ceiling Fan
               </li>
               <li className="flex items-center">
-                <FontAwesomeIcon icon={faWifi} className="text-darkGreen mr-2" />
+                <FontAwesomeIcon icon={faWifi} style={{color: "#669c35",}} className="text-darkGreen mr-2" />
                 Free Wi-Fi
               </li>
               <li className="flex items-center">
-                <FontAwesomeIcon icon={faGlassMartini} className="text-darkGreen mr-2" />
+                <FontAwesomeIcon icon={faGlassMartini} style={{color: "#669c35",}} className="text-darkGreen mr-2" />
                 Mini Bar
               </li>
               <li className="flex items-center">
-                <FontAwesomeIcon icon={faConciergeBell} className="text-darkGreen mr-2" />
+                <FontAwesomeIcon icon={faConciergeBell} style={{color: "#669c35",}} className="text-darkGreen mr-2" />
                 24/7 Room Service
               </li>
             </ul>
           </div>
         </div>
 
+        {/* Add Explore Full Villa Button */}
+        <div className="text-center mb-16">
+          <a 
+            href="/villa" 
+            className="bg-darkGreen hover:bg-lightGreen text-white py-2 px-6 rounded-lg transition transform hover:scale-105 inline-block"
+          >
+            Explore Full Villa
+          </a>
+        </div>
+
+        {/* Activities section */}
+        <section className="container mx-auto py-16 px-6 text-center">
+          <h2 className="text-3xl font-bold text-gray-500 mb-4">Activities</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 mb-8">
+            <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-md flex items-center">
+              <FontAwesomeIcon icon={faSwimmer} className="text-3xl text-[#9ABA12] mr-4" />
+              <span className="text-lg text-gray-800">Swimming Pool</span>
+            </div>
+            <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-md flex items-center">
+              <FontAwesomeIcon icon={faSpa} className="text-3xl text-[#9ABA12] mr-4" />
+              <span className="text-lg text-gray-800">Masseuse (On-Request)</span>
+            </div>
+            <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-md flex items-center">
+              <FontAwesomeIcon icon={faTableTennis} className="text-3xl text-[#9ABA12] mr-4" />
+              <span className="text-lg text-gray-800">Table Tennis</span>
+            </div>
+            <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-md flex items-center">
+              <FontAwesomeIcon icon={faCocktail} className="text-3xl text-[#9ABA12] mr-4" />
+              <span className="text-lg text-gray-800">Bartender (BYO Alcohol)</span>
+            </div>
+            <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-md flex items-center">
+              <FontAwesomeIcon icon={faUtensils} className="text-3xl text-[#9ABA12] mr-4" />
+              <span className="text-lg text-gray-800">Dining (Charged at Cost)</span>
+            </div>
+          </div>
+          
+          {/* Add See More Button */}
+          <div className="text-center">
+            <a 
+              href="/things-to-do" 
+              className="bg-darkGreen hover:bg-lightGreen text-white py-2 px-6 rounded-lg transition transform hover:scale-105 inline-block"
+            >
+              See More
+            </a>
+          </div>
+        </section>
+
+        <section
+          id="booking-form"
+          className="section-padding bg-lightestGreen mb-6"
+        >
+          <div className="container mx-auto px-6 md:px-12  lg:px-24 text-center">
+            <h2 className="text-3xl font-bold text-gray-500 mb-4">Book Your Stay</h2>
+            <p className="text-darkGreen mb-10 max-w-2xl mx-auto">
+              Fill out the form below to reserve your stay at The Lake House Villa.
+            </p>
+            <BookingForm />
+          </div>
+        </section>
+
         {/* Related Rooms */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-center">Other Rooms You May Like</h2>
+          <h2 className="text-3xl text-gray-500 font-bold  mb-6 text-center">Other Rooms You May Like</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-white shadow-md rounded-lg overflow-hidden">
-              <LazyLoadImage src={relatedRoom1} alt="Garden View Room" effect="blur" className="w-full h-48 object-cover" />
+              <LazyLoadImage src={relatedRoom1} alt="Lake View Indoor" effect="blur" className="w-full h-48 object-cover" />
               <div className="p-6">
-                <h4 className="text-xl font-bold">Garden View Room</h4>
-                <p className="text-gray-600 mt-2">A tranquil garden view with modern amenities.</p>
-                <a href="/rooms/garden-view" className="block mt-4 bg-darkGreen hover:bg-lightGreen text-white py-2 px-4 rounded-lg transition transform hover:scale-105">View Details</a>
+                <h4 className="font-bold text-h3 text-[#5F9540] drop-shadow-lg mb-2">Lake View (Indoor Shower)</h4>
+                <p className="text-gray-600 mt-2">Luxurious room with stunning lake views.</p>
+                <a href="/lake-view-indoor" className="block mt-4 bg-darkGreen hover:bg-lightGreen text-white py-2 px-4 rounded-lg transition transform hover:scale-105">View Details</a>
               </div>
             </div>
             <div className="bg-white shadow-md rounded-lg overflow-hidden">
-              <LazyLoadImage src={relatedRoom2} alt="Lake View Suite" effect="blur" className="w-full h-48 object-cover" />
+              <LazyLoadImage src={relatedRoom2} alt="Garden View Indoor" effect="blur" className="w-full h-48 object-cover" />
               <div className="p-6">
-                <h4 className="text-xl font-bold">Lake View Suite</h4>
-                <p className="text-gray-600 mt-2">A luxurious suite with private access to the pool.</p>
-                <a href="/rooms/lake-view-suite" className="block mt-4 bg-darkGreen hover:bg-lightGreen text-white py-2 px-4 rounded-lg transition transform hover:scale-105">View Details</a>
+                <h4 className="font-bold text-h3 text-[#5F9540] drop-shadow-lg mb-2">Garden View (Indoor Shower)</h4>
+                <p className="text-gray-600 mt-2">A tranquil garden view with modern amenities.</p>
+                <a href="/garden-view-indoor" className="block mt-4 bg-darkGreen hover:bg-lightGreen text-white py-2 px-4 rounded-lg transition transform hover:scale-105">View Details</a>
+              </div>
+            </div>
+            <div className="bg-white shadow-md rounded-lg overflow-hidden">
+              <LazyLoadImage src={relatedRoom2} alt="Lake View Outdoor" effect="blur" className="w-full h-48 object-cover" />
+              <div className="p-6">
+                <h4 className="font-bold text-h3 text-[#5F9540] drop-shadow-lg mb-2">Lake View (Outdoor Shower)</h4>
+                <p className="text-gray-600 mt-2">Experience luxury with our outdoor shower suite.</p>
+                <a href="/lake-view-outdoor" className="block mt-4 bg-darkGreen hover:bg-lightGreen text-white py-2 px-4 rounded-lg transition transform hover:scale-105">View Details</a>
               </div>
             </div>
           </div>
         </div>
+
+      
+
+
       </div>
 
       <Footer />

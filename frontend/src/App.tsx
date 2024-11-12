@@ -9,12 +9,13 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import LakeViewIndoor from './pages/LakeViewIndoor';
 import LakeViewOutdoor from './pages/LakeViewOutdoor';
-import GardenViewIndoor from './pages/GradenViewIndoor';
+import GardenViewIndoor from './pages/GardenViewIndoor';
 import GardenViewOutdoor from './pages/GardenViewOutdoor';
 import ThingsToDo from './pages/ThingsToDo';
 import PlacesToVisit from './pages/PlacesToVisit';
 import Events from './pages/Event';
 import AllRoomsPage from './pages/Villa';
+import Gallery from './pages/Gallery';
 
 const App: React.FC = () => {
   return (
@@ -35,6 +36,7 @@ const App: React.FC = () => {
         <Route path="/lake-view-outdoor" element={<LakeViewOutdoor/>}/>
         <Route path="/garden-view-indoor" element={<GardenViewIndoor/>}/>
         <Route path="/garden-view-outdoor" element={<GardenViewOutdoor/>}/>
+        <Route path="/gallery" element={<Gallery />} />
       </Routes>
     </Router>
   );
