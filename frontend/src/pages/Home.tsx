@@ -8,7 +8,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 import roomData from '../data/roomData';
 import { AiOutlineMail } from "react-icons/ai";
 import { IoCallSharp, IoArrowUpSharp } from "react-icons/io5";
-
+import '../App.css';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import villaFrontView from '../assets/images/Gallery/villa-front-view-2.jpg';
 import lakeViewIndoor from '../assets/images/lakeview(indoor).jpg';
@@ -138,7 +138,7 @@ const Home: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="md:w-1/2 order-2 md:order-1 md:pr-8">
               <h2 className="text-gray-500 text-center font-bold mb-6 text-2xl">LUXURIOUS ROOMS & AMENITIES</h2>
-              <p className="text-gray-700 mx-10 mb-6 text-2xl">
+              <p className="text-gray-700 mx-10 mb-6 ">
               The villa includes four double bedrooms with en-suite bathrooms, three of which have outdoor showers.  An additional twin room is available on request. Our guests are offered the choice of renting the entire estate, or individual rooms offering tailored elegance for every lifestyle. 
               </p>
               <p className="text-gray-700 mx-10 mb-6">
