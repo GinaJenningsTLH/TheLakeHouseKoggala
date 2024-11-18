@@ -10,7 +10,7 @@ import { AiOutlineMail } from "react-icons/ai";
 import { IoCallSharp, IoArrowUpSharp } from "react-icons/io5";
 import '../App.css';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import villaFrontView from '../assets/images/Gallery/villa-front-view-2.jpeg';
+import villaFrontView from '../assets/images/Gallery/villa-front-view-2.jpg';
 import lakeViewIndoor from '../assets/images/lakeview(indoor).jpg';
 import galleryImages from '../data/galleryData';
 import RoomsTypeCard from '../components/RoomTypeCard';
@@ -86,7 +86,7 @@ const Home: React.FC = () => {
         <meta name="keywords" content="The Lake House Villa, Koggala Lake, Luxury Villa, Sustainable Accommodation, Sri Lanka Villas, Book Lake Villa" />
         <meta property="og:title" content="The Lake House Villa - Kogalla Villas" />
         <meta property="og:description" content="Experience the serene beauty of Koggala Lake at the Lake House Villa. A contemporary, sustainable villa with luxurious amenities and stunning views." />
-        <meta property="og:image" content="/assets/images/Gallery/villa-front-view-2.jpeg" />
+        <meta property="og:image" content="/assets/images/Gallery/villa-front-view-2.jpg" />
         <meta property="og:url" content="https://yourwebsite.com/" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>

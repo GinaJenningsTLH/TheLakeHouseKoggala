@@ -5,9 +5,9 @@ import { FaTree, FaWater, FaFish, FaFan, FaBed, FaUtensils, FaWifi } from 'react
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { motion } from 'framer-motion';
-import villaFrontView from '../assets/images/Gallery/villa-front-view-2.jpeg';
+import villaFrontView from '../assets/images/Gallery/villa-front-view-2.jpg';
 import lakeViewIndoor from '../assets/images/lakeview(indoor).jpg';
-import poolView from '../assets/images/Gallery/pool-view-4.jpeg';
+import poolView from '../assets/images/Gallery/pool-view-4.jpg';
 import villaSittingLounge from '../assets/images/Gallery/villa-sitting-lounge.jpg';
 
 const About: React.FC = () => {

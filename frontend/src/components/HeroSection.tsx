@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import villaLakeView from '../assets/villa-lake-view.png'; 
-import sittingView from '../assets/images/Gallery/sitting-area.jpeg';
+import sittingView from '../assets/images/Gallery/sitting-area.jpg';
 
 const HeroSection: React.FC = () => {
   const textVariant = {

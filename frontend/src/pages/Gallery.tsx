@@ -8,10 +8,10 @@ import { faChevronLeft, faChevronRight, faTimes } from '@fortawesome/free-solid-
 
 // Import images from galleryData
 import poolView from '../assets/images/Gallery/Pool-overview.jpg';
-import villaFrontView from '../assets/images/Gallery/villa-front-view-2.jpeg';
-import sittingArea from '../assets/images/Gallery/sitting-area.jpeg';
+import villaFrontView from '../assets/images/Gallery/villa-front-view-2.jpg';
+import sittingArea from '../assets/images/Gallery/sitting-area.jpg';
 import droneView from '../assets/images/Gallery/drone-view-3.jpg';
-import centerVilla from '../assets/images/Gallery/center-villa.jpeg';
+import centerVilla from '../assets/images/Gallery/center-villa.jpg';
 import entrance from '../assets/images/Gallery/entrance.jpg';
 import sittingLounge from '../assets/images/Gallery/villa-sitting-lounge.jpg';
 import scenery3 from '../assets/images/Gallery/scenery3.jpg';
