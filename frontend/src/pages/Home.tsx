@@ -221,7 +221,7 @@ const Home: React.FC = () => {
                 <p className="mb-6 text-gray-600">Reach out to us via email for any inquiries or bookings.</p>
                 <a
                   href="mailto:your-email@example.com"
-                  className="inline-block bg-gray-500 hover:bg-darkGreen text-white py-3 px-6 rounded-md transition-transform duration-300 hover:scale-105"
+                  className="inline-block bg-gray-500 hover:bg-gray-200 hover:text-gray-800 text-white py-3 px-6 rounded-md transition-transform duration-300 hover:scale-105"
                   aria-label="Send us an email to book your stay"
                 >
                   Get in touch!
@@ -240,7 +240,7 @@ const Home: React.FC = () => {
                 <p className="mb-6 text-gray-600">Give us a call and we'll be happy to assist you with your booking.</p>
                 <a
                   href="tel:+1234567890"
-                  className="inline-block bg-gray-500 hover:bg-darkGreen text-white py-3 px-6 rounded-md transition-transform duration-300 hover:scale-105"
+                  className="inline-block bg-gray-500 hover:bg-gray-200 hover:text-gray-800 text-white py-3 px-6 rounded-md transition-transform duration-300 hover:scale-105"
                   aria-label="Call us now to book your stay"
                 >
                   Call Us Now

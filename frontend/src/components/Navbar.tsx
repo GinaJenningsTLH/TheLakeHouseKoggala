@@ -117,7 +117,7 @@ const Navbar: React.FC = () => {
                   <Link 
                     to="/places-to-visit" 
                     className={`block px-4 py-2 text-gray-700 hover:bg-gray-500 hover:text-white ${
-                      location.pathname === '/places-to-visit' ? 'bg-lightGreen text-white' : ''
+                      location.pathname === '/places-to-visit' ? 'bg-gray-800 text-white' : ''
                     }`}
                   >
                     Places to Visit

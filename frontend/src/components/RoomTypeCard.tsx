@@ -29,11 +29,11 @@ const RoomsTypeCard: React.FC<RoomProps> = ({ imageSrc, altText, title, descript
         height="192px" // Maintain aspect ratio for consistent design
       />
       <div className="p-6">
-        <h3 className="font-bold text-h3 text-[#5F9540] drop-shadow-lg mb-2">{title}</h3>
+        <h3 className="font-bold text-h3 text-gray-500 drop-shadow-lg mb-2">{title}</h3>
         <p className="text-gray-700 mb-4">{description}</p>
         <a
           href={link}
-          className="bg-darkGreen hover:bg-lightGreen text-white py-2 px-4 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105"
+          className="bg-gray-500 hover:bg-gray-200 hover:text-gray-800 text-white py-2 px-4 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105"
         >
           View Details
         </a>
