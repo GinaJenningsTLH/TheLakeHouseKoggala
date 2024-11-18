@@ -168,7 +168,7 @@ const Navbar: React.FC = () => {
               </li>
             </ul>
           </div>
-        </div>
+        </div> 
       </nav>
 
       {/* Mobile Side Drawer */}
