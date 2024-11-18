@@ -66,9 +66,9 @@ const ThingsToDo: React.FC = () => {
               animate={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.6 }}
             >
-              <FaSwimmer className="text-6xl text-white mb-4" />
+           
               <h3 className="text-2xl font-semibold mb-2 text-white">Swimming Pool</h3>
-              <p className="text-white">Relax by the large pool, perfect for swimming and sunbathing in our tropical garden.</p>
+              <p className="text-white">Relax by the oversized serenity pool that blends with the calm waters of the lake.</p>
             </motion.div>
 
             {/* Houseboat */}
@@ -79,9 +79,9 @@ const ThingsToDo: React.FC = () => {
               animate={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <FaFish className="text-6xl text-white mb-4" />
+            
               <h3 className="text-2xl font-semibold mb-2 text-white">Boat Ride</h3>
-              <p className="text-white">Experience serenity on a houseboat trip across the tranquil Koggala Lake.</p>
+              <p className="text-white">Hop on a boat ride from our private jetty and take a tour of Koggala Lake to experience a slice of nature’s finest gifts.  Almost 60 percent of Sri Lanka’s biodiversity cannot be found anywhere else on earth.   </p>
             </motion.div>
 
             {/* Surfing */}
@@ -92,9 +92,9 @@ const ThingsToDo: React.FC = () => {
               animate={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <FaBicycle className="text-6xl text-white mb-4" />
+             
               <h3 className="text-2xl font-semibold mb-2 text-white">Massage Room</h3>
-              <p className="text-white">Experience an ayuredic massage by the Lake</p>
+              <p className="text-white">Book a private treatment and pamper yourself with a range of relaxing Ayurvedic rituals or sports massages. This could be enjoyed within the comfort of your room, or a pool side therapy room.</p>
             </motion.div>
 
             {/* Sunbeds */}
@@ -105,9 +105,9 @@ const ThingsToDo: React.FC = () => {
               animate={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <FaTree className="text-6xl text-white mb-4" />
-              <h3 className="text-2xl font-semibold mb-2 text-white">Sunbeds</h3>
-              <p className="text-white">Soak up the sun on our comfortable sunbeds, surrounded by tropical foliage.</p>
+       
+              <h3 className="text-2xl font-semibold mb-2 text-white">Sunbeams</h3>
+              <p className="text-white">Select any one of our comfortable sunbeds and find your favourite spot by the pool, by the lake or in a lush corner of the gardens.</p>
             </motion.div>
 
             {/* Cocktails by the Lake */}
@@ -118,9 +118,9 @@ const ThingsToDo: React.FC = () => {
               animate={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.6, delay: 0.8 }}
             >
-              <FaGlassCheers className="text-6xl text-white mb-4" />
+           
               <h3 className="text-2xl font-semibold mb-2 text-white">Cocktails by the Lake</h3>
-              <p className="text-white">Enjoy sunset cocktails by the lake with a personalized bartender (BYO alcohol).</p>
+              <p className="text-white">Enjoy sundowners by the lake with a fine bottle of wine from our collection, or a cocktail created specially for you by our Bartender. Alternatively, you are welcome to bring your own bottles of spirits.</p>
             </motion.div>
 
             {/* Personalized Services */}
@@ -131,9 +131,9 @@ const ThingsToDo: React.FC = () => {
               animate={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.6, delay: 1 }}
             >
-              <FaUtensils className="text-6xl text-white mb-4" />
+             
               <h3 className="text-2xl font-semibold mb-2 text-white">Personalized Services</h3>
-              <p className="text-white">Enjoy cooking lessons, fishing tours, tuk-tuk rides, and more, all tailored to your preferences.</p>
+              <p className="text-white">Let our experienced staff make this holiday even more memorable with a personal cooking lesson, bird-watching tour, tuk-tuk ride, or yoga at sunrise. All this and more, tailored to your needs. </p>
             </motion.div>
 
           </div>
@@ -159,8 +159,10 @@ const ThingsToDo: React.FC = () => {
                 effect="blur"
                 className="rounded-lg mb-4 h-64 w-full object-cover"
               />
-              <h3 className="text-2xl font-semibold mb-2">Koggala Canoeing</h3>
-              <p className="text-gray-600">From November to April, explore the scenic beauty of Koggala Lake by kayak.</p>
+              <h3 className="text-2xl font-semibold mb-2">Canoeing on the Lake</h3>
+              <p className="text-gray-600">From November to April, explore the scenic beauty of Koggala Lake by canoe. Accessible, by arrangement, from our private jetty at The Lake House.
+
+</p>
             </motion.div>
 
             {/* Turtle Hatchery */}
@@ -177,7 +179,9 @@ const ThingsToDo: React.FC = () => {
                 className="rounded-lg mb-4 h-64 w-full object-cover"
               />
               <h3 className="text-2xl font-semibold mb-2">Turtle Hatchery</h3>
-              <p className="text-gray-600">Visit the nearby turtle hatchery and learn about turtle conservation efforts just 10 minutes away.</p>
+              <p className="text-gray-600">Sri Lanka is one of the few islands in the world to support five different kinds of turtles. Visit any of the turtle hatcheries dotted along the southern coast to learn more about the conservation of these gentle creatures. 
+Located just 10 minutes from The Lake House.
+</p>
             </motion.div>
 
             {/* Stick Fishermen */}
@@ -193,8 +197,9 @@ const ThingsToDo: React.FC = () => {
                 effect="blur"
                 className="rounded-lg mb-4 h-64 w-full object-cover"
               />
-              <h3 className="text-2xl font-semibold mb-2">Stick Fishermen</h3>
-              <p className="text-gray-600">Witness Sri Lanka’s iconic stick fishermen in action, a unique cultural experience.</p>
+              <h3 className="text-2xl font-semibold mb-2">Stilt Fishermen</h3>
+              <p className="text-gray-600">Discover the unique tradition of stilt fishing in Sri Lanka, where fishermen balance on stilts to catch fish in shallow waters. This iconic practice has been passed down for generations, adding to the cultural richness of the island nation. Located just 5 minutes away from The Lake House.
+              </p>
             </motion.div>
 
             {/* Martin Wickramasinghe Museum */}
@@ -211,7 +216,8 @@ const ThingsToDo: React.FC = () => {
                 className="rounded-lg mb-4 h-64 w-full object-cover"
               />
               <h3 className="text-2xl font-semibold mb-2">Martin Wickramasinghe Museum</h3>
-              <p className="text-gray-600">Explore Sri Lankan culture and heritage at the nearby Martin Wickramasinghe Museum.</p>
+              <p className="text-gray-600">Explore the Martin Wickramasinghe Museum in Koggala, dedicated to the renowned author and showcasing his personal belongings, literary works, and traditional artefacts. Immerse yourself in the cultural heritage and literary legacy of this iconic figure in Sri Lankan history. Located just 10 minutes away from The Lake House.
+              </p>
             </motion.div>
 
             {/* Golf Course */}
@@ -228,7 +234,8 @@ const ThingsToDo: React.FC = () => {
                 className="rounded-lg mb-4 h-64 w-full object-cover"
               />
               <h3 className="text-2xl font-semibold mb-2">Surfing</h3>
-              <p className="text-gray-600">Catch some waves at nearby beaches, perfect for both beginners and experienced surfers.
+              <p className="text-gray-600">Sri Lanka offers incredible surfing opportunities with waves suitable for all levels of experience. From the famous breaks in Arugam Bay to the stunning beaches of Hikkaduwa, the island's coastline has won multiple awards as a surfing paradise and is waiting to be explored. Excellent surfing beaches can be found just 10 minutes from The Lake House.
+
               </p>
             </motion.div>
 
@@ -246,7 +253,78 @@ const ThingsToDo: React.FC = () => {
                 className="rounded-lg mb-4 h-64 w-full object-cover"
               />
               <h3 className="text-2xl font-semibold mb-2">Whale Watching</h3>
-              <p className="text-gray-600">Whale watching at Mirissa with a group</p>
+              <p className="text-gray-600">Sri Lanka is one of the best places in the world for whale watching.? With the chance to spot majestic blue whales, sperm whales, and playful dolphins, the waters off the island's coast are a haven for marine enthusiasts. Whale watching boats can be located just 120 minutes from The Lake House or private hire of crewed boats can be arranged.</p>
+            </motion.div>
+
+            <motion.div 
+              className="relative p-8 bg-white rounded-lg shadow-lg" 
+              initial={{ opacity: 0, y: 50 }} 
+              animate={{ opacity: 1, y: 0 }} 
+              transition={{ duration: 0.6, delay: 1 }}
+            >
+              <LazyLoadImage
+                src={teaPlantImage}
+                alt="Virgin White Tea Plantations"
+                effect="blur"
+                className="rounded-lg mb-4 h-64 w-full object-cover"
+              />
+              <h3 className="text-2xl font-semibold mb-2">Bicycle Rides</h3>
+              <p className="text-gray-600">Guided bicycle rides can be arranged which take you through the backwaters of the area, with rides across paddy fields and refreshments en route.
+              </p>
+            </motion.div>
+
+
+            <motion.div 
+              className="relative p-8 bg-white rounded-lg shadow-lg" 
+              initial={{ opacity: 0, y: 50 }} 
+              animate={{ opacity: 1, y: 0 }} 
+              transition={{ duration: 0.6, delay: 1 }}
+            >
+              <LazyLoadImage
+                src={teaPlantImage}
+                alt="Virgin White Tea Plantations"
+                effect="blur"
+                className="rounded-lg mb-4 h-64 w-full object-cover"
+              />
+              <h3 className="text-2xl font-semibold mb-2">Sundowner Cocktails</h3>
+              <p className="text-gray-600">Enjoy cocktails while watching the sunset and one of the many beach bars or restaurants nearby or in the high spots of Galle.  Or ask our steward to bring you something special wherever you are in the house or garden.
+
+              </p>
+            </motion.div>
+
+
+            <motion.div 
+              className="relative p-8 bg-white rounded-lg shadow-lg" 
+              initial={{ opacity: 0, y: 50 }} 
+              animate={{ opacity: 1, y: 0 }} 
+              transition={{ duration: 0.6, delay: 1 }}
+            >
+              <LazyLoadImage
+                src={teaPlantImage}
+                alt="Virgin White Tea Plantations"
+                effect="blur"
+                className="rounded-lg mb-4 h-64 w-full object-cover"
+              />
+              <h3 className="text-2xl font-semibold mb-2">White Tea Estate</h3>
+              <p className="text-gray-600">Visit the Handunungoda white tea estate where the luxury white tea is grown and picked.  Tour around the plantation and factory and sample the many different teas. 20 minutes from The Lake House</p>
+            </motion.div>
+
+            <motion.div 
+              className="relative p-8 bg-white rounded-lg shadow-lg" 
+              initial={{ opacity: 0, y: 50 }} 
+              animate={{ opacity: 1, y: 0 }} 
+              transition={{ duration: 0.6, delay: 1 }}
+            >
+              <LazyLoadImage
+                src={teaPlantImage}
+                alt="Virgin White Tea Plantations"
+                effect="blur"
+                className="rounded-lg mb-4 h-64 w-full object-cover"
+              />
+              <h3 className="text-2xl font-semibold mb-2">Habaraduwa Beach</h3>
+              <p className="text-gray-600">Although it is not safe to swim at this glorious beach, the long stretch of white sand down to the rolling waves is a wonderful spot for a stroll or a sunbathe and there are a number of chilled out bars with good casual food right on the sand.  Sunsets here are spectacular if the clouds are obliging!
+
+              </p>
             </motion.div>
               
           </div>

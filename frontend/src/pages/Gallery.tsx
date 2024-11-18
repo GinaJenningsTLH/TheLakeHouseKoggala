@@ -6,29 +6,44 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-// Import images
-import room1 from '../assets/images/room1.jpg';
-import room2 from '../assets/images/room2.jpg';
-import room3 from '../assets/images/room3.jpg';
-import room4 from '../assets/images/room4.jpg';
+// Import images from galleryData
+import poolView from '../assets/images/Gallery/Pool-overview.jpg';
+import villaFrontView from '../assets/images/Gallery/villa-front-view-2.jpeg';
+import sittingArea from '../assets/images/Gallery/sitting-area.jpeg';
+import droneView from '../assets/images/Gallery/drone-view-3.jpg';
+import centerVilla from '../assets/images/Gallery/center-villa.jpeg';
+import entrance from '../assets/images/Gallery/entrance.jpg';
+import sittingLounge from '../assets/images/Gallery/villa-sitting-lounge.jpg';
+import scenery3 from '../assets/images/Gallery/scenery3.jpg';
+import scenicView from '../assets/images/Gallery/scenery.jpg';
+import treeView from '../assets/images/Gallery/Tree.jpg';
+import servingDrinks from '../assets/images/Gallery/serving-drinks.jpg';
+import villaDroneView from '../assets/images/Gallery/villa-drone-view.jpg';
 
 const Gallery: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const images = [
-    { src: room1, category: 'rooms', title: 'Lake View Room' },
-    { src: room2, category: 'outdoor', title: 'Swimming Pool' },
-    { src: room3, category: 'dining', title: 'Dining Area' },
-    { src: room4, category: 'rooms', title: 'Garden View Room' },
-    // Add more images with their categories
+    { src: poolView, category: 'villa', title: 'Pool View' },
+    { src: villaFrontView, category: 'villa', title: 'Villa Front View' },
+    { src: sittingArea, category: 'interior', title: 'Sitting Area' },
+    { src: droneView, category: 'villa', title: 'Drone View' },
+    { src: centerVilla, category: 'villa', title: 'Center of Villa' },
+    { src: entrance, category: 'villa', title: 'Villa Entrance' },
+    { src: sittingLounge, category: 'interior', title: 'Sitting Lounge' },
+    { src: scenery3, category: 'views', title: 'Beautiful Scenery' },
+    { src: scenicView, category: 'views', title: 'Scenic View' },
+    { src: treeView, category: 'views', title: 'Tree by the Villa' },
+    { src: servingDrinks, category: 'interior', title: 'Serving Drinks' },
+    { src: villaDroneView, category: 'villa', title: 'Villa Drone View' }
   ];
 
   const categories = [
     { id: 'all', name: 'All' },
-    { id: 'rooms', name: 'Rooms' },
-    { id: 'outdoor', name: 'Outdoor' },
-    { id: 'dining', name: 'Dining' },
+    { id: 'villa', name: 'Villa' },
+    { id: 'interior', name: 'Interior' },
+    { id: 'views', name: 'Views' }
   ];
 
   const filteredImages = selectedCategory === 'all' 
@@ -64,7 +79,7 @@ const Gallery: React.FC = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <div className="relative h-[400px] bg-cover bg-center" style={{ backgroundImage: `url(${room1})` }}>
+      <div className="relative h-[400px] bg-cover bg-center" style={{ backgroundImage: `url(${poolView})` }}>
         <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-center">
           <h1 className="text-5xl font-bold text-white mb-4">Our Gallery</h1>
           <p className="text-xl text-gray-200">Explore the beauty of The Lake House Villa</p>
@@ -80,8 +95,8 @@ const Gallery: React.FC = () => {
               onClick={() => setSelectedCategory(category.id)}
               className={`px-6 py-2 rounded-full transition-all ${
                 selectedCategory === category.id
-                  ? 'bg-darkGreen text-white'
-                  : 'bg-gray-200 text-gray-700 hover:bg-lightGreen hover:text-white'
+                  ? 'bg-gray-500 text-white'
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300 hover:text-white'
               }`}
             >
               {category.name}

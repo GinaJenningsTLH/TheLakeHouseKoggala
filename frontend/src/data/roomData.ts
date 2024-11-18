@@ -7,7 +7,7 @@ const roomData = [
     imageSrc: lakeViewIndoor,
     altText: 'Lake View Room with Indoor Shower',
     title: 'LAKE VIEW ROOM',
-    description: 'A serene room with a stunning view of Koggala Lake and modern amenities.',
+    description: 'A serene room with an oversized terrace offering direct views of Koggala Lake.',
     link: '/lake-view-indoor'
   },
   {

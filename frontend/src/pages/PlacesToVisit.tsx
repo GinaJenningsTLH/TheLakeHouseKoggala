@@ -13,38 +13,45 @@ const PlacesToVisit: React.FC = () => {
   const places = [
     {
       name: 'Galle Fort',
-      description: 'A 1-hour drive from Koggala, explore this iconic UNESCO World Heritage Site.',
+      description: 'Explore the rich history and the stunning architecture of Galle Fort. This iconic UNESCO World Heritage Site is located just 20 minutes from The Lake House.',
       image: galleFort,
       route: '/blog/galle-fort',
       distance: '1 Hour Drive',
     },
     {
       name: 'Mirissa Beach',
-      description: 'A 45-minute drive to one of Sri Lanka’s most famous beaches, known for whale watching.',
+      description: 'Swim in the crystal clear water, swing in a hammock or simply sink your feet in the warm soft sea sand and catch the golden sunset. Located just 20 minutes from The Lake House.',
       image: mirissa,
       route: '/blog/mirissa-beach',
       distance: '45 Minutes Drive',
     },
     {
       name: 'Unawatuna Beach',
-      description: 'A 30-minute drive to a beautiful beach with turquoise waters and lively atmosphere.',
+      description: 'Known for seeing turtles close to the shore, this location has won multiple awards for Asia’s best surfing beach. Located just 30 minutes from The Lake House. ',
       image: unawatuna,
       route: '/blog/unawatuna-beach',
       distance: '30 Minutes Drive',
     },
     {
       name: 'Yala National Park',
-      description: 'Experience wildlife and safari tours in one of Sri Lanka’s famous national parks.',
+      description: 'Did you know that Sri Lanka has the highest density of Elephants in Asia? Experience these majestic animals and more during a safari in one of Sri Lanka’s famous national parks.  ',
       image: yala,
       route: '/blog/yala-national-park',
       distance: '2.5 Hours Drive',
     },
     {
       name: 'Ella',
-      description: 'A scenic town known for hikes, waterfalls, and Nine Arches Bridge. Perfect for a road trip.',
+      description: 'Sri Lanka has over 430 waterfalls throughout the Island, making it one of the most waterfall rich countries in the world. The Ella region is dotted with waterfalls, hikes, the famous Nine Arch Bridge and variety of adventurous activities making it perfect for a road trip.',
       image: ella,
       route: '/blog/ella',
       distance: '3.5 Hours Drive',
+    },
+    {
+      name: 'Sinharaja Rain Forest',
+      description: 'Take a trip to this biodiverse rain forest which is listed as a  Biosphere Reserve and a World Heritage Site by UNESCO with almost all of Sri Lanka’s endemic birds and over 60% of the island’s endemic trees.  1 hour from The Lake House.',
+      image: ella,
+      route: '/blog/sinharaja-rain-forest',
+      distance: '2.5 Hours Drive',
     },
   ];
 
@@ -60,7 +67,7 @@ const PlacesToVisit: React.FC = () => {
             transition={{ duration: 0.6 }} 
             className="text-5xl font-bold mb-4"
           >
-            Places to Visit Near Koggala
+            Places to Visit Near Koggala Lake
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 50 }} 
@@ -68,7 +75,7 @@ const PlacesToVisit: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }} 
             className="text-lg"
           >
-            Explore the best destinations around Koggala.
+            Explore the best destinations around Koggala Lake.
           </motion.p>
         </div>
       </section>
@@ -76,7 +83,7 @@ const PlacesToVisit: React.FC = () => {
       {/* Places to Visit Section */}
       <section className="py-20 bg-lightestGreen">
         <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
-          <h2 className="text-4xl font-bold text-darkGreen mb-8">Nearby Places to Visit</h2>
+          <h2 className="text-4xl font-bold text-gray-500 mb-8">Nearby Places to Visit</h2>
           <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

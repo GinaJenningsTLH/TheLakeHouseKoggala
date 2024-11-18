@@ -106,7 +106,7 @@ const Home: React.FC = () => {
               initial="initial"
               animate="animate"
             >
-              THE LAKE HOUSE VILLA
+              THE LAKE HOUSE 
             </motion.h1>
             <motion.p
               className="text-darkGreen mb-8 max-w-2xl mx-auto text-lg md:text-3xl"
@@ -114,7 +114,8 @@ const Home: React.FC = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 1.5 }}
             >
-              Built in 2010 by a British architect, The Lake House is a peaceful, architect-designed, contemporary, and environmentally sustainable villa located on the serene shores of Koggala Lake.
+             Constructed in 2010 and designed by a British architect, The Lake House stands as a tranquil, modern and environmentally conscious villa nestled along the calm waters of Koggala Lake.
+
             </motion.p>
           </div>
           {/* Image and Description Section */}
@@ -125,7 +126,8 @@ const Home: React.FC = () => {
             <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="md:w-1/2 md:pl-8 mt-12 md:mt-0">
               <h2 className="text-gray-500 font-bold mb-6 text-2xl">BUILT FOR SUSTAINABILITY</h2>
               <p className="text-gray-700 mb-6 mx-10">
-                The Lake House is a contemporary home built using local Sri Lankan materials, designed to be as energy-efficient and low-impact as possible. It relies on natural sea and lake breezes for cooling, supplemented with ceiling fans, and most of the hot water is heated using solar power.
+              We have designed our villa using local materials which adds to the authenticity of the architecture. It also dramatically reduces the carbon footprint. Additionally, reliance on natural ventilation and solar power aligns with the villa's commitment to environmental responsibility. This approach minimises the villa’s impact on the surrounding ecosystem and offers a unique and eco-friendly experience for all our guests.
+
               </p>
             </motion.div>
           </div>
@@ -137,11 +139,10 @@ const Home: React.FC = () => {
               className="md:w-1/2 order-2 md:order-1 md:pr-8">
               <h2 className="text-gray-500 font-bold mb-6 text-2xl">LUXURIOUS ROOMS & AMENITIES</h2>
               <p className="text-gray-700 mx-10 mb-6">
-                The villa includes 4 double bedrooms with en-suite bathrooms, 3 of which have outdoor showers, and an additional twin room on request.
-                The open-plan dining, sitting, and games area offers stunning views of the pool and lake.
+              The villa includes four double bedrooms with en-suite bathrooms, three of which have outdoor showers.  An additional twin room is available on request. Our guests are offered the choice of renting the entire estate, or individual rooms offering tailored elegance for every lifestyle. 
               </p>
               <p className="text-gray-700 mx-10 mb-6">
-                Relax in the large swimming pool or sunbathe by the water. Private yoga lessons, massages in the garden, and table tennis are also available.
+              The villa amenities are truly inviting and well-suited for a relaxing and rejuvenating stay. The combination of indoor and outdoor living spaces ensures a wonderful experience with nature surrounding you. The open-plan dining and sitting area with panoramic views, offers a seamless connection to the natural surroundings and Koggala Lake.  The emphasis we have made on outdoor showers, private garden, and a dedicated massage room further enhances the feeling of tranquillity. These thoughtful touches align with the villa's sustainable ethos. 
               </p>
             </motion.div>
             <motion.div
@@ -166,8 +167,8 @@ const Home: React.FC = () => {
           style={{ backgroundImage: "url('/assets/images/leaf-pattern.png') repeat" }}
         >
           <div className="py-20 bg-gray-100 mx-auto px-10 md:px-12 lg:px-24 text-center">
-            <h2 className="text-3xl font-bold text-gray-500 mb-4">ROOM TYPES</h2>
-            <p className="text-darkGreen mb-10 max-w-2xl mx-auto">Enjoy luxurious accommodations with stunning views.</p>
+            <h2 className="text-3xl font-bold text-gray-500 mb-4">OUR ROOMS</h2>
+            <p className="text-darkGreen mb-10 max-w-2xl mx-auto">Enjoy a variety of luxurious accommodation with stunning views over the landscape or lake. </p>
             <motion.div
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
               initial={{ opacity: 0 }}
@@ -193,7 +194,8 @@ const Home: React.FC = () => {
             <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
               <div className='w-fit mx-auto px-2 mb-8'>
                 <h2 className="text-3xl font-bold text-gray-500 mb-2">GALLERY</h2>
-                <p className="text-white mb-10 max-w-2xl mx-auto">Explore beautiful moments captured at The Lake House.</p>
+                <p className="text-white mb-10 max-w-2xl mx-auto">Explore our gallery of selected images.
+                </p>
               </div>
               <Gallery images={galleryImages} />
             </div>
@@ -215,11 +217,11 @@ const Home: React.FC = () => {
                 <div className="mb-6">
                   <AiOutlineMail className="w-12 h-12 mx-auto" aria-hidden="true" />
                 </div>
-                <h2 className="text-2xl text-darkGreen font-bold mb-2">Ready to Book Your Stay?</h2>
+                <h2 className="text-2xl text-gray-500 font-bold mb-2">Ready to Book Your Stay?</h2>
                 <p className="mb-6 text-gray-600">Reach out to us via email for any inquiries or bookings.</p>
                 <a
                   href="mailto:your-email@example.com"
-                  className="inline-block bg-lightGreen hover:bg-darkGreen text-white py-3 px-6 rounded-md transition-transform duration-300 hover:scale-105"
+                  className="inline-block bg-gray-500 hover:bg-darkGreen text-white py-3 px-6 rounded-md transition-transform duration-300 hover:scale-105"
                   aria-label="Send us an email to book your stay"
                 >
                   Get in touch!
@@ -234,11 +236,11 @@ const Home: React.FC = () => {
                 <div className="mb-6">
                   <IoCallSharp className="w-12 h-12 mx-auto" aria-hidden="true" />
                 </div>
-                <h2 className="text-2xl text-darkGreen font-bold mb-2">Prefer to Speak Directly?</h2>
+                <h2 className="text-2xl text-gray-500 font-bold mb-2">Prefer to Speak Directly?</h2>
                 <p className="mb-6 text-gray-600">Give us a call and we'll be happy to assist you with your booking.</p>
                 <a
                   href="tel:+1234567890"
-                  className="inline-block bg-lightGreen hover:bg-darkGreen text-white py-3 px-6 rounded-md transition-transform duration-300 hover:scale-105"
+                  className="inline-block bg-gray-500 hover:bg-darkGreen text-white py-3 px-6 rounded-md transition-transform duration-300 hover:scale-105"
                   aria-label="Call us now to book your stay"
                 >
                   Call Us Now
@@ -265,7 +267,7 @@ const Home: React.FC = () => {
       {showTopBtn && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-[#14C2DD] text-white p-3 rounded-full shadow-lg hover:bg-darkGreen transition-colors duration-300 z-50"
+          className="fixed bottom-8 right-8 bg-gray-500 text-white p-3 rounded-full shadow-lg hover:bg-darkGreen transition-colors duration-300 z-50"
           aria-label="Scroll to top"
         >
           <IoArrowUpSharp className="w-6 h-6" />

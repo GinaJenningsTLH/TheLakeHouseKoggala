@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import '../index.css';
 
 const Navbar: React.FC = () => {
+  const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [roomsExpanded, setRoomsExpanded] = useState(false);
@@ -61,40 +62,108 @@ const Navbar: React.FC = () => {
           </button>
           <div className="hidden md:flex space-x-8">
             <ul className="flex items-center nav space-x-6 text-xl font-medium">
-              <li><Link to="/" className="hover:text-yellow-100 text-white">ABOUT US</Link></li>
+              <li>
+                <Link 
+                  to="/" 
+                  className={`text-white hover:bg-gray-200 hover:text-gray-800 transition-all px-4 py-2 rounded-md ${
+                    location.pathname === '/' ? 'bg-gray-200 text-black' : ''
+                  }`}
+                >
+                  ABOUT US
+                </Link>
+              </li>
 
               {/* Villa Dropdown */}
               <li className="relative group">
-                <Link to="/villa" className="hover:text-yellow-100 text-white">
+                <Link 
+                  to="/villa" 
+                  className={`text-white hover:bg-gray-200 hover:text-gray-800 transition-all px-4 py-2 rounded-md ${
+                    location.pathname.includes('/villa') || location.pathname.includes('view') 
+                      ? 'bg-gray-200 text-black' 
+                      : ''
+                  }`}
+                >
                   VILLA
                 </Link>
-                <div className="absolute left-0 mt-2 w-72 bg-white rounded-md shadow-lg z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Link to="/lake-view-indoor" className="block px-4 py-2 border-b border-paleGreen text-gray-700 hover:bg-yellow-100">Lake View (Indoor Shower)</Link>
-                  <Link to="/garden-view-indoor" className="block px-4 py-2 border-b border-paleGreen text-gray-700 hover:bg-yellow-100">Garden View (Indoor Shower)</Link>
-                  <Link to="/lake-view-outdoor" className="block px-4 py-2 border-b border-paleGreen text-gray-700 hover:bg-yellow-100">Lake View (Outdoor Shower)</Link>
-                  <Link to="/garden-view-outdoor" className="block px-4 py-2 text-gray-700 hover:bg-yellow-100">Garden View (Outdoor Shower)</Link>
-                </div>
+                {/* <div className="absolute left-0 mt-2 w-72 bg-white rounded-md shadow-lg z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <Link to="/lake-view-indoor" className="block px-4 py-2 border-b border-paleGreen text-gray-700 hover:bg-lightGreen hover:text-white">Lake View (Indoor Shower)</Link>
+                  <Link to="/garden-view-indoor" className="block px-4 py-2 border-b border-paleGreen text-gray-700 hover:bg-lightGreen hover:text-white">Garden View (Indoor Shower)</Link>
+                  <Link to="/lake-view-outdoor" className="block px-4 py-2 border-b border-paleGreen text-gray-700 hover:bg-lightGreen hover:text-white">Lake View (Outdoor Shower)</Link>
+                  <Link to="/garden-view-outdoor" className="block px-4 py-2 text-gray-700 hover:bg-lightGreen hover:text-white">Garden View (Outdoor Shower)</Link>
+                </div> */}
               </li>
 
               {/* Experiences Dropdown */}
               <li className="relative group">
-                <Link to="#" className="hover:text-yellow-100 text-white">
+                <Link 
+                  to="/things-to-do" 
+                  className={`text-white hover:bg-gray-200 hover:text-gray-800 transition-all px-4 py-2 rounded-md ${
+                    location.pathname.includes('/things-to-do') || location.pathname.includes('/places-to-visit') 
+                      ? 'bg-gray-200 text-black' 
+                      : ''
+                  }`}
+                >
                   EXPERIENCES
                 </Link>
                 <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Link to="/things-to-do" className="block px-4 py-2 border-b border-paleGreen text-gray-700 hover:bg-yellow-100">Things to Do</Link>
-                  <Link to="/places-to-visit" className="block px-4 py-2 text-gray-700 hover:bg-yellow-100">Places to Visit</Link>
+                  <Link 
+                    to="/things-to-do" 
+                    className={`block px-4 py-2 border-b border-paleGreen text-gray-700 hover:bg-gray-500 hover:text-white ${
+                      location.pathname === '/things-to-do' ? 'bg-gray-800 text-white' : ''
+                    }`}
+                  >
+                    Things to Do
+                  </Link>
+                  <Link 
+                    to="/places-to-visit" 
+                    className={`block px-4 py-2 text-gray-700 hover:bg-gray-500 hover:text-white ${
+                      location.pathname === '/places-to-visit' ? 'bg-lightGreen text-white' : ''
+                    }`}
+                  >
+                    Places to Visit
+                  </Link>
                 </div>
               </li>
 
-              <li><Link to="/dining" className="hover:text-yellow-100 text-white">DINING</Link></li>
-              <li><Link to="/contact" className="hover:text-yellow-100 text-white">CONTACT</Link></li>
               <li>
                 <Link 
+                  to="/dining" 
+                  className={`text-white hover:bg-gray-200 hover:text-gray-800 transition-all px-4 py-2 rounded-md ${
+                    location.pathname === '/dining' 
+                      ? 'bg-gray-200 text-black' 
+                      : 'text-lightestGreen hover:bg-gray-200 hover:text-gray-800'
+                  }`} 
+                  onClick={toggleMenu}
+                >
+                  DINING
+                </Link>
+              </li>
+
+              <li>
+              <Link 
+                  to="/contact" 
+                  className={`text-white hover:bg-gray-200 hover:text-gray-800 transition-all px-4 py-2 rounded-md ${
+                    location.pathname === '/contact' ? 'bg-gray-200 text-black' : ''
+                  }`}
+                >
+                  CONTACT
+                  <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-lightGreen transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${
+                    location.pathname === '/contact' ? 'scale-x-100' : ''
+                  }`}></span>
+                </Link>
+              </li>
+
+              <li>
+              <Link 
                   to="/gallery" 
-                  className="hover:text-yellow-100 text-white"
+                  className={`text-white hover:bg-gray-200 hover:text-gray-800 transition-all px-4 py-2 rounded-md ${
+                    location.pathname === '/gallery' ? 'bg-gray-200 text-black' : ''
+                  }`}
                 >
                   GALLERY
+                  <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-lightGreen transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${
+                    location.pathname === '/gallery' ? 'scale-x-100' : ''
+                  }`}></span>
                 </Link>
               </li>
             </ul>
@@ -116,7 +185,15 @@ const Navbar: React.FC = () => {
         </button>
         <ul className="flex flex-col space-y-6 mt-20 px-8 text-xl font-medium text-lightestGreen">
           <li>
-            <Link to="/" className="hover:text-yellow-100" onClick={toggleMenu}>
+            <Link 
+              to="/" 
+              className={`transition-colors ${
+                location.pathname === '/' 
+                  ? 'text-lightestGreen' 
+                  : 'text-lightestGreen hover:text-lightGreen'
+              }`} 
+              onClick={toggleMenu}
+            >
               ABOUT US
             </Link>
           </li>
@@ -141,7 +218,13 @@ const Navbar: React.FC = () => {
 
           {/* Experiences Submenu */}
           <li className="flex items-center justify-between" onClick={() => toggleSubMenu('experiences')}>
-            <span className="hover:text-yellow-100 pr-2">EXPERIENCES</span>
+            <span className={`pr-2 transition-colors ${
+              location.pathname.includes('/things-to-do') || location.pathname.includes('/places-to-visit') 
+                ? 'text-lightGreen' 
+                : 'text-lightestGreen hover:text-lightGreen'
+            }`}>
+              EXPERIENCES
+            </span>
             <FaChevronDown
               className={`transform transition-transform duration-300 ${
                 experiencesExpanded ? 'rotate-180' : 'rotate-0'
@@ -150,19 +233,74 @@ const Navbar: React.FC = () => {
           </li>
           {experiencesExpanded && (
             <ul className="pl-4 mt-2 space-y-2 text-lg text-gray-300">
-              <li><Link to="/things-to-do" className="hover:text-yellow-100" onClick={toggleMenu}>Things to Do</Link></li>
-              <li><Link to="/places-to-visit" className="hover:text-yellow-100" onClick={toggleMenu}>Places to Visit</Link></li>
+              <li>
+                <Link 
+                  to="/things-to-do" 
+                  className={`transition-colors ${
+                    location.pathname === '/things-to-do' 
+                      ? 'text-lightGreen' 
+                      : 'hover:text-lightGreen'
+                  }`} 
+                  onClick={toggleMenu}
+                >
+                  Things to Do
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/places-to-visit" 
+                  className={`transition-colors ${
+                    location.pathname === '/places-to-visit' 
+                      ? 'text-lightGreen' 
+                      : 'hover:text-lightGreen'
+                  }`} 
+                  onClick={toggleMenu}
+                >
+                  Places to Visit
+                </Link>
+              </li>
             </ul>
           )}
 
-          <li><Link to="/dining" className="hover:text-yellow-100" onClick={toggleMenu}>DINING</Link></li>
-          <li><Link to="/contact" className="hover:text-yellow-100" onClick={toggleMenu}>CONTACT</Link></li>
+          <li>
+            <Link 
+              to="/dining" 
+              className={`transition-all px-4 py-2 rounded-md ${
+                location.pathname === '/dining' 
+                  ? 'bg-gray-200 text-gray-800' 
+                  : 'text-lightestGreen hover:bg-gray-200 hover:text-gray-800'
+              }`} 
+              onClick={toggleMenu}
+            >
+              DINING
+            </Link>
+          </li>
+
+          <li>
+            <Link 
+              to="/contact" 
+              className={`transition-colors ${
+                location.pathname === '/contact' 
+                  ? 'text-lightGreen' 
+                  : 'text-lightestGreen hover:text-lightGreen'
+              }`} 
+              onClick={toggleMenu}
+            >
+              CONTACT
+            </Link>
+          </li>
+
           <li>
             <Link 
               to="/gallery" 
-              className="text-gray-600 hover:text-darkGreen transition-colors"
+              className={`transition-colors ${
+                location.pathname === '/gallery' 
+                  ? 'text-lightGreen' 
+                  : 'text-lightestGreen hover:text-lightGreen'
+              }`} 
+              onClick={toggleMenu}
             >
-              Gallery
+              GALLERY
             </Link>
           </li>
         </ul>

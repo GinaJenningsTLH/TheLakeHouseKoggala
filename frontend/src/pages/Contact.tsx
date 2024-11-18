@@ -93,10 +93,10 @@ const Contact: React.FC = () => {
           <div className='flex flex-col md:flex-row gap-12'>
             {/* Form Section */}
             <form onSubmit={handleSubmit} className="w-full md:w-2/3 bg-white shadow-md p-8 rounded-lg">
-              <h2 className="text-3xl font-bold text-darkGreen text-center mb-8">Get in Touch</h2>
+              <h2 className="text-3xl font-bold text-gray-500 text-center mb-8">Get in Touch</h2>
               {/* Input fields */}
               <div className="mb-6">
-                <label htmlFor="name" className="block text-darkGreen font-semibold mb-2">Name</label>
+                <label htmlFor="name" className="block text-gray-500 font-semibold mb-2">Name</label>
                 <input
                   type="text"
                   id="name"
@@ -108,7 +108,7 @@ const Contact: React.FC = () => {
               </div>
               {/* Email Input */}
               <div className="mb-6">
-                <label htmlFor="email" className="block text-darkGreen font-semibold mb-2">Email</label>
+                <label htmlFor="email" className="block text-gray-500 font-semibold mb-2">Email</label>
                 <input
                   type="email"
                   id="email"
@@ -121,7 +121,7 @@ const Contact: React.FC = () => {
               {/* Date Pickers */}
               <div className="mb-6 flex gap-4">
                 <div className="w-1/2">
-                  <label htmlFor="checkIn" className="block text-darkGreen font-semibold mb-2">Check-In</label>
+                  <label htmlFor="checkIn" className="block text-gray-500 font-semibold mb-2">Check-In</label>
                   <DatePicker
                     selected={formData.checkIn || undefined}
                     onChange={handleCheckInChange}
@@ -134,7 +134,7 @@ const Contact: React.FC = () => {
                   />
                 </div>
                 <div className="w-1/2">
-                  <label htmlFor="checkOut" className="block text-darkGreen font-semibold mb-2">Check-Out</label>
+                  <label htmlFor="checkOut" className="block text-gray-500 font-semibold mb-2">Check-Out</label>
                   <DatePicker
                     selected={formData.checkOut || undefined}
                     onChange={handleCheckOutChange}
@@ -152,7 +152,7 @@ const Contact: React.FC = () => {
               {/* Number of Guests */}
               <div className="mb-6 flex gap-4">
                 <div className="w-1/2">
-                  <label htmlFor="guests" className="block text-darkGreen font-semibold mb-2">Number of Guests</label>
+                  <label htmlFor="guests" className="block text-gray-500 font-semibold mb-2">Number of Guests</label>
                   <input
                     type="number"
                     id="guests"
@@ -164,7 +164,7 @@ const Contact: React.FC = () => {
                   />
                 </div>
                 <div className="w-1/2">
-                  <label htmlFor="nights" className="block text-darkGreen font-semibold mb-2">Number of Nights</label>
+                  <label htmlFor="nights" className="block text-gray-500 font-semibold mb-2">Number of Nights</label>
                   <input
                     type="number"
                     id="nights"
@@ -179,7 +179,7 @@ const Contact: React.FC = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-darkGreen hover:bg-lightGreen text-white py-3 px-6 rounded-md transition-transform duration-300 hover:scale-105"
+                className="w-full bg-gray-500 hover:bg-lightGreen text-white py-3 px-6 rounded-md transition-transform duration-300 hover:scale-105"
               >
                 Send Message
               </button>
@@ -194,8 +194,8 @@ const Contact: React.FC = () => {
                 transition={{ duration: 0.6 }}
                 className="flex items-center mb-6"
               >
-                <div className='border w-80 px-10 bg-yellow-100/50 items-center justify-center shadow-md border-none rounded flex py-4'>
-                  <FaPhoneAlt className="text-3xl mt-auto text-darkGreen mr-4" />
+                <div className='border w-80 px-10 bg-gray-100 items-center justify-center shadow-md border-none rounded flex py-4'>
+                  <FaPhoneAlt className="text-3xl mt-auto text-gray-500 mr-4" />
                   <div >
                     <h3 className="text-xl font-semibold">Call Us</h3>
                     <p className="text-gray-600">+1 234 567 890</p>
@@ -209,8 +209,8 @@ const Contact: React.FC = () => {
                 transition={{ duration: 0.6 }}
                 className="flex items-center mb-6"
               >
-                <div className='border w-80 px-10 bg-yellow-100/50 shadow-md items-center justify-center border-none rounded flex py-4'>
-                  <FaEnvelope className="text-3xl mt-auto text-darkGreen mr-4" />
+                <div className='border w-80 px-10 bg-gray-100 shadow-md items-center justify-center border-none rounded flex py-4'>
+                  <FaEnvelope className="text-3xl mt-auto text-gray-500 mr-4" />
                   <div>
                     <h3 className="text-xl font-semibold">Email Us</h3>
                     <p className="text-gray-600">info@lakehouse.com</p>
@@ -224,8 +224,8 @@ const Contact: React.FC = () => {
                 transition={{ duration: 0.6 }}
                 className="flex items-center"
               >
-                <div className='border w-80 px-10 bg-yellow-100/50 items-center justify-center shadow-md border-none rounded flex py-4'>
-                  <FaWhatsapp className="text-3xl mt-auto text-darkGreen mr-4" />
+                <div className='border w-80 px-10 bg-gray-100 items-center justify-center shadow-md border-none rounded flex py-4'>
+                  <FaWhatsapp className="text-3xl mt-auto text-gray-500 mr-4" />
                   <div>
                     <h3 className="text-xl font-semibold">WhatsApp</h3>
                     <p className="text-gray-600"><a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">Chat with us</a></p>
@@ -237,7 +237,7 @@ const Contact: React.FC = () => {
 
           {/* Map Placeholder */}
           <div className="mt-16">
-            <h2 className="text-3xl font-bold text-darkGreen text-center mb-8">Our Location</h2>
+            <h2 className="text-3xl font-bold text-gray-500 text-center mb-8">Our Location</h2>
             <div className="h-64 bg-gray-200 rounded-lg text-center flex items-center justify-center">
               <p>Map will be integrated here.</p>
             </div>

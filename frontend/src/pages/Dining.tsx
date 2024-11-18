@@ -30,7 +30,7 @@ const Dining: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-5xl font-bold mb-4"
           >
-            Savor Every Moment
+            Savour Every Moment
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 50 }}
@@ -50,7 +50,7 @@ const Dining: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl font-bold text-darkGreen mb-8"
+            className="text-4xl font-bold text-gray-500 mb-8"
           >
             Fresh Food
           </motion.h2>
@@ -64,6 +64,8 @@ const Dining: React.FC = () => {
               <img src={freshIcon} className="mx-auto" alt="Fresh Food" />
              
               <p>100% fresh, locally sourced ingredients for every dish.</p>
+              <p>We have a wonderful chef who takes great pride in delighting our guests.  What’s even better is that he will prepare your food at only the cost of the ingredients.  There is no additional mark up of “menu” price – unlike hotels and many other villas
+              </p>
             </motion.div>
      
           </div>
@@ -77,15 +79,15 @@ const Dining: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl font-bold text-darkGreen mb-8"
+            className="text-4xl font-bold text-gray-500 mb-8"
           >
             How is Dining at The Lake House?
           </motion.h2>
           <p className="mb-8">
-            At Lake House Villa, guests can choose from a wide range of fresh, locally sourced seafood, vegetables, and produce. Whether you select from our carefully crafted Lake House offerings or have specific preferences, we ensure your culinary experience is exceptional. Inform our chef a few hours in advance, and he will arrange for the freshest ingredients to be delivered promptly, catering to your dining desires.
+          Enjoy a wide range of fresh, locally sourced seafood, vegetables, and produce. Whether you select from our carefully chosen. The Lake House offerings or have specific preferences, we ensure your culinary experience is exceptional. Inform our chef a few hours in advance, and he will arrange for the freshest ingredients to be delivered promptly, catering to your dining desires.  We don’t think you will find better food elsewhere!
           </p>
           <div className="flex flex-wrap items-center justify-center gap-12">
-            {[desireIcon, freshIngIcon, preparedIcon, servedIcon].map((imgSrc, index) => (
+            {[desireIcon, freshIngIcon].map((imgSrc, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
@@ -96,12 +98,11 @@ const Dining: React.FC = () => {
                 <div className="mx-auto rounded-full w-fit border bg-white mb-4">
                   <img className="mx-auto my-3 p-4" src={imgSrc} alt={`Step ${index + 1}`} />
                 </div>
-                <h4 className="text-xl font-semibold">{["Select Your Ingredients", "Freshly Delivered", "Prepared to Perfection", "Served Fresh"][index]}</h4>
+                <h4 className="text-xl font-semibold">{["Select Your Ingredients", "Freshly Delivered, Cooked and Served", ][index]}</h4>
                 <p>{[
                   "Choose from our wide range of fresh, locally sourced seafood, vegetables, and produce.",
-                  "Ingredients are sourced daily from local farms and delivered fresh, just for you.",
-                  "Our in-house chefs prepare each dish to perfection using fresh ingredients.",
-                  "Every meal is served fresh, ensuring unmatched taste and quality."
+                  "Ingredients are sourced daily from local farms and markets, and delivered fresh, just for you.",
+
                 ][index]}</p>
               </motion.div>
             ))}
@@ -118,10 +119,11 @@ const Dining: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-4xl font-bold mb-8"
           >
-            Private Barbecues by the Lake
+            Our legendary Barbecues
           </motion.h2>
           <p className="text-lg mb-8">
-            For a truly unforgettable dining experience, guests can arrange for a private BBQ by the lake. Enjoy the serene surroundings while savoring expertly grilled dishes prepared with the freshest ingredients.
+          For a special experience, guests can arrange for a BBQ on the garden by the lake or in the courtyard. Enjoy the serene surroundings while savouring expertly grilled dishes prepared with the freshest ingredients. 
+
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[bbq1, bbq2, bbq3].map((imgSrc, index) => (
