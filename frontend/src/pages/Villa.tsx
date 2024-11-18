@@ -9,10 +9,10 @@ import { faBed, faShower, faWifi, faConciergeBell, faLeaf, faFan, faCouch, faUte
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
-import room1 from '../assets/images/room1.jpg';
-import room2 from '../assets/images/room2.jpg';
-import room3 from '../assets/images/room3.jpg';
-import room4 from '../assets/images/room4.jpg';
+import room1 from '../assets/images/room1-large.jpg';
+import room2 from '../assets/images/room2-large.jpg';
+import room3 from '../assets/images/room3-large.jpg';
+import room4 from '../assets/images/room4-large.jpg';
 import BookingForm from '../components/BookingForm';
 
 const roomNames = [
@@ -49,7 +49,6 @@ const AllRoomsPage: React.FC = () => {
         </p>
         <p className="text-gray-600 text-lg mt-6 leading-relaxed max-w-2xl mx-auto">
         We have designed the villa to blend seamlessly with the natural surroundings, offering a serene escape from the hustle and bustle of everyday life. The direct access to Koggala Lake allows our guests to immerse themselves in the beauty of the area and enjoy a range of outdoor activities such as boat trips, bird watching and sunsets. This is a perfect setting for those seeking a peaceful and rejuvenating retreat, but with easy access to the many bars and restaurants nearby.
-
         </p>
       </section>
 
@@ -66,19 +65,29 @@ const AllRoomsPage: React.FC = () => {
 
       {/* Rooms Gallery Section */}
       <section className="container mx-auto py-16 px-6">
-        <h2 className="text-3xl font-bold text-gray-500 text-center mb-8">Our Rooms</h2>
-        <AwesomeSlider animation="foldOutAnimation">
-          {[room1, room2, room3, room4].map((image, idx) => (
-            <div key={idx} data-src={image}>
-              <LazyLoadImage
-                src={image}
-                alt={`Room ${idx + 1}`}
-                effect="blur"
-                className="w-full h-auto object-cover rounded"
-              />
-            </div>
-          ))}
-        </AwesomeSlider>
+      <h2 className="text-3xl font-bold text-gray-500 text-center mb-8">Our Rooms</h2>
+      <div className="w-full"> {/* Removed bg-black */}
+    <AwesomeSlider 
+      animation="foldOutAnimation"
+      className="h-[760px]"
+      bullets={false}
+    >
+      {[room1, room2, room3, room4].map((image, idx) => (
+        <div key={idx} className="w-full h-full">
+          <LazyLoadImage
+            src={image}
+            alt={`Room ${idx + 1}`}
+            effect="blur"
+            className="w-full h-[760px] object-cover" // Changed to object-cover
+            style={{
+              width: '100%',
+              height: '100%'
+            }}
+          />
+        </div>
+      ))}
+    </AwesomeSlider>
+        </div>
         <div className="mt-8 text-center">
   <h3 className="text-2xl font-semibold text-gray-800 pt-6 mb-8">Available Rooms</h3>
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">

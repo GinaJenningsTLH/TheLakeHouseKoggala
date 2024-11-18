@@ -16,7 +16,6 @@ import PlacesToVisit from './pages/PlacesToVisit';
 import Events from './pages/Event';
 import AllRoomsPage from './pages/Villa';
 import Gallery from './pages/Gallery';
-import './App.css';
 
 const App: React.FC = () => {
   return (
