@@ -3,7 +3,7 @@ import { FaPhoneAlt, FaEnvelope, FaFacebookF, FaInstagram, FaTwitter } from 'rea
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-darkGreen text-white py-10">
+    <footer className="bg-gray-500 text-white py-10">
       <div className="container mx-auto px-6 md:px-12 lg:px-24">
         {/* Top section with columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
@@ -90,9 +90,7 @@ const Footer: React.FC = () => {
               <a href="https://instagram.com" className="text-gray-400 hover:text-yellow-100" aria-label="Instagram">
                 <FaInstagram size={20} />
               </a>
-              <a href="https://twitter.com" className="text-gray-400 hover:text-yellow-100" aria-label="Twitter">
-                <FaTwitter size={20} />
-              </a>
+             
             </div>
           </div>
         </div>
