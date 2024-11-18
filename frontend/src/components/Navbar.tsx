@@ -65,8 +65,10 @@ const Navbar: React.FC = () => {
               <li>
                 <Link 
                   to="/" 
-                  className={`text-white hover:bg-gray-200 hover:text-gray-800 transition-all px-4 py-2 rounded-md ${
-                    location.pathname === '/' ? 'bg-gray-200 text-black' : ''
+                  className={`transition-all px-4 py-2 rounded-md ${
+                    location.pathname === '/' 
+                      ? 'bg-gray-200 text-gray-800' 
+                      : 'text-white hover:bg-gray-200 hover:text-gray-800'
                   }`}
                 >
                   ABOUT US
@@ -77,30 +79,24 @@ const Navbar: React.FC = () => {
               <li className="relative group">
                 <Link 
                   to="/villa" 
-                  className={`text-white hover:bg-gray-200 hover:text-gray-800 transition-all px-4 py-2 rounded-md ${
+                  className={`transition-all px-4 py-2 rounded-md ${
                     location.pathname.includes('/villa') || location.pathname.includes('view') 
-                      ? 'bg-gray-200 text-black' 
-                      : ''
+                      ? 'bg-gray-200 text-gray-800' 
+                      : 'text-white hover:bg-gray-200 hover:text-gray-800'
                   }`}
                 >
                   VILLA
                 </Link>
-                {/* <div className="absolute left-0 mt-2 w-72 bg-white rounded-md shadow-lg z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Link to="/lake-view-indoor" className="block px-4 py-2 border-b border-paleGreen text-gray-700 hover:bg-lightGreen hover:text-white">Lake View (Indoor Shower)</Link>
-                  <Link to="/garden-view-indoor" className="block px-4 py-2 border-b border-paleGreen text-gray-700 hover:bg-lightGreen hover:text-white">Garden View (Indoor Shower)</Link>
-                  <Link to="/lake-view-outdoor" className="block px-4 py-2 border-b border-paleGreen text-gray-700 hover:bg-lightGreen hover:text-white">Lake View (Outdoor Shower)</Link>
-                  <Link to="/garden-view-outdoor" className="block px-4 py-2 text-gray-700 hover:bg-lightGreen hover:text-white">Garden View (Outdoor Shower)</Link>
-                </div> */}
               </li>
 
               {/* Experiences Dropdown */}
               <li className="relative group">
                 <Link 
                   to="/things-to-do" 
-                  className={`text-white hover:bg-gray-200 hover:text-gray-800 transition-all px-4 py-2 rounded-md ${
+                  className={`transition-all px-4 py-2 rounded-md ${
                     location.pathname.includes('/things-to-do') || location.pathname.includes('/places-to-visit') 
-                      ? 'bg-gray-200 text-black' 
-                      : ''
+                      ? 'bg-gray-200 text-gray-800' 
+                      : 'text-white hover:bg-gray-200 hover:text-gray-800'
                   }`}
                 >
                   EXPERIENCES
@@ -128,10 +124,10 @@ const Navbar: React.FC = () => {
               <li>
                 <Link 
                   to="/dining" 
-                  className={`text-white hover:bg-gray-200 hover:text-gray-800 transition-all px-4 py-2 rounded-md ${
+                  className={`transition-all px-4 py-2 rounded-md ${
                     location.pathname === '/dining' 
-                      ? 'bg-gray-200 text-black' 
-                      : 'text-lightestGreen hover:bg-gray-200 hover:text-gray-800'
+                      ? 'bg-gray-200 text-gray-800' 
+                      : 'text-white hover:bg-gray-200 hover:text-gray-800'
                   }`} 
                   onClick={toggleMenu}
                 >
@@ -142,28 +138,26 @@ const Navbar: React.FC = () => {
               <li>
               <Link 
                   to="/contact" 
-                  className={`text-white hover:bg-gray-200 hover:text-gray-800 transition-all px-4 py-2 rounded-md ${
-                    location.pathname === '/contact' ? 'bg-gray-200 text-black' : ''
+                  className={`transition-all px-4 py-2 rounded-md ${
+                    location.pathname === '/contact' 
+                      ? 'bg-gray-200 text-gray-800' 
+                      : 'text-white hover:bg-gray-200 hover:text-gray-800'
                   }`}
                 >
                   CONTACT
-                  <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-lightGreen transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${
-                    location.pathname === '/contact' ? 'scale-x-100' : ''
-                  }`}></span>
                 </Link>
               </li>
 
               <li>
               <Link 
                   to="/gallery" 
-                  className={`text-white hover:bg-gray-200 hover:text-gray-800 transition-all px-4 py-2 rounded-md ${
-                    location.pathname === '/gallery' ? 'bg-gray-200 text-black' : ''
+                  className={`transition-all px-4 py-2 rounded-md ${
+                    location.pathname === '/gallery' 
+                      ? 'bg-gray-200 text-gray-800' 
+                      : 'text-white hover:bg-gray-200 hover:text-gray-800'
                   }`}
                 >
                   GALLERY
-                  <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-lightGreen transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${
-                    location.pathname === '/gallery' ? 'scale-x-100' : ''
-                  }`}></span>
                 </Link>
               </li>
             </ul>
@@ -220,7 +214,7 @@ const Navbar: React.FC = () => {
           <li className="flex items-center justify-between" onClick={() => toggleSubMenu('experiences')}>
             <span className={`pr-2 transition-colors ${
               location.pathname.includes('/things-to-do') || location.pathname.includes('/places-to-visit') 
-                ? 'text-lightGreen' 
+                ? 'text-lightestGreen' 
                 : 'text-lightestGreen hover:text-lightGreen'
             }`}>
               EXPERIENCES
