@@ -101,7 +101,7 @@ const Home: React.FC = () => {
         >
           <div className=" px-6 md:px-12 lg:px-24 text-center">
             <motion.h1
-              className="font-bold text-gray-500 mb-6 text-4xl md:text-5xl"
+              className="font-bold text-gray-500 mb-6 text-4xl md:text-4xl"
               variants={fadeInUp}
               initial="initial"
               animate="animate"
@@ -109,7 +109,7 @@ const Home: React.FC = () => {
               THE LAKE HOUSE 
             </motion.h1>
             <motion.p
-              className="text-darkGreen mb-8 max-w-2xl mx-auto text-lg md:text-3xl"
+              className="text-darkGreen mb-8 max-w-2xl mx-auto text-lg md:text-2xl"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 1.5 }}
@@ -138,7 +138,7 @@ const Home: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="md:w-1/2 order-2 md:order-1 md:pr-8">
               <h2 className="text-gray-500 font-bold mb-6 text-2xl">LUXURIOUS ROOMS & AMENITIES</h2>
-              <p className="text-gray-700 mx-10 mb-6">
+              <p className="text-gray-700 mx-10 mb-6 text-2xl">
               The villa includes four double bedrooms with en-suite bathrooms, three of which have outdoor showers.  An additional twin room is available on request. Our guests are offered the choice of renting the entire estate, or individual rooms offering tailored elegance for every lifestyle. 
               </p>
               <p className="text-gray-700 mx-10 mb-6">
