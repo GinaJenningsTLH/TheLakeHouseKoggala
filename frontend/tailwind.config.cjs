@@ -6,10 +6,10 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        'h1': '42px',
-        'h2': '26px',
-        'h3': '18px',
-        'h4': '14px',
+        'h1': '2.625rem',  // 42px
+        'h2': '1.625rem',  // 26px
+        'h3': '1.125rem',  // 18px
+        'h4': '0.875rem',  // 14px
       },
       colors: {
         darkGreen: '#16423C',    // Primary
