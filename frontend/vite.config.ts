@@ -19,7 +19,6 @@ export default defineConfig({
     cssCodeSplit: true,
     minify: 'esbuild',
     sourcemap: true,
-    cssMinify: 'esbuild',
   },
   server: {
     open: true, // Automatically open the browser when the dev server starts

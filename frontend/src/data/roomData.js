@@ -1,22 +1,25 @@
+import lakeViewIndoor from '../assets/images/lakeview(indoor).jpg';
+import gardenViewRoom from '../assets/images/gardenviewroom.jpg';
+import gardenViewRoom2 from '../assets/images/gardenviewroom2.jpg';
 const roomData = [
     {
-        imageSrc: '/lakeview(indoor).jpg',
+        imageSrc: lakeViewIndoor,
         altText: 'Lake View Room with Indoor Shower',
-        title: 'Lake View Room (Indoor)',
-        description: 'A serene room with a stunning view of Koggala Lake and modern amenities.',
+        title: 'LAKE VIEW ROOM',
+        description: 'A serene room with an oversized terrace offering direct views of Koggala Lake.',
         link: '/lake-view-indoor'
     },
     {
-        imageSrc: '/gardenviewroom.jpg',
+        imageSrc: gardenViewRoom,
         altText: 'Garden View Room',
-        title: 'Garden View Room',
+        title: 'GARDEN VIEW ROOM',
         description: 'Enjoy the tranquility of a lush garden with comfortable and stylish settings.',
         link: '/garden-view-indoor'
     },
     {
-        imageSrc: '/gardenviewroom2.jpg',
+        imageSrc: gardenViewRoom2,
         altText: 'Garden View Room with Extra Comfort',
-        title: 'Garden View Room (Deluxe)',
+        title: 'TWIN ROOM',
         description: 'An upgraded garden room offering more space and luxury features.',
         link: '/garden-view-outdoor'
     },
