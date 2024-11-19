@@ -2,13 +2,13 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
-import galleFort from '../assets/images/Galle-fort.png';
-import mirissa from '../assets/images/Mirissa.png';
-import unawatuna from '../assets/images/Unawatuna-Beach.png';
-import yala from '../assets/images/Yala.png';
-import ella from '../assets/images/Ella.png';
-import heroImage from '../assets/images/Places-to-visit.png';
-import sinharaja from '../assets/images/sinharaja.jpg';
+import heroImage from '../assets/images/places-to-visit/Places-to-visit.png';
+import galleFort from '../assets/images/places-to-visit/Galle-fort.png';
+import mirissa from '../assets/images/places-to-visit/Mirissa.png';
+import unawatuna from '../assets/images/places-to-visit/Unawatuna-Beach.png';
+import yala from '../assets/images/places-to-visit/Yala.png';
+import ella from '../assets/images/places-to-visit/Ella.png';
+import sinharaja from '../assets/images/places-to-visit/Sinharaja.jpg';
 
 const PlacesToVisit: React.FC = () => {
   const places = [

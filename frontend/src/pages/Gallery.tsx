@@ -6,44 +6,76 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-// Import images from galleryData
-import poolView from '../assets/images/Gallery/Pool-overview.jpg';
-import villaFrontView from '../assets/images/Gallery/villa-front-view-2.jpg';
-import sittingArea from '../assets/images/Gallery/sitting-area.jpg';
-import droneView from '../assets/images/Gallery/drone-view-3.jpg';
-import centerVilla from '../assets/images/Gallery/center-villa.jpg';
-import entrance from '../assets/images/Gallery/entrance.jpg';
-import sittingLounge from '../assets/images/Gallery/villa-sitting-lounge.jpg';
-import scenery3 from '../assets/images/Gallery/scenery3.jpg';
-import scenicView from '../assets/images/Gallery/scenery.jpg';
-import treeView from '../assets/images/Gallery/Tree.jpg';
-import servingDrinks from '../assets/images/Gallery/serving-drinks.jpg';
-import villaDroneView from '../assets/images/Gallery/villa-drone-view.jpg';
+// Import all images from GalleryMain folder
+import centerVillaTree from '../assets/images/GalleryMain/center-villa-tree.webp';
+import centreVillaTreeDry from '../assets/images/GalleryMain/centre-villa-tree-dry.webp';
+import drinksAreaView from '../assets/images/GalleryMain/drinks-area-view.webp';
+import foodServed from '../assets/images/GalleryMain/food-served.webp';
+import gardenLakeView from '../assets/images/GalleryMain/garden-and-lake-view.webp';
+import jettyLakeView from '../assets/images/GalleryMain/jetty-with-lake-view.webp';
+import lakeViewRoom from '../assets/images/GalleryMain/lake-view-from-room.webp';
+import lakeViewGarden from '../assets/images/GalleryMain/lake-view-with-garden.webp';
+import outdoorShower from '../assets/images/GalleryMain/outdoor-shower-room.webp';
+import poolDrinksArea from '../assets/images/GalleryMain/pool-view-with-drinks-area.webp';
+import poolGardenVilla from '../assets/images/GalleryMain/pool-view-with-garden-and-villa.webp';
+import roomFrontView from '../assets/images/GalleryMain/room-front-view.webp';
+import roomSideView from '../assets/images/GalleryMain/room-side-view.webp';
+import poolSideView from '../assets/images/GalleryMain/side-view-of-pool.webp';
+import sittingAreaInside from '../assets/images/GalleryMain/sitting-area-inside-view.webp';
+import roomSideViewSlightly from '../assets/images/GalleryMain/slightly-side-room-view.webp';
+import srilankanFood from '../assets/images/GalleryMain/Srilankan-food-prepared.webp';
+import staffCenter from '../assets/images/GalleryMain/staff-center-of-villa.webp';
+import staffServing from '../assets/images/GalleryMain/staff-serving-drinks.webp';
+import villaEntrance from '../assets/images/GalleryMain/the-lake-house-entrance.webp';
+import treeCentre from '../assets/images/GalleryMain/tree-centre-of-the-villa.webp';
+import villaSunbeams from '../assets/images/GalleryMain/villa-with-sunbeams-view.webp';
 
 const Gallery: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const images = [
-    { src: poolView, category: 'villa', title: 'Pool View' },
-    { src: villaFrontView, category: 'villa', title: 'Villa Front View' },
-    { src: sittingArea, category: 'interior', title: 'Sitting Area' },
-    { src: droneView, category: 'villa', title: 'Drone View' },
-    { src: centerVilla, category: 'villa', title: 'Center of Villa' },
-    { src: entrance, category: 'villa', title: 'Villa Entrance' },
-    { src: sittingLounge, category: 'interior', title: 'Sitting Lounge' },
-    { src: scenery3, category: 'views', title: 'Beautiful Scenery' },
-    { src: scenicView, category: 'views', title: 'Scenic View' },
-    { src: treeView, category: 'views', title: 'Tree by the Villa' },
-    { src: servingDrinks, category: 'interior', title: 'Serving Drinks' },
-    { src: villaDroneView, category: 'villa', title: 'Villa Drone View' }
+    // Villa Views
+    { src: villaEntrance, category: 'villa', title: 'Villa Entrance' },
+    { src: villaSunbeams, category: 'villa', title: 'Villa with Sunbeams' },
+    { src: centerVillaTree, category: 'villa', title: 'Center Villa Tree' },
+    { src: centreVillaTreeDry, category: 'villa', title: 'Villa Tree View' },
+    { src: treeCentre, category: 'villa', title: 'Tree Centre View' },
+    
+    // Pool Views
+    { src: poolDrinksArea, category: 'pool', title: 'Pool with Drinks Area' },
+    { src: poolGardenVilla, category: 'pool', title: 'Pool with Garden and Villa' },
+    { src: poolSideView, category: 'pool', title: 'Side View of Pool' },
+    
+    // Room Views
+    { src: roomFrontView, category: 'rooms', title: 'Room Front View' },
+    { src: roomSideView, category: 'rooms', title: 'Room Side View' },
+    { src: roomSideViewSlightly, category: 'rooms', title: 'Room View' },
+    { src: lakeViewRoom, category: 'rooms', title: 'Lake View from Room' },
+    { src: outdoorShower, category: 'rooms', title: 'Outdoor Shower Room' },
+    
+    // Lake Views
+    { src: gardenLakeView, category: 'lake', title: 'Garden and Lake View' },
+    { src: jettyLakeView, category: 'lake', title: 'Jetty with Lake View' },
+    { src: lakeViewGarden, category: 'lake', title: 'Lake View with Garden' },
+    
+    // Interior & Dining
+    { src: sittingAreaInside, category: 'interior', title: 'Indoor Sitting Area' },
+    { src: staffCenter, category: 'interior', title: 'Villa Staff Center' },
+    { src: drinksAreaView, category: 'dining', title: 'Drinks Area' },
+    { src: foodServed, category: 'dining', title: 'Food Service' },
+    { src: srilankanFood, category: 'dining', title: 'Sri Lankan Cuisine' },
+    { src: staffServing, category: 'dining', title: 'Drink Service' }
   ];
 
   const categories = [
     { id: 'all', name: 'All' },
     { id: 'villa', name: 'Villa' },
+    { id: 'pool', name: 'Pool' },
+    { id: 'rooms', name: 'Rooms' },
+    { id: 'lake', name: 'Lake Views' },
     { id: 'interior', name: 'Interior' },
-    { id: 'views', name: 'Views' }
+    { id: 'dining', name: 'Dining' }
   ];
 
   const filteredImages = selectedCategory === 'all' 
@@ -79,7 +111,7 @@ const Gallery: React.FC = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <div className="relative h-[400px] bg-cover bg-center" style={{ backgroundImage: `url(${poolView})` }}>
+      <div className="relative h-[400px] bg-cover bg-center" style={{ backgroundImage: `url(${poolGardenVilla})` }}>
         <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-center">
           <h1 className="text-5xl font-bold text-white mb-4">Our Gallery</h1>
           <p className="text-xl text-gray-200">Explore the beauty of The Lake House Villa</p>
