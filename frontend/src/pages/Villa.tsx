@@ -138,23 +138,23 @@ const AllRoomsPage: React.FC = () => {
         <h2 className="text-3xl font-bold text-gray-500 mb-4">Activities</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
           <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-md flex items-center">
-            <FontAwesomeIcon icon={faSwimmer} className="text-3xl text-gray-500 mr-4" />
+            {/* <FontAwesomeIcon icon={faSwimmer} className="text-3xl text-gray-500 mr-4" /> */}
             <span className="text-lg text-gray-800">Swimming Pool</span>
           </div>
           <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-md flex items-center">
-            <FontAwesomeIcon icon={faSpa} className="text-3xl text-gray-500 mr-4" />
+            {/* <FontAwesomeIcon icon={faSpa} className="text-3xl text-gray-500 mr-4" /> */}
             <span className="text-lg text-gray-800">Masseuse (On-Request)</span>
           </div>
           <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-md flex items-center">
-            <FontAwesomeIcon icon={faTableTennis} className="text-3xl text-gray-500 mr-4" />
+            {/* <FontAwesomeIcon icon={faTableTennis} className="text-3xl text-gray-500 mr-4" /> */}
             <span className="text-lg text-gray-800">Table Tennis</span>
           </div>
           <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-md flex items-center">
-            <FontAwesomeIcon icon={faCocktail} className="text-3xl text-gray-500 mr-4" />
+            {/* <FontAwesomeIcon icon={faCocktail} className="text-3xl text-gray-500 mr-4" /> */}
             <span className="text-lg text-gray-800">Bartender (BYO Alcohol)</span>
           </div>
           <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-md flex items-center">
-            <FontAwesomeIcon icon={faUtensils} className="text-3xl text-gray-500 mr-4" />
+            {/* <FontAwesomeIcon icon={faUtensils} className="text-3xl text-gray-500 mr-4" /> */}
             <span className="text-lg text-gray-800">Dining (Charged at Cost)</span>
           </div>
         </div>

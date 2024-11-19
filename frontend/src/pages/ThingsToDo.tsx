@@ -17,7 +17,10 @@ import turtleHatcheryImage from '../assets/images/turtle-hatchery.png';
 import stickFishermenImage from '../assets/images/stick-fishermen.png';
 import martinMuseumImage from '../assets/images/Martin.png';
 import surfImage from '../assets/images/surfing.png';
-import teaPlantImage from '../assets/images/whale-watching.png';
+import teaPlantImage from '../assets/images/tea-plant.png';
+import bikeride from '../assets/images/bikeride.jpg';
+import sundowner from '../assets/images/sundowner.jpg';
+import habaraduwa from '../assets/images/habaraduwa.jpg';
 
 const ThingsToDo: React.FC = () => {
   const { scrollYProgress } = useScroll();
@@ -263,7 +266,7 @@ Located just 10 minutes from The Lake House.
               transition={{ duration: 0.6, delay: 1 }}
             >
               <LazyLoadImage
-                src={teaPlantImage}
+                src={bikeride}
                 alt="Virgin White Tea Plantations"
                 effect="blur"
                 className="rounded-lg mb-4 h-64 w-full object-cover"
@@ -281,7 +284,7 @@ Located just 10 minutes from The Lake House.
               transition={{ duration: 0.6, delay: 1 }}
             >
               <LazyLoadImage
-                src={teaPlantImage}
+                src={sundowner}
                 alt="Virgin White Tea Plantations"
                 effect="blur"
                 className="rounded-lg mb-4 h-64 w-full object-cover"
@@ -316,7 +319,7 @@ Located just 10 minutes from The Lake House.
               transition={{ duration: 0.6, delay: 1 }}
             >
               <LazyLoadImage
-                src={teaPlantImage}
+                src={habaraduwa}
                 alt="Virgin White Tea Plantations"
                 effect="blur"
                 className="rounded-lg mb-4 h-64 w-full object-cover"

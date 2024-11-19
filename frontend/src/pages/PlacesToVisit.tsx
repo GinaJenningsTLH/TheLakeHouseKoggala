@@ -8,6 +8,7 @@ import unawatuna from '../assets/images/Unawatuna-Beach.png';
 import yala from '../assets/images/Yala.png';
 import ella from '../assets/images/Ella.png';
 import heroImage from '../assets/images/Places-to-visit.png';
+import sinharaja from '../assets/images/Sinharaja.jpg';
 
 const PlacesToVisit: React.FC = () => {
   const places = [
@@ -49,7 +50,7 @@ const PlacesToVisit: React.FC = () => {
     {
       name: 'Sinharaja Rain Forest',
       description: 'Take a trip to this biodiverse rain forest which is listed as a  Biosphere Reserve and a World Heritage Site by UNESCO with almost all of Sri Lanka’s endemic birds and over 60% of the island’s endemic trees.  1 hour from The Lake House.',
-      image: ella,
+      image: sinharaja,
       route: '/blog/sinharaja-rain-forest',
       distance: '2.5 Hours Drive',
     },
