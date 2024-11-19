@@ -71,7 +71,7 @@ const ThingsToDo: React.FC = () => {
             >
            
               <h3 className="text-2xl font-semibold mb-2 text-white">Swimming Pool</h3>
-              <p className="text-white">Relax by the oversized serenity pool that blends with the calm waters of the lake.</p>
+              <p className="text-white ">Relax by the oversized serenity pool that blends with the calm waters of the lake.</p>
             </motion.div>
 
             {/* Houseboat */}

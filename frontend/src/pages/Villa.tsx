@@ -34,7 +34,7 @@ const AllRoomsPage: React.FC = () => {
           <p className="text-xl text-gray-200 mt-2">Book the entire villa with 4 luxurious rooms, 6 dedicated staff, and private lake views.</p>
           <a
             href="/book-villa"
-            className="mt-6 bg-gray-500 hover:bg-[#7B940E] text-white py-3 px-8 rounded-lg text-lg font-semibold transition transform hover:scale-105"
+            className="mt-6 bg-gray-500 hover:bg-gray-200 hover:text-gray-500 text-white py-3 px-8 rounded-lg text-lg font-semibold transition transform hover:scale-105"
           >
             Book the Entire Villa
           </a>
@@ -89,7 +89,7 @@ const AllRoomsPage: React.FC = () => {
     </AwesomeSlider>
         </div>
         <div className="mt-8 text-center">
-  <h3 className="text-2xl font-semibold text-gray-800 pt-6 mb-8">Available Rooms</h3>
+  <h3 className="text-2xl font-bold text-gray-500 pt-6 mb-8">Available Rooms</h3>
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
     {roomNames.map((name, index) => (
       <div
