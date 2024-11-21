@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { sendBookingEmail } from '../utils/emailService';
 
 const BookingForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -22,6 +23,7 @@ const BookingForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Temporarily log the data until email service is implemented
     console.log(formData);
     setSubmitted(true);
   };
@@ -32,7 +34,8 @@ const BookingForm: React.FC = () => {
       className="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-md"
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.6 }}>
+      transition={{ duration: 0.6 }}
+    >
       {submitted ? (
         <div className="text-center">
           <h3 className="text-2xl font-bold text-green-500 mb-4">Thank You!</h3>
@@ -98,7 +101,7 @@ const BookingForm: React.FC = () => {
               />
             </div>
           </div>
-          <div className="mb-6">
+          <div className="mb-4">
             <label htmlFor="guests" className="block text-gray-700 mb-2">
               Number of Guests
             </label>
@@ -106,9 +109,9 @@ const BookingForm: React.FC = () => {
               type="number"
               id="guests"
               name="guests"
+              min="1"
               value={formData.guests}
               onChange={handleChange}
-              min="1"
               required
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#14C2DD]"
             />
@@ -123,14 +126,14 @@ const BookingForm: React.FC = () => {
               value={formData.comments}
               onChange={handleChange}
               rows={4}
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#14C2DD] resize-none"
-              placeholder="Any special requests or additional information..."
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#14C2DD]"
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-gray-500 text-white py-3 px-6 rounded-md hover:bg-gray-200 hover:text-gray-800 transition-colors duration-300">
-            Submit Inquiry
+            className="w-full bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-200 hover:text-gray-800 transition-colors duration-300"
+          >
+            Submit Booking Request
           </button>
         </>
       )}
