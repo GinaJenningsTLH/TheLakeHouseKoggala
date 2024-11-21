@@ -16,6 +16,7 @@ import PlacesToVisit from './pages/PlacesToVisit';
 import Events from './pages/Event';
 import AllRoomsPage from './pages/Villa';
 import Gallery from './pages/Gallery';
+import Team from './pages/Team';
 
 const App: React.FC = () => {
   return (
@@ -37,6 +38,7 @@ const App: React.FC = () => {
         <Route path="/garden-view-indoor" element={<GardenViewIndoor/>}/>
         <Route path="/garden-view-outdoor" element={<GardenViewOutdoor/>}/>
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/team" element={<Team />} />
       </Routes>
     </Router>
   );

@@ -5,7 +5,8 @@ import { FaPhoneAlt, FaEnvelope, FaWhatsapp } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import contactHero from '../assets/images/room1.jpg'; // Importing the hero image
+import contactHero from '../assets/images/GalleryMain/jetty-with-lake-view.webp'; // Importing the hero image
+import GoogleMap from '../components/GoogleMap';
 
 // TypeScript: Define form data types
 interface ContactFormData {
@@ -235,12 +236,15 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          {/* Map Placeholder */}
+          {/* Google Map */}
           <div className="mt-16">
             <h2 className="text-3xl font-bold text-gray-500 text-center mb-8">Our Location</h2>
-            <div className="h-64 bg-gray-200 rounded-lg text-center flex items-center justify-center">
-              <p>Map will be integrated here.</p>
-            </div>
+            {/* <div className="h-[400px] rounded-lg overflow-hidden">
+              <GoogleMap 
+                center={{ lat: 6.0174, lng: 80.1155 }} // Koggala Lake coordinates
+                zoom={15}
+              />
+            </div> */}
           </div>
         </div>
       </section>

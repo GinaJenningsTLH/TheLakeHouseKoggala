@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
-import diningHero from '../assets/images/room1.jpg';
+import diningHero from '../assets/images/GalleryMain/staff-serving-drinks.webp';
 import freshIcon from '../assets/images/Fresh.svg';
 import desireIcon from '../assets/images/desire.svg';
 import freshIngIcon from '../assets/images/Fresh-Ing.svg';

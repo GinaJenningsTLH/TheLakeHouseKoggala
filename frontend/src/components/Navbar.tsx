@@ -160,6 +160,19 @@ const Navbar: React.FC = () => {
                   GALLERY
                 </Link>
               </li>
+
+              <li>
+                <Link 
+                  to="/team" 
+                  className={`transition-all px-4 py-2 rounded-md ${
+                    location.pathname === '/team' 
+                      ? 'bg-gray-200 text-gray-800' 
+                      : 'text-white hover:bg-gray-200 hover:text-gray-800'
+                  }`}
+                >
+                  TEAM
+                </Link>
+              </li>
             </ul>
           </div>
         </div> 
@@ -295,6 +308,20 @@ const Navbar: React.FC = () => {
               onClick={toggleMenu}
             >
               GALLERY
+            </Link>
+          </li>
+
+          <li>
+            <Link 
+              to="/team" 
+              className={`transition-colors ${
+                location.pathname === '/team' 
+                  ? 'text-lightGreen' 
+                  : 'text-lightestGreen hover:text-lightGreen'
+              }`} 
+              onClick={toggleMenu}
+            >
+              TEAM
             </Link>
           </li>
         </ul>
