@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import villaLakeView from '../assets/villa-lake-view.png'; 
+import { IoArrowDownCircle } from "react-icons/io5";
 import sittingView from '../assets/images/Gallery/sitting-area.jpg';
 
 const HeroSection: React.FC = () => {
@@ -9,9 +9,27 @@ const HeroSection: React.FC = () => {
     visible: { opacity: 1, x: 0, transition: { duration: 1, ease: "easeOut" } }
   };
 
-  const buttonVariant = {
+  const arrowVariant = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 1.2, ease: "easeOut" } }
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { 
+        duration: 1, 
+        delay: 1.2, 
+        ease: "easeOut",
+        repeat: Infinity,
+        repeatType: "reverse",
+        repeatDelay: 0.5
+      } 
+    }
+  };
+
+  const scrollToNextSection = () => {
+    const overviewSection = document.getElementById('overview');
+    if (overviewSection) {
+      overviewSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -19,14 +37,9 @@ const HeroSection: React.FC = () => {
       className="relative bg-cover bg-center h-screen"
       style={{ backgroundImage: `url(${sittingView})` }}
     >
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-0 "></div>
+      <div className="absolute inset-0 bg-black bg-opacity-0"></div>
 
-      {/* Content */}
-      <div
-        className="relative z-10 flex flex-col justify-center items-center  md:items-center h-full px-4 sm:px-6 md:px-12 text-left"
-      >
-        {/* Animated Text with Gradient Background */}
+      <div className="relative z-10 flex flex-col justify-center items-center h-full px-4 sm:px-6 md:px-12 text-left">
         <motion.h1
           className="text-white text-4xl sm:text-6xl rethink-sans-lake font-bold mb-4"
           initial="hidden"
@@ -41,26 +54,34 @@ const HeroSection: React.FC = () => {
         >
           <h1 className="text-[50px] sm:text-[60px] sm:pb-20 sm:mb-6 lg:text-[90px] mx-auto md:mx-0 -mt-10 lg:-mt-20 md:-mt-20 text-center outfit-lake text-white bg-clip-text text-transparent">
             <br /> THE LAKE HOUSE <br />
-          
-              KOGGALA
-          
+            KOGGALA
           </h1>
         </motion.h1>
 
-        {/* Explore Button */}
-        <motion.div
-          className="flex justify-center md:justify-start mt-4 md:mb-19 md:mx-72 absolute bottom-10 md:static" // Positioned at bottom for mobile, normal for desktop
+        <motion.button
+          onClick={scrollToNextSection}
+          className="absolute bottom-12 text-white hover:text-gray-500 transition-colors duration-300"
           initial="hidden"
           animate="visible"
-          variants={buttonVariant}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 1,
+                delay: 1.2,
+                ease: "easeOut",
+                repeat: Infinity,
+                repeatType: "reverse" as const,
+                repeatDelay: 0.5
+              }
+            }
+          }}
+          aria-label="Scroll to next section"
         >
-          <a
-            href="/villa"
-            className="bg-gradient-to-r from-teal-400 to-teal-500 hover:bg-darkGreen text-white text-2xl py-3 px-6 rounded-md transition duration-300 ease-in-out transform hover:scale-105"
-          >
-            Explore
-          </a>
-        </motion.div>
+          <IoArrowDownCircle className="w-12 h-12" />
+        </motion.button>
       </div>
     </section>
   );

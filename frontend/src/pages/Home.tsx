@@ -161,7 +161,7 @@ const Home: React.FC = () => {
           </div>
         </section>
 
-        <section
+        {/* <section
           id="rooms"
           className={`section-padding transition-opacity duration-1000 ease-in-out ${isVisible.rooms ? 'animate-fadeIn' : 'opacity-0'}`}
           style={{ backgroundImage: "url('/assets/images/leaf-pattern.png') repeat" }}
@@ -187,14 +187,14 @@ const Home: React.FC = () => {
               ))}
             </motion.div>
           </div>
-        </section>
+        </section> */}
 
         <Suspense fallback={<div className="text-center py-20">Loading gallery...</div>}>
           <section id="gallery" className={`section-padding ${isVisible.gallery ? 'animate-fadeIn' : 'opacity-0'}`}>
-            <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
+            <div className="container bg-gray-100 py-6 mx-auto px-6 md:px-12 lg:px-24 text-center">
               <div className='w-fit mx-auto px-2 mb-8'>
                 <h2 className="text-3xl font-bold text-gray-500 mb-2">GALLERY</h2>
-                <p className="text-white mb-10 max-w-2xl mx-auto">Explore our gallery of selected images.
+                <p className="text-gray-500 mb-10 max-w-2xl mx-auto">Explore our gallery of selected images.
                 </p>
               </div>
               <Gallery images={galleryImages} />
@@ -215,9 +215,9 @@ const Home: React.FC = () => {
                 transition={{ delay: 0.3, duration: 1 }}
               >
                 <div className="mb-6">
-                  <AiOutlineMail className="w-12 h-12 mx-auto" aria-hidden="true" />
+                  {/* <AiOutlineMail className="w-12 h-12 mx-auto" aria-hidden="true" /> */}
                 </div>
-                <h2 className="text-2xl text-gray-500 font-bold mb-2">Ready to Book Your Stay?</h2>
+                {/* <h2 className="text-2xl text-gray-500 font-bold mb-2">Ready to Book Your Stay?</h2> */}
                 <p className="mb-6 text-gray-600">Reach out to us via email for any inquiries or bookings.</p>
                 <a
                   href="mailto:your-email@example.com"
@@ -234,9 +234,9 @@ const Home: React.FC = () => {
                 transition={{ delay: 0.5, duration: 1 }}
               >
                 <div className="mb-6">
-                  <IoCallSharp className="w-12 h-12 mx-auto" aria-hidden="true" />
+                  {/* <IoCallSharp className="w-12 h-12 mx-auto" aria-hidden="true" /> */}
                 </div>
-                <h2 className="text-2xl text-gray-500 font-bold mb-2">Prefer to Speak Directly?</h2>
+                {/* <h2 className="text-2xl text-gray-500 font-bold mb-2">Prefer to Speak Directly?</h2> */}
                 <p className="mb-6 text-gray-600">Give us a call and we'll be happy to assist you with your booking.</p>
                 <a
                   href="tel:+1234567890"

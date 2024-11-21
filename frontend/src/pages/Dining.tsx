@@ -9,7 +9,7 @@ import freshIngIcon from '../assets/images/Fresh-Ing.svg';
 import preparedIcon from '../assets/images/prepared.svg';
 import servedIcon from '../assets/images/served.svg';
 import bbq1 from '../assets/images/Dining/bbq-grill.png';
-import bbq2 from '../assets/images/Dining/group-of-diverse-friends-hanging-out.png';
+import bbq2 from '../assets/images/Dining/food-served.webp';
 import bbq3 from '../assets/images/Dining/seafood-bbq.png';
 
 const Dining: React.FC = () => {
@@ -61,7 +61,7 @@ const Dining: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="infographic-card min-h-[200px] flex flex-col items-center"
             >
-              <img src={freshIcon} className="mx-auto" alt="Fresh Food" />
+              {/* <img src={freshIcon} className="mx-auto" alt="Fresh Food" /> */}
              
               <p>100% fresh, locally sourced ingredients for every dish.</p>
               <p>We have a wonderful chef who takes great pride in delighting our guests.  What’s even better is that he will prepare your food at only the cost of the ingredients.  There is no additional mark up of “menu” price – unlike hotels and many other villas
@@ -86,7 +86,7 @@ const Dining: React.FC = () => {
           <p className="mb-8">
           Enjoy a wide range of fresh, locally sourced seafood, vegetables, and produce. Whether you select from our carefully chosen. The Lake House offerings or have specific preferences, we ensure your culinary experience is exceptional. Inform our chef a few hours in advance, and he will arrange for the freshest ingredients to be delivered promptly, catering to your dining desires.  We don’t think you will find better food elsewhere!
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-12">
+          {/* <div className="flex flex-wrap items-center justify-center gap-12">
             {[desireIcon, freshIngIcon].map((imgSrc, index) => (
               <motion.div
                 key={index}
@@ -106,25 +106,25 @@ const Dining: React.FC = () => {
                 ][index]}</p>
               </motion.div>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
 
       {/* BBQ Section with Images in Row */}
-      <section className="py-16 bg-gray-800 text-white">
+      <section className="py-16 bg-gray-200 text-white">
         <div className="container mx-auto px-6 md:px-12 text-center">
-          <motion.h2
+          {/* <motion.h2
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
             className="text-4xl font-bold mb-8"
           >
             Our legendary Barbecues
-          </motion.h2>
-          <p className="text-lg mb-8">
+          </motion.h2> */}
+          {/* <p className="text-lg mb-8">
           For a special experience, guests can arrange for a BBQ on the garden by the lake or in the courtyard. Enjoy the serene surroundings while savouring expertly grilled dishes prepared with the freshest ingredients. 
 
-          </p>
+          </p> */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[bbq1, bbq2, bbq3].map((imgSrc, index) => (
               <motion.div

@@ -29,6 +29,19 @@ import staffServing from '../assets/images/GalleryMain/staff-serving-drinks.webp
 import villaEntrance from '../assets/images/GalleryMain/the-lake-house-entrance.webp';
 import treeCentre from '../assets/images/GalleryMain/tree-centre-of-the-villa.webp';
 import villaSunbeams from '../assets/images/GalleryMain/villa-with-sunbeams-view.webp';
+import ptBoatForLake from '../assets/images/GalleryMain/pt-boat-for-lake.webp';
+import ptEntranceViewInside from '../assets/images/GalleryMain/pt-entrance-view-inside.webp';
+import ptEntrance from '../assets/images/GalleryMain/pt-entrance.webp';
+import ptJettyAndGarden from '../assets/images/GalleryMain/pt-jetty-and-garden.webp';
+import ptJettyLakeView from '../assets/images/GalleryMain/pt-jetty-lake-view.webp';
+import ptLakeHouseGate from '../assets/images/GalleryMain/pt-lake-house-gate.webp';
+import ptLobbyView from '../assets/images/GalleryMain/pt-lobby-view.webp';
+import ptPoolAndLakeView from '../assets/images/GalleryMain/pt-pool-and-lake-view.webp';
+import ptPoolAndVillaView from '../assets/images/GalleryMain/pt-pool-and-villa-view.webp';
+import ptPoolSideView from '../assets/images/GalleryMain/pt-pool-side-view.webp';
+import ptSidePoolView from '../assets/images/GalleryMain/pt-side-pool-view.webp';
+import ptSittingAreaView from '../assets/images/GalleryMain/pt-sitting-area-view.webp';
+import ptVillaCenterView from '../assets/images/GalleryMain/pt-villa-center-view.webp';
 
 const Gallery: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -60,12 +73,27 @@ const Gallery: React.FC = () => {
     { src: lakeViewGarden, category: 'lake', title: 'Lake View with Garden' },
     
     // Interior & Dining
-    { src: sittingAreaInside, category: 'interior', title: 'Indoor Sitting Area' },
-    { src: staffCenter, category: 'interior', title: 'Villa Staff Center' },
+    { src: sittingAreaInside, category: 'villa', title: 'Indoor Sitting Area' },
+    { src: staffCenter, category: 'villa', title: 'Villa Staff Center' },
     { src: drinksAreaView, category: 'dining', title: 'Drinks Area' },
     { src: foodServed, category: 'dining', title: 'Food Service' },
     { src: srilankanFood, category: 'dining', title: 'Sri Lankan Cuisine' },
-    { src: staffServing, category: 'dining', title: 'Drink Service' }
+    { src: staffServing, category: 'dining', title: 'Drink Service' },
+   
+    // Additional PT Images
+    { src: ptBoatForLake, category: 'lake', title: 'Boat on the Lake' },
+    { src: ptEntranceViewInside, category: 'interior', title: 'Villa Entrance Interior' },
+    { src: ptEntrance, category: 'villa', title: 'Villa Entrance View' },
+    { src: ptJettyAndGarden, category: 'lake', title: 'Jetty and Garden View' },
+    { src: ptJettyLakeView, category: 'lake', title: 'Jetty Lake View' },
+    { src: ptLakeHouseGate, category: 'villa', title: 'Lake House Gate' },
+    { src: ptLobbyView, category: 'villa', title: 'Lobby View' },
+    { src: ptPoolAndLakeView, category: 'pool', title: 'Pool and Lake View' },
+    { src: ptPoolAndVillaView, category: 'pool', title: 'Pool and Villa View' },
+    { src: ptPoolSideView, category: 'pool', title: 'Pool Side View' },
+    { src: ptSidePoolView, category: 'pool', title: 'Side Pool View' },
+    { src: ptSittingAreaView, category: 'villa', title: 'Sitting Area View' },
+    { src: ptVillaCenterView, category: 'villa', title: 'Villa Center View' },
   ];
 
   const categories = [
@@ -74,7 +102,6 @@ const Gallery: React.FC = () => {
     { id: 'pool', name: 'Pool' },
     { id: 'rooms', name: 'Rooms' },
     { id: 'lake', name: 'Lake Views' },
-    { id: 'interior', name: 'Interior' },
     { id: 'dining', name: 'Dining' }
   ];
 
