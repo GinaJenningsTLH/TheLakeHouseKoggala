@@ -8,7 +8,7 @@ import mirissa from '../assets/images/places-to-visit/Mirissa.png';
 import unawatuna from '../assets/images/places-to-visit/Unawatuna-Beach.png';
 import yala from '../assets/images/places-to-visit/Yala.png';
 import ella from '../assets/images/places-to-visit/Ella.png';
-import sinharaja from '../assets/images/places-to-visit/Sinharaja.jpg';
+import sinharaja from '../assets/images/places-to-visit/sinharaja.jpg';
 
 const PlacesToVisit: React.FC = () => {
   const places = [
