@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import contactHero from '../assets/images/GalleryMain/jetty-with-lake-view.webp'; // Importing the hero image
-import GoogleMap from '../components/GoogleMap';
+// import GoogleMap from '../components/GoogleMap';
 import BookingForm from '../components/BookingForm';
 
 const Contact: React.FC = () => {
