@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { FaPhoneAlt, FaEnvelope, FaWhatsapp } from 'react-icons/fa';
@@ -7,54 +7,9 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import contactHero from '../assets/images/GalleryMain/jetty-with-lake-view.webp'; // Importing the hero image
 import GoogleMap from '../components/GoogleMap';
-
-// TypeScript: Define form data types
-interface ContactFormData {
-  name: string;
-  email: string;
-  checkIn: Date | null;
-  checkOut: Date | null;
-  guests: number;
-  nights: number;
-  message: string;
-}
+import BookingForm from '../components/BookingForm';
 
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState<ContactFormData>({
-    name: '',
-    email: '',
-    checkIn: null,
-    checkOut: null,
-    guests: 1,
-    nights: 1,
-    message: '',
-  });
-
-  const checkOutRef = useRef<DatePicker>(null);
-
-  const handleCheckInChange = (date: Date | null) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      checkIn: date,
-      checkOut: date ? prevData.checkOut : null,
-    }));
-    if (date) {
-      checkOutRef.current?.setFocus();
-    }
-  };
-
-  const handleCheckOutChange = (date: Date | null) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      checkOut: date,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    alert('Form submitted!');
-  };
-
   return (
     <>
       <Navbar />
@@ -92,99 +47,11 @@ const Contact: React.FC = () => {
           </div>
 
           <div className='flex flex-col md:flex-row gap-12'>
-            {/* Form Section */}
-            <form onSubmit={handleSubmit} className="w-full md:w-2/3 bg-white shadow-md p-8 rounded-lg">
-              <h2 className="text-3xl font-bold text-gray-500 text-center mb-8">Get in Touch</h2>
-              {/* Input fields */}
-              <div className="mb-6">
-                <label htmlFor="name" className="block text-gray-500 font-semibold mb-2">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:border-darkGreen"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  required
-                />
-              </div>
-              {/* Email Input */}
-              <div className="mb-6">
-                <label htmlFor="email" className="block text-gray-500 font-semibold mb-2">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:border-darkGreen"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  required
-                />
-              </div>
-              {/* Date Pickers */}
-              <div className="mb-6 flex gap-4">
-                <div className="w-1/2">
-                  <label htmlFor="checkIn" className="block text-gray-500 font-semibold mb-2">Check-In</label>
-                  <DatePicker
-                    selected={formData.checkIn || undefined}
-                    onChange={handleCheckInChange}
-                    className="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:border-darkGreen"
-                    placeholderText="Select Date"
-                    dateFormat="dd/MM/yyyy"
-                    selectsStart
-                    startDate={formData.checkIn || undefined}
-                    endDate={formData.checkOut || undefined}
-                  />
-                </div>
-                <div className="w-1/2">
-                  <label htmlFor="checkOut" className="block text-gray-500 font-semibold mb-2">Check-Out</label>
-                  <DatePicker
-                    selected={formData.checkOut || undefined}
-                    onChange={handleCheckOutChange}
-                    className="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:border-darkGreen"
-                    placeholderText="Select Date"
-                    dateFormat="dd/MM/yyyy"
-                    selectsEnd
-                    startDate={formData.checkIn || undefined}
-                    endDate={formData.checkOut || undefined}
-                    minDate={formData.checkIn || undefined}
-                    ref={checkOutRef}
-                  />
-                </div>
-              </div>
-              {/* Number of Guests */}
-              <div className="mb-6 flex gap-4">
-                <div className="w-1/2">
-                  <label htmlFor="guests" className="block text-gray-500 font-semibold mb-2">Number of Guests</label>
-                  <input
-                    type="number"
-                    id="guests"
-                    className="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:border-darkGreen"
-                    value={formData.guests}
-                    onChange={(e) => setFormData({ ...formData, guests: +e.target.value })}
-                    min={1}
-                    required
-                  />
-                </div>
-                <div className="w-1/2">
-                  <label htmlFor="nights" className="block text-gray-500 font-semibold mb-2">Number of Nights</label>
-                  <input
-                    type="number"
-                    id="nights"
-                    className="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:border-darkGreen"
-                    value={formData.nights}
-                    onChange={(e) => setFormData({ ...formData, nights: +e.target.value })}
-                    min={1}
-                    required
-                  />
-                </div>
-              </div>
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full bg-gray-500 hover:bg-gray-200 hover:text-gray-500 text-white py-3 px-6 rounded-md transition-transform duration-300 hover:scale-105"
-              >
-                Send Message
-              </button>
-            </form>
+            {/* Replace the old form with BookingForm component */}
+            <div className="w-full md:w-2/3 bg-white shadow-md p-8 rounded-lg">
+              <h2 className="text-3xl font-bold text-gray-500 text-center mb-8">Book Your Stay</h2>
+              <BookingForm />
+            </div>
 
             {/* Contact Details */}
             <div className="w-full md:w-1/3 flex flex-col justify-center items-start bg-white shadow-md p-8 items-center space-y-20 rounded-lg">
