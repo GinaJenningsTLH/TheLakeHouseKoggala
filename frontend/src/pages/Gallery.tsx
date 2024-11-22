@@ -181,7 +181,7 @@ const Gallery: React.FC = () => {
         </div>
 
         {/* Landscape Images Section */}
-        <h2 className="text-2xl font-bold text-gray-500 mb-6">Landscape Views</h2>
+        {/* <h2 className="text-2xl font-bold text-gray-500 mb-6">Landscape Views</h2> */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {landscapeImages
             .filter(img => selectedCategory === 'all' || img.category === selectedCategory)
@@ -208,7 +208,7 @@ const Gallery: React.FC = () => {
         </div>
 
         {/* Portrait Images Section */}
-        <h2 className="text-2xl font-bold text-gray-500 mb-6">Portrait Views</h2>
+        {/* <h2 className="text-2xl font-bold text-gray-500 mb-6">Portrait Views</h2> */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {portraitImages
             .filter(img => selectedCategory === 'all' || img.category === selectedCategory)
