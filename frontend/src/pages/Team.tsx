@@ -2,9 +2,13 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
 import teamHero from '../assets/images/GalleryMain/villa-with-sunbeams-view.webp'; // Use appropriate hero image
-import teamPhoto from '../assets/images/gina.jpg';
+import teamPhoto from '../assets/images/Team/full-team.jpg';
 import ginaPhoto from '../assets/images/gina.jpg';
-import rangaPhoto from '../assets/images/ranga.jpg';
+import rangaPhoto from '../assets/images/Team/ranga.jpg';
+import staffServing from '../assets/images/Team/team-1.jpg';
+import srilankanFood from '../assets/images/Team/team-2.jpg';
+import drinksAreaView from '../assets/images/Team/team-3.jpg';
+import foodServed from '../assets/images/Team/team-4.jpg';
 
 const Team = () => {
   return (
@@ -48,16 +52,16 @@ const Team = () => {
               transition={{ duration: 0.6 }}
               className="flex flex-col md:flex-row gap-8 items-start"
             >
-              <div className="w-48 h-48 shrink-0">
+              <div className="flex flex-col items-center w-48 shrink-0">
                 <img
                   src={ginaPhoto}
                   alt="Gina Jennings"
-                  className="w-full h-full object-cover rounded-lg"
+                  className="w-48 h-48 object-cover rounded-lg mb-4"
                 />
+                <h3 className="text-xl text-gray-700 font-semibold">Gina Jennings</h3>
+                <p className="text-gray-600">Owner</p>
               </div>
               <div className="flex-1">
-                <h3 className="text-2xl text-gray-700 font-semibold mb-2">Gina Jennings</h3>
-                <p className="text-lg text-gray-600 mb-4">Owner</p>
                 <blockquote className="italic text-gray-700 border-l-4 border-gray-300 pl-4">
                   "Welcome to The Lake House, our private villa on Koggala Lake near Galle. We have designed, built and loved this place for 12 years now and are delighted to share the joy of it with you. It is a truly special place and our staff are a delightful team, most of whom have been with us for a long time and, especially Ranga, who has been with us from before the villa was conceived. He is a close friend and member of our family and is, frankly, completely magical. Our chef is excellent and prepares a wide range of dishes from local cuisine to international dishes, and nothing is too much for our House Steward to handle. Come, stay with us and meet the team!"
                 </blockquote>
@@ -71,20 +75,79 @@ const Team = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex flex-col md:flex-row-reverse gap-8 items-start"
             >
-              <div className="w-48 h-48 shrink-0">
+              <div className="flex flex-col items-center w-48 shrink-0">
                 <img
                   src={rangaPhoto}
                   alt="Ranga Koralage"
-                  className="w-full h-full object-cover rounded-lg"
+                  className="w-48 h-48 object-cover rounded-lg mb-4"
                 />
+                <h3 className="text-xl text-gray-700 font-semibold">Ranga Koralage</h3>
+                <p className="text-gray-600">Manager</p>
               </div>
               <div className="flex-1">
-                <h3 className="text-2xl text-gray-700 font-semibold mb-2">Ranga Koralage</h3>
-                <p className="text-lg text-gray-600 mb-4">Manager</p>
                 <blockquote className="italic text-gray-700 border-l-4 border-gray-300 pl-4">
                   "I love The Lake House and just want everyone who visits Sri Lanka and our house to have a wonderful time. My colleagues and I work hard to achieve this and I am proud to say that we have always had excellent reviews and feedback. Most of all, we have always had delightful guests of all nationalities and ages, many of whom return year after year. It is always such fun to have returning guests and it feels just like seeing old friends again! We would love you to become one of those..."
                 </blockquote>
               </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Four Images Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="w-full"
+            >
+              <img
+                src={staffServing}
+                alt="Staff Service"
+                className="w-[300px] h-[400px] object-cover rounded-lg shadow-lg mx-auto"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="w-full"
+            >
+              <img
+                src={srilankanFood}
+                alt="Sri Lankan Cuisine"
+                className="w-[300px] h-[400px] object-cover rounded-lg shadow-lg mx-auto"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="w-full"
+            >
+              <img
+                src={drinksAreaView}
+                alt="Drinks Area"
+                className="w-[300px] h-[400px] object-cover rounded-lg shadow-lg mx-auto"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="w-full"
+            >
+              <img
+                src={foodServed}
+                alt="Food Service"
+                className="w-[300px] h-[400px] object-cover rounded-lg shadow-lg mx-auto"
+              />
             </motion.div>
           </div>
         </div>
@@ -110,7 +173,7 @@ const Team = () => {
             <img
               src={teamPhoto}
               alt="The Lake House Team"
-              className="w-full h-[540px] object-cover rounded-lg"
+              className="w-full h-full object-cover rounded-lg"
             />
           </motion.div>
         </div>

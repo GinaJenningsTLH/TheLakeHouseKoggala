@@ -8,9 +8,10 @@ import desireIcon from '../assets/images/desire.svg';
 import freshIngIcon from '../assets/images/Fresh-Ing.svg';
 import preparedIcon from '../assets/images/prepared.svg';
 import servedIcon from '../assets/images/served.svg';
-import bbq1 from '../assets/images/Dining/bbq-grill.png';
+
 import bbq2 from '../assets/images/Dining/food-served.webp';
 import bbq3 from '../assets/images/Dining/seafood-bbq.png';
+import bbq4 from '../assets/images/Dining/Srilankan-food-prepared.webp';
 
 const Dining: React.FC = () => {
   return (
@@ -44,7 +45,7 @@ const Dining: React.FC = () => {
       </section>
 
       {/* Fresh vs Frozen Food Infographic */}
-      <section className="py-16 bg-white">
+      <section className="pt-16 bg-white">
         <div className="container mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0 }}
@@ -68,6 +69,34 @@ const Dining: React.FC = () => {
               </p>
             </motion.div>
      
+          </div>
+        </div>
+      </section>
+      <section className="py-10 bg-gray-200 text-white">
+        <div className="container mx-auto px-6 md:px-12 text-center">
+          {/* <motion.h2
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl font-bold mb-8"
+          >
+            Our legendary Barbecues
+          </motion.h2> */}
+          {/* <p className="text-lg mb-8">
+          For a special experience, guests can arrange for a BBQ on the garden by the lake or in the courtyard. Enjoy the serene surroundings while savouring expertly grilled dishes prepared with the freshest ingredients. 
+
+          </p> */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[ bbq2, bbq3, bbq4].map((imgSrc, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+              >
+                <img src={imgSrc} alt={`BBQ Dish ${index + 1}`} className="rounded-lg shadow-lg w-full h-64 object-cover" />
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -111,34 +140,7 @@ const Dining: React.FC = () => {
       </section>
 
       {/* BBQ Section with Images in Row */}
-      <section className="py-16 bg-gray-200 text-white">
-        <div className="container mx-auto px-6 md:px-12 text-center">
-          {/* <motion.h2
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl font-bold mb-8"
-          >
-            Our legendary Barbecues
-          </motion.h2> */}
-          {/* <p className="text-lg mb-8">
-          For a special experience, guests can arrange for a BBQ on the garden by the lake or in the courtyard. Enjoy the serene surroundings while savouring expertly grilled dishes prepared with the freshest ingredients. 
 
-          </p> */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[bbq1, bbq2, bbq3].map((imgSrc, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-              >
-                <img src={imgSrc} alt={`BBQ Dish ${index + 1}`} className="rounded-lg shadow-lg w-full h-64 object-cover" />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <Footer />
     </>

@@ -29,6 +29,16 @@ import staffServing from '../assets/images/GalleryMain/staff-serving-drinks.webp
 import villaEntrance from '../assets/images/GalleryMain/the-lake-house-entrance.webp';
 import treeCentre from '../assets/images/GalleryMain/tree-centre-of-the-villa.webp';
 import villaSunbeams from '../assets/images/GalleryMain/villa-with-sunbeams-view.webp';
+import lobbyinsidesitting from '../assets/images/GalleryMain/lobby-inside-sitting.webp';
+import entrancewithgarden from '../assets/images/GalleryMain/entrance-with-garden.webp';
+import sideviewsittingarea from '../assets/images/GalleryMain/side-view-sitting-area.webp';
+import tabletennis from '../assets/images/GalleryMain/table-tennis-outside.webp';
+import villasittingview from '../assets/images/GalleryMain/view-from-villa-sitting-area.webp';
+import villapoolview from '../assets/images/GalleryMain/vila-pool-lake-view.webp';
+import villasideviewland from '../assets/images/GalleryMain/villa-side-view-land.webp';
+import dronshot2 from '../assets/images/GalleryMain/drone-shot-2.webp';
+import dronshot3 from '../assets/images/GalleryMain/drone-shot-3.webp';
+import droneshot from '../assets/images/GalleryMain/drone-shot.webp';
 import ptBoatForLake from '../assets/images/GalleryMain/pt-boat-for-lake.webp';
 import ptEntranceViewInside from '../assets/images/GalleryMain/pt-entrance-view-inside.webp';
 import ptEntrance from '../assets/images/GalleryMain/pt-entrance.webp';
@@ -42,45 +52,52 @@ import ptPoolSideView from '../assets/images/GalleryMain/pt-pool-side-view.webp'
 import ptSidePoolView from '../assets/images/GalleryMain/pt-side-pool-view.webp';
 import ptSittingAreaView from '../assets/images/GalleryMain/pt-sitting-area-view.webp';
 import ptVillaCenterView from '../assets/images/GalleryMain/pt-villa-center-view.webp';
+import ptlakeboatview from '../assets/images/GalleryMain/pt-lake-boat-view.webp';
+import ptshowerview from '../assets/images/GalleryMain/pt-shower.webp';
+import pttuk from '../assets/images/GalleryMain/pt-tuk.webp';
+import ptview2 from '../assets/images/GalleryMain/pt-view-2.webp';
 
 const Gallery: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-  const images = [
+  const landscapeImages = [
     // Villa Views
     { src: villaEntrance, category: 'villa', title: 'Villa Entrance' },
     { src: villaSunbeams, category: 'villa', title: 'Villa with Sunbeams' },
     { src: centerVillaTree, category: 'villa', title: 'Center Villa Tree' },
     { src: centreVillaTreeDry, category: 'villa', title: 'Villa Tree View' },
     { src: treeCentre, category: 'villa', title: 'Tree Centre View' },
-    
-    // Pool Views
     { src: poolDrinksArea, category: 'pool', title: 'Pool with Drinks Area' },
     { src: poolGardenVilla, category: 'pool', title: 'Pool with Garden and Villa' },
     { src: poolSideView, category: 'pool', title: 'Side View of Pool' },
-    
-    // Room Views
     { src: roomFrontView, category: 'rooms', title: 'Room Front View' },
     { src: roomSideView, category: 'rooms', title: 'Room Side View' },
     { src: roomSideViewSlightly, category: 'rooms', title: 'Room View' },
     { src: lakeViewRoom, category: 'rooms', title: 'Lake View from Room' },
     { src: outdoorShower, category: 'rooms', title: 'Outdoor Shower Room' },
-    
-    // Lake Views
     { src: gardenLakeView, category: 'lake', title: 'Garden and Lake View' },
     { src: jettyLakeView, category: 'lake', title: 'Jetty with Lake View' },
     { src: lakeViewGarden, category: 'lake', title: 'Lake View with Garden' },
-    
-    // Interior & Dining
     { src: sittingAreaInside, category: 'villa', title: 'Indoor Sitting Area' },
     { src: staffCenter, category: 'villa', title: 'Villa Staff Center' },
     { src: drinksAreaView, category: 'dining', title: 'Drinks Area' },
     { src: foodServed, category: 'dining', title: 'Food Service' },
     { src: srilankanFood, category: 'dining', title: 'Sri Lankan Cuisine' },
     { src: staffServing, category: 'dining', title: 'Drink Service' },
-   
-    // Additional PT Images
+    { src: lobbyinsidesitting, category: 'villa', title: 'Lobby Inside Sitting' },
+    { src: entrancewithgarden, category: 'villa', title: 'Entrance with Garden' },
+    { src: sideviewsittingarea, category: 'villa', title: 'Side View Sitting Area' },
+    { src: tabletennis, category: 'villa', title: 'Table Tennis Outside' },
+    { src: villasittingview, category: 'villa', title: 'Villa from Sitting Area' },
+    { src: villapoolview, category: 'villa', title: 'Villa Pool View' },
+    { src: villasideviewland, category: 'villa', title: 'Villa Side View Land' },
+    { src: dronshot2, category: 'villa', title: 'Drone Shot 2' },
+    { src: dronshot3, category: 'villa', title: 'Drone Shot 3' },
+    { src: droneshot, category: 'villa', title: 'Drone Shot' },
+  ];
+
+  const portraitImages = [
     { src: ptBoatForLake, category: 'lake', title: 'Boat on the Lake' },
     { src: ptEntranceViewInside, category: 'interior', title: 'Villa Entrance Interior' },
     { src: ptEntrance, category: 'villa', title: 'Villa Entrance View' },
@@ -94,20 +111,20 @@ const Gallery: React.FC = () => {
     { src: ptSidePoolView, category: 'pool', title: 'Side Pool View' },
     { src: ptSittingAreaView, category: 'villa', title: 'Sitting Area View' },
     { src: ptVillaCenterView, category: 'villa', title: 'Villa Center View' },
+    { src: ptlakeboatview, category: 'lake', title: 'Lake Boat View' },
+    { src: ptshowerview, category: 'villa', title: 'Shower View' },
+    { src: pttuk, category: 'villa', title: 'Tuk Tuk View' },
+    { src: ptview2, category: 'villa', title: 'View 2' },
   ];
+
+  const allImages = [...landscapeImages, ...portraitImages];
+  const filteredImages = selectedCategory === 'all' 
+    ? allImages 
+    : allImages.filter(img => img.category === selectedCategory);
 
   const categories = [
     { id: 'all', name: 'All' },
-    { id: 'villa', name: 'Villa' },
-    { id: 'pool', name: 'Pool' },
-    { id: 'rooms', name: 'Rooms' },
-    { id: 'lake', name: 'Lake Views' },
-    { id: 'dining', name: 'Dining' }
   ];
-
-  const filteredImages = selectedCategory === 'all' 
-    ? images 
-    : images.filter(img => img.category === selectedCategory);
 
   const handlePrevImage = () => {
     setSelectedImage(prev => 
@@ -163,28 +180,58 @@ const Gallery: React.FC = () => {
           ))}
         </div>
 
-        {/* Image Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredImages.map((image, index) => (
-            <div 
-              key={index} 
-              className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
-              onClick={() => setSelectedImage(index)}
-            >
-              <LazyLoadImage
-                src={image.src}
-                alt={image.title}
-                effect="blur"
-                className="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                <div className="p-4 w-full text-white">
-                  <h3 className="text-xl font-semibold">{image.title}</h3>
-                  <p className="text-sm capitalize">{image.category}</p>
+        {/* Landscape Images Section */}
+        <h2 className="text-2xl font-bold text-gray-500 mb-6">Landscape Views</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {landscapeImages
+            .filter(img => selectedCategory === 'all' || img.category === selectedCategory)
+            .map((image, index) => (
+              <div 
+                key={`landscape-${index}`} 
+                className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
+                onClick={() => setSelectedImage(index)}
+              >
+                <LazyLoadImage
+                  src={image.src}
+                  alt={image.title}
+                  effect="blur"
+                  className="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-4 w-full text-white">
+                    <h3 className="text-xl font-semibold">{image.title}</h3>
+                    <p className="text-sm capitalize">{image.category}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+        </div>
+
+        {/* Portrait Images Section */}
+        <h2 className="text-2xl font-bold text-gray-500 mb-6">Portrait Views</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {portraitImages
+            .filter(img => selectedCategory === 'all' || img.category === selectedCategory)
+            .map((image, index) => (
+              <div 
+                key={`portrait-${index}`} 
+                className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
+                onClick={() => setSelectedImage(landscapeImages.length + index)}
+              >
+                <LazyLoadImage
+                  src={image.src}
+                  alt={image.title}
+                  effect="blur"
+                  className="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-4 w-full text-white">
+                    <h3 className="text-xl font-semibold">{image.title}</h3>
+                    <p className="text-sm capitalize">{image.category}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
         </div>
       </div>
 

@@ -131,7 +131,7 @@ const Home: React.FC = () => {
               </p>
             </motion.div>
           </div>
-          <div className="mb-16 md:flex items-center justify-center">
+          <div className="mb-5 md:flex items-center justify-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -189,10 +189,10 @@ const Home: React.FC = () => {
           </div>
         </section> */}
 
-        <Suspense fallback={<div className="text-center py-20">Loading gallery...</div>}>
+        <Suspense fallback={<div className="text-center pt-16">Loading gallery...</div>}>
           <section id="gallery" className={`section-padding ${isVisible.gallery ? 'animate-fadeIn' : 'opacity-0'}`}>
-            <div className="container bg-gray-100 py-6 mx-auto px-6 md:px-12 lg:px-24 text-center">
-              <div className='w-fit mx-auto px-2 mb-8'>
+            <div className="container bg-gray-100 pt-6 pb-16 mx-auto px-6 md:px-12 lg:px-24 text-center">
+              <div className='w-fit mx-auto px-2 mb-2'>
                 <h2 className="text-3xl font-bold text-gray-500 mb-2">GALLERY</h2>
                 <p className="text-gray-500 mb-10 max-w-2xl mx-auto">Explore our gallery of selected images.
                 </p>
@@ -206,7 +206,7 @@ const Home: React.FC = () => {
           id="booking"
           className={`section-padding bg-white transition-opacity duration-1000 ease-in-out ${isVisible.booking ? 'animate-fadeIn' : 'opacity-0'}`}
         >
-          <div className="container py-8 mx-auto px-6 md:px-12 lg:px-24">
+          <div className=" container -mt-20 mx-auto px-6 md:px-12 lg:px-24">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
               <motion.div
                 className="bg-gray-100 shadow-md p-6 rounded-lg flex flex-col items-center justify-center transition-transform duration-300"
