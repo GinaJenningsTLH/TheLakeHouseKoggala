@@ -42,9 +42,9 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
               effect="blur"
             />
             {/* Overlay with subtle text */}
-            <div className="absolute bottom-0 w-full p-4 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white text-center rounded-b-lg">
+            {/* <div className="absolute bottom-0 w-full p-4 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white text-center rounded-b-lg">
               <p className="text-sm">{image.alt}</p>
-            </div>
+            </div> */}
           </motion.div>
         </SwiperSlide>
       ))}

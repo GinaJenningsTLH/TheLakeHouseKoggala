@@ -198,10 +198,10 @@ const Gallery: React.FC = () => {
                   className="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                  <div className="p-4 w-full text-white">
+                  {/* <div className="p-4 w-full text-white">
                     <h3 className="text-xl font-semibold">{image.title}</h3>
                     <p className="text-sm capitalize">{image.category}</p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             ))}
@@ -225,10 +225,10 @@ const Gallery: React.FC = () => {
                   className="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                  <div className="p-4 w-full text-white">
+                  {/* <div className="p-4 w-full text-white">
                     <h3 className="text-xl font-semibold">{image.title}</h3>
                     <p className="text-sm capitalize">{image.category}</p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             ))}
@@ -259,10 +259,10 @@ const Gallery: React.FC = () => {
               effect="blur"
               className="max-w-full max-h-[85vh] object-contain"
             />
-            <div className="text-white text-center mt-4">
+            {/* <div className="text-white text-center mt-4">
               <h3 className="text-xl font-semibold">{filteredImages[selectedImage].title}</h3>
               <p className="text-sm capitalize">{filteredImages[selectedImage].category}</p>
-            </div>
+            </div> */}
           </div>
           
           <button 
