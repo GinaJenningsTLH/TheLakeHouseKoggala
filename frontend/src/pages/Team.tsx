@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
 import teamHero from '../assets/images/GalleryMain/villa-with-sunbeams-view.webp'; // Use appropriate hero image
 import teamPhoto from '../assets/images/Team/full-team.jpg';
-import ginaPhoto from '../assets/images/gina.jpg';
+import ginaPhoto from '../assets/images/Team/gina.jpg';
 import rangaPhoto from '../assets/images/Team/ranga.jpg';
 import staffServing from '../assets/images/Team/team-1.jpg';
 import srilankanFood from '../assets/images/Team/team-2.jpg';
