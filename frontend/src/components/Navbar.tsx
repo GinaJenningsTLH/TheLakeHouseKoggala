@@ -61,7 +61,7 @@ const Navbar: React.FC = () => {
             {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
           <div className="hidden md:flex space-x-8">
-            <ul className="flex items-center nav space-x-5  font-medium">
+            <ul className="flex items-center nav space-x-1  font-medium">
               <li>
                 <Link 
                   to="/" 
