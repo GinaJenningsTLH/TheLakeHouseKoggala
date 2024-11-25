@@ -73,7 +73,10 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <p className="flex items-center justify-center md:justify-start mb-2">
-              <FaPhoneAlt className="mr-2" /> +1 234 567 890
+              <FaPhoneAlt className="mr-2" /> +94 776 197 728 (Sri Lanka)
+            </p>
+            <p className="flex items-center justify-center md:justify-start mb-2">
+              <FaPhoneAlt className="mr-2" /> +44 7710 634 540 (UK)
             </p>
             <p className="flex items-center justify-center md:justify-start">
               <FaEnvelope className="mr-2" /> info@lakehouse.com

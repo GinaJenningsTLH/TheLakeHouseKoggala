@@ -89,6 +89,19 @@ const Navbar: React.FC = () => {
                 </Link>
               </li>
 
+              <li className="relative group">
+                <Link 
+                  to="/rates" 
+                  className={`transition-all px-4 py-2 rounded-md ${
+                    location.pathname.includes('/rates') || location.pathname.includes('view') 
+                      ? 'bg-gray-200 text-gray-800' 
+                      : 'text-white hover:bg-gray-200 hover:text-gray-800'
+                  }`}
+                >
+                  RATES
+                </Link>
+              </li>
+
               {/* Experiences Dropdown */}
               <li className="relative group">
                 <Link 
