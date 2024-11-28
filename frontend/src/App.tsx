@@ -18,31 +18,37 @@ import AllRoomsPage from './pages/Villa';
 import Gallery from './pages/Gallery';
 import Team from './pages/Team';
 import Rates from './pages/Rates';
+import Privacy from './pages/Privacy';
+import CookieConsentBanner from './components/CookieConsent';
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <ScrollToTop /> {/* Add this line */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/rooms" element={<Rooms />} />
-        <Route path="/experiences" element={<Experiences />} />
-        <Route path="/dining" element={<Dining />} />
-        <Route path="/things-to-do" element={<ThingsToDo/>} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About/>}/>
-        <Route path="/events" element={<Events/>}/>
-        <Route path="/villa" element={<AllRoomsPage/>}/>
-        <Route path="/places-to-visit" element={<PlacesToVisit/>}/>
-        <Route path="/lake-view-indoor" element={<LakeViewIndoor/>}/>
-        <Route path="/lake-view-outdoor" element={<LakeViewOutdoor/>}/>
-        <Route path="/garden-view-indoor" element={<GardenViewIndoor/>}/>
-        <Route path="/garden-view-outdoor" element={<GardenViewOutdoor/>}/>
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/team" element={<Team />} />
-        <Route path="/rates" element={<Rates />} />
-      </Routes>
-    </Router>
+    <>
+      <Router>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/rooms" element={<Rooms />} />
+          <Route path="/experiences" element={<Experiences />} />
+          <Route path="/dining" element={<Dining />} />
+          <Route path="/things-to-do" element={<ThingsToDo/>} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About/>}/>
+          <Route path="/events" element={<Events/>}/>
+          <Route path="/villa" element={<AllRoomsPage/>}/>
+          <Route path="/places-to-visit" element={<PlacesToVisit/>}/>
+          <Route path="/lake-view-indoor" element={<LakeViewIndoor/>}/>
+          <Route path="/lake-view-outdoor" element={<LakeViewOutdoor/>}/>
+          <Route path="/garden-view-indoor" element={<GardenViewIndoor/>}/>
+          <Route path="/garden-view-outdoor" element={<GardenViewOutdoor/>}/>
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/rates" element={<Rates />} />
+          <Route path="/privacy" element={<Privacy />} />
+        </Routes>
+      </Router>
+      <CookieConsentBanner />
+    </>
   );
 };
 
