@@ -21,6 +21,7 @@ import Rates from './pages/Rates';
 import Privacy from './pages/Privacy';
 import CookieConsentBanner from './components/CookieConsent';
 
+
 const App: React.FC = () => {
   return (
     <>
@@ -45,6 +46,7 @@ const App: React.FC = () => {
           <Route path="/team" element={<Team />} />
           <Route path="/rates" element={<Rates />} />
           <Route path="/privacy" element={<Privacy />} />
+          
         </Routes>
       </Router>
       <CookieConsentBanner />

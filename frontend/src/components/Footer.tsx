@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaPhoneAlt, FaEnvelope, FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
@@ -94,9 +95,15 @@ const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="mb-4 md:mb-0">&copy; 2024 The Lake House Koggala. All rights reserved.</p>
             <div className="flex space-x-6">
-              <a href="/privacy" className="text-gray-400 hover:text-gray-300">Privacy Policy</a>
-              <a href="/terms" className="text-gray-400 hover:text-gray-300">Terms of Service</a>
-              <a href="/contact" className="text-gray-400 hover:text-gray-300">Contact Us</a>
+              <Link to="/privacy">      
+                <a className="text-gray-400 hover:text-gray-300">Privacy Policy</a>
+              </Link>
+              <Link to="/terms">
+                <a  className="text-gray-400 hover:text-gray-300">Terms of Service</a>
+              </Link>
+              <Link to="/contact">  
+                <a className="text-gray-400 hover:text-gray-300">Contact Us</a>
+              </Link>
             </div>
           </div>
         </div>
