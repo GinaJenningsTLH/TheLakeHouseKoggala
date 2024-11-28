@@ -1,0 +1,11 @@
+/* Add only the most critical styles needed for above-the-fold content */
+/* For example: */
+:root {
+  --primary-font: 'Lexend', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--primary-font);
+} 
