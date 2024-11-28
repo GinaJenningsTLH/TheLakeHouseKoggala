@@ -141,10 +141,10 @@ const Rates: React.FC = () => {
               <p>Submit an Enquiry</p>
               <BookingForm />
               <p className='text-gray-700 pt-4'>Or contact us directly</p>
-              <div className="pt-2 grid grid-cols-3 items-center">
-                <p className="text-gray-700 grid grid-rows-2">UK: <a href="tel:+447710634540" className="text-gray-800 hover:underline">+44 7710 634540</a> <span className='text-sm italic'> (bookings from UK)</span> </p>
-                <p className="text-gray-700 grid grid-rows-2">Sri Lanka: <a href="tel:+94776197728" className="text-gray-800 hover:underline">+94 776 197728</a> <span className='text-sm italic'> (bookings from Sri Lanka)</span> </p>
-                <p className="text-gray-700 grid grid-rows-2">Email: <a href="mailto:ginajennings10@gmail.com" className="text-gray-800 hover:underline">ginajennings10@gmail.com</a> <span className='text-sm italic'> (general enquiries)</span> </p>
+              <div className="pt-2 md:grid md:grid-cols-3 items-center">
+                <p className="text-gray-700 md:grid md:grid-rows-2">UK: <a href="tel:+447710634540" className="text-gray-800 hover:underline">+44 7710 634540</a> <span className='text-sm italic'> (bookings from UK)</span> </p>
+                <p className="text-gray-700 md:grid md:grid-rows-2">Sri Lanka: <a href="tel:+94776197728" className="text-gray-800 hover:underline">+94 776 197728</a> <span className='text-sm italic'> (bookings from Sri Lanka)</span> </p>
+                <p className="text-gray-700 md:grid md:grid-rows-2">Email: <a href="mailto:ginajennings10@gmail.com" className="text-gray-800 hover:underline">ginajennings10@gmail.com</a> <span className='text-sm italic'> (general enquiries)</span> </p>
               </div>
             </motion.div>
 
