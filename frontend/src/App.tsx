@@ -21,13 +21,7 @@ import Rates from './pages/Rates';
 import Privacy from './pages/Privacy';
 
 // Lazy load the CookieConsentBanner
-const CookieConsentBanner = lazy(() => 
-  new Promise<{ default: React.FC }>(resolve => {
-    setTimeout(() => {
-      resolve(import('./components/CookieConsent'));
-    }, 2000);
-  })
-);
+const CookieConsentBanner = lazy(() => import('./components/CookieConsent'));
 
 const App: React.FC = () => {
   const [showCookieBanner, setShowCookieBanner] = useState(false);
