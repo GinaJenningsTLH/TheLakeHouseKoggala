@@ -65,7 +65,7 @@ const Rates: React.FC = () => {
                 <h3 className="text-2xl font-bold text-gray-500 mb-4">High Season</h3>
                 <p className="text-gray-700 mb-2">15th December 2024 to 06th January 2025</p>
                 <p className="text-gray-700 text-i mb-2">Minimum stay 1 week</p>
-                <p className="text-gray-700">$1500 per day*</p>
+                <p className="text-gray-700">$1500 per night</p>
                
               </motion.div>
 
@@ -80,7 +80,7 @@ const Rates: React.FC = () => {
                 <p className="text-gray-700 mb-2">6 January to 30 April 2025</p>
                 <p className="text-gray-700 mb-2">15 June to 15 November 2025</p>
                 <p className="text-gray-700 mb-2">Minimum stay 3 nights</p>
-                <p className="text-gray-700">$660 per day</p>
+                <p className="text-gray-700">$660 per night</p>
               </motion.div>
 
               {/* Low Season */}
@@ -138,7 +138,7 @@ const Rates: React.FC = () => {
             >
               <h3 className="text-2xl font-bold text-gray-500 mb-4">Make a Reservation</h3>
               <p className="text-gray-700 mb-6">Making a reservation couldn't be easier. Contact us through any of these methods:</p>
-              <p>Submit an inquiry</p>
+              <p>Submit an Enquiry</p>
               <BookingForm />
               <p className='text-gray-700 pt-4'>Or contact us directly</p>
               <div className="pt-2 grid grid-cols-3 items-center">

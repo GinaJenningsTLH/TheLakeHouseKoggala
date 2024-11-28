@@ -89,18 +89,23 @@ const Navbar: React.FC = () => {
                 </Link>
               </li>
 
-              <li className="relative group">
+              <li>
                 <Link 
-                  to="/rates" 
+                  to="/dining" 
                   className={`transition-all px-4 py-2 rounded-md ${
-                    location.pathname.includes('/rates') || location.pathname.includes('view') 
+                    location.pathname === '/dining' 
                       ? 'bg-gray-200 text-gray-800' 
                       : 'text-white hover:bg-gray-200 hover:text-gray-800'
-                  }`}
+                  }`} 
+                  onClick={toggleMenu}
                 >
-                  RATES
+                  DINING
                 </Link>
               </li>
+     
+
+              {/* Rates Dropdown */}
+             
 
               {/* Experiences Dropdown */}
               <li className="relative group">
@@ -134,17 +139,32 @@ const Navbar: React.FC = () => {
                 </div>
               </li>
 
+           
+           
+
               <li>
-                <Link 
-                  to="/dining" 
+              <Link 
+                  to="/gallery" 
                   className={`transition-all px-4 py-2 rounded-md ${
-                    location.pathname === '/dining' 
+                    location.pathname === '/gallery' 
                       ? 'bg-gray-200 text-gray-800' 
                       : 'text-white hover:bg-gray-200 hover:text-gray-800'
-                  }`} 
-                  onClick={toggleMenu}
+                  }`}
                 >
-                  DINING
+                  GALLERY
+                </Link>
+              </li>
+
+              <li className="relative group">
+                <Link 
+                  to="/rates" 
+                  className={`transition-all px-4 py-2 rounded-md ${
+                    location.pathname.includes('/rates') || location.pathname.includes('view') 
+                      ? 'bg-gray-200 text-gray-800' 
+                      : 'text-white hover:bg-gray-200 hover:text-gray-800'
+                  }`}
+                >
+                  RATES
                 </Link>
               </li>
 
@@ -158,19 +178,6 @@ const Navbar: React.FC = () => {
                   }`}
                 >
                   CONTACT
-                </Link>
-              </li>
-
-              <li>
-              <Link 
-                  to="/gallery" 
-                  className={`transition-all px-4 py-2 rounded-md ${
-                    location.pathname === '/gallery' 
-                      ? 'bg-gray-200 text-gray-800' 
-                      : 'text-white hover:bg-gray-200 hover:text-gray-800'
-                  }`}
-                >
-                  GALLERY
                 </Link>
               </li>
 
@@ -193,24 +200,24 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Side Drawer */}
       <div
-        className={`fixed top-0 right-0 h-screen bg-black/90 transform transition-transform duration-300 ease-in-out z-30 ${
+        className={`fixed top-0 right-0 h-screen bg-black/90 transform transition-transform duration-300 ease-in-out z-30 w-64 ${
           menuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         <button
           onClick={toggleMenu}
-          className="absolute top-4 right-4 text-lightestGreen focus:outline-none"
+          className="absolute top-4 right-4 text-white focus:outline-none hover:text-gray-200"
         >
           <FaTimes size={24} />
         </button>
-        <ul className="flex flex-col space-y-6 mt-20 px-8 text-xl font-medium text-lightestGreen">
+        <ul className="flex flex-col space-y-6 mt-20 px-8 text-base font-medium">
           <li>
             <Link 
               to="/" 
-              className={`transition-colors ${
+              className={`transition-all px-4 py-2 rounded-md block ${
                 location.pathname === '/' 
-                  ? 'text-lightestGreen' 
-                  : 'text-lightestGreen hover:text-lightGreen'
+                  ? 'bg-gray-200 text-gray-800' 
+                  : 'text-white hover:bg-gray-200 hover:text-gray-800'
               }`} 
               onClick={toggleMenu}
             >
@@ -218,77 +225,29 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
 
-          {/* Villa Submenu */}
-          <li className="flex items-center justify-between" onClick={() => toggleSubMenu('rooms')}>
-            <span className="hover:text-yellow-100">VILLA</span>
-            <FaChevronDown
-              className={`transform transition-transform duration-300 ${
-                roomsExpanded ? 'rotate-180' : 'rotate-0'
-              }`}
-            />
+          {/* Villa */}
+          <li>
+            <Link 
+              to="/villa" 
+              className={`transition-all px-4 py-2 rounded-md block ${
+                location.pathname === '/villa' 
+                  ? 'bg-gray-200 text-gray-800' 
+                  : 'text-white hover:bg-gray-200 hover:text-gray-800'
+              }`} 
+              onClick={toggleMenu}
+            >
+              VILLA
+            </Link>
           </li>
-          {roomsExpanded && (
-            <ul className="pl-4 mt-2 space-y-2 text-lg text-gray-300">
-              <li><Link to="/lake-view-indoor" className="hover:text-yellow-100" onClick={toggleMenu}>Lake View (Indoor Shower)</Link></li>
-              <li><Link to="/garden-view-indoor" className="hover:text-yellow-100" onClick={toggleMenu}>Garden View (Indoor Shower)</Link></li>
-              <li><Link to="/lake-view-outdoor" className="hover:text-yellow-100" onClick={toggleMenu}>Lake View (Outdoor Shower)</Link></li>
-              <li><Link to="/garden-view-outdoor" className="hover:text-yellow-100" onClick={toggleMenu}>Garden View (Outdoor Shower)</Link></li>
-            </ul>
-          )}
 
-          {/* Experiences Submenu */}
-          <li className="flex items-center justify-between" onClick={() => toggleSubMenu('experiences')}>
-            <span className={`pr-2 transition-colors ${
-              location.pathname.includes('/things-to-do') || location.pathname.includes('/places-to-visit') 
-                ? 'text-lightestGreen' 
-                : 'text-lightestGreen hover:text-lightGreen'
-            }`}>
-              EXPERIENCES
-            </span>
-            <FaChevronDown
-              className={`transform transition-transform duration-300 ${
-                experiencesExpanded ? 'rotate-180' : 'rotate-0'
-              }`}
-            />
-          </li>
-          {experiencesExpanded && (
-            <ul className="pl-4 mt-2 space-y-2 text-lg text-gray-300">
-              <li>
-                <Link 
-                  to="/things-to-do" 
-                  className={`transition-colors ${
-                    location.pathname === '/things-to-do' 
-                      ? 'text-lightGreen' 
-                      : 'hover:text-lightGreen'
-                  }`} 
-                  onClick={toggleMenu}
-                >
-                  Things to Do
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="/places-to-visit" 
-                  className={`transition-colors ${
-                    location.pathname === '/places-to-visit' 
-                      ? 'text-lightGreen' 
-                      : 'hover:text-lightGreen'
-                  }`} 
-                  onClick={toggleMenu}
-                >
-                  Places to Visit
-                </Link>
-              </li>
-            </ul>
-          )}
-
+          {/* Dining */}
           <li>
             <Link 
               to="/dining" 
-              className={`transition-all px-4 py-2 rounded-md ${
+              className={`transition-all px-4 py-2 rounded-md block ${
                 location.pathname === '/dining' 
                   ? 'bg-gray-200 text-gray-800' 
-                  : 'text-lightestGreen hover:bg-gray-200 hover:text-gray-800'
+                  : 'text-white hover:bg-gray-200 hover:text-gray-800'
               }`} 
               onClick={toggleMenu}
             >
@@ -296,27 +255,62 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
 
-          <li>
-            <Link 
-              to="/contact" 
-              className={`transition-colors ${
-                location.pathname === '/contact' 
-                  ? 'text-lightGreen' 
-                  : 'text-lightestGreen hover:text-lightGreen'
-              }`} 
-              onClick={toggleMenu}
+        
+
+          {/* Experiences */}
+          <li className="px-4">
+            <button 
+              onClick={() => toggleSubMenu('experiences')}
+              className="flex items-center justify-between w-full text-white hover:text-gray-200"
             >
-              CONTACT
-            </Link>
+              <span>EXPERIENCES</span>
+              <FaChevronDown className={`transform transition-transform duration-300 ${
+                experiencesExpanded ? 'rotate-180' : 'rotate-0'
+              }`} />
+            </button>
+            {experiencesExpanded && (
+              <ul className="pl-4 mt-2 space-y-2">
+                <li>
+                  <Link 
+                    to="/things-to-do" 
+                    className={`transition-all px-4 py-2 rounded-md block ${
+                      location.pathname === '/things-to-do' 
+                        ? 'bg-gray-200 text-gray-800' 
+                        : 'text-white hover:bg-gray-200 hover:text-gray-800'
+                    }`}
+                    onClick={toggleMenu}
+                  >
+                    Things to Do
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/places-to-visit" 
+                    className={`transition-all px-4 py-2 rounded-md block ${
+                      location.pathname === '/places-to-visit' 
+                        ? 'bg-gray-200 text-gray-800' 
+                        : 'text-white hover:bg-gray-200 hover:text-gray-800'
+                    }`}
+                    onClick={toggleMenu}
+                  >
+                    Places to Visit
+                  </Link>
+                </li>
+              </ul>
+            )}
           </li>
 
+            {/* Rates */}
+        
+
+          {/* Gallery */}
           <li>
             <Link 
               to="/gallery" 
-              className={`transition-colors ${
+              className={`transition-all px-4 py-2 rounded-md block ${
                 location.pathname === '/gallery' 
-                  ? 'text-lightGreen' 
-                  : 'text-lightestGreen hover:text-lightGreen'
+                  ? 'bg-gray-200 text-gray-800' 
+                  : 'text-white hover:bg-gray-200 hover:text-gray-800'
               }`} 
               onClick={toggleMenu}
             >
@@ -326,11 +320,26 @@ const Navbar: React.FC = () => {
 
           <li>
             <Link 
+              to="/rates" 
+              className={`transition-all px-4 py-2 rounded-md block ${
+                location.pathname === '/rates' 
+                  ? 'bg-gray-200 text-gray-800' 
+                  : 'text-white hover:bg-gray-200 hover:text-gray-800'
+              }`} 
+              onClick={toggleMenu}
+            >
+              RATES
+            </Link>
+          </li>
+
+          {/* Team */}
+          <li>
+            <Link 
               to="/team" 
-              className={`transition-colors ${
+              className={`transition-all px-4 py-2 rounded-md block ${
                 location.pathname === '/team' 
-                  ? 'text-lightGreen' 
-                  : 'text-lightestGreen hover:text-lightGreen'
+                  ? 'bg-gray-200 text-gray-800' 
+                  : 'text-white hover:bg-gray-200 hover:text-gray-800'
               }`} 
               onClick={toggleMenu}
             >

@@ -5,10 +5,10 @@ import teamHero from '../assets/images/GalleryMain/villa-with-sunbeams-view.webp
 import teamPhoto from '../assets/images/Team/full-team.jpg';
 import ginaPhoto from '../assets/images/Team/gina.jpg';
 import rangaPhoto from '../assets/images/Team/ranga.jpg';
-import staffServing from '../assets/images/Team/team-1.jpg';
-import srilankanFood from '../assets/images/Team/team-2.jpg';
-import drinksAreaView from '../assets/images/Team/team-3.jpg';
-import foodServed from '../assets/images/Team/team-4.jpg';
+import headsteward from '../assets/images/Team/team-1.jpg';
+import chef from '../assets/images/Team/team-2.jpg';
+import gardener from '../assets/images/Team/team-3.jpg';
+import roomsteward from '../assets/images/Team/team-4.jpg';
 
 const Team = () => {
   return (
@@ -50,16 +50,16 @@ const Team = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="flex flex-col md:flex-row gap-8 items-start"
+              className="flex flex-col md:flex-row gap-8 items-center md:items-start"
             >
-              <div className="flex flex-col items-center w-48 shrink-0">
+              <div className="flex flex-col items-center w-full md:w-48 shrink-0">
                 <img
                   src={ginaPhoto}
                   alt="Gina Jennings"
                   className="w-48 h-48 object-cover rounded-lg mb-4"
                 />
-                <h3 className="text-xl text-gray-700 font-semibold">Gina Jennings</h3>
-                <p className="text-gray-600">Owner</p>
+                <h3 className="text-xl text-gray-700 font-semibold text-center">Gina Jennings</h3>
+                <p className="text-gray-600 text-center">Owner</p>
               </div>
               <div className="flex-1">
                 <blockquote className="italic text-gray-700 border-l-4 border-gray-300 pl-4">
@@ -73,16 +73,16 @@ const Team = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex flex-col md:flex-row-reverse gap-8 items-start"
+              className="flex flex-col md:flex-row-reverse gap-8 items-center md:items-start"
             >
-              <div className="flex flex-col items-center w-48 shrink-0">
+              <div className="flex flex-col items-center w-full md:w-48 shrink-0">
                 <img
                   src={rangaPhoto}
                   alt="Ranga Koralage"
                   className="w-48 h-48 object-cover rounded-lg mb-4"
                 />
-                <h3 className="text-xl text-gray-700 font-semibold">Ranga Koralage</h3>
-                <p className="text-gray-600">Manager</p>
+                <h3 className="text-xl text-gray-700 font-semibold text-center">Ranga Koralage</h3>
+                <p className="text-gray-600 text-center">Manager</p>
               </div>
               <div className="flex-1">
                 <blockquote className="italic text-gray-700 border-l-4 border-gray-300 pl-4">
@@ -98,6 +98,22 @@ const Team = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="w-full"
+            >
+              <img
+                src={chef}
+                alt="Sri Lankan Cuisine"
+                className="w-[300px] h-[400px] object-cover rounded-lg shadow-lg mx-auto"
+              />
+              <h3 className="text-xl text-gray-700 pt-2 font-semibold">Vigith </h3>
+              <h4 className="text-gray-600">Chef</h4>
+            </motion.div>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -105,23 +121,29 @@ const Team = () => {
               className="w-full"
             >
               <img
-                src={staffServing}
+                src={headsteward}
                 alt="Staff Service"
                 className="w-[300px] h-[400px] object-cover rounded-lg shadow-lg mx-auto"
               />
+              <h3 className="text-xl text-gray-700 pt-2 font-semibold">Malith</h3>
+              <h4 className="text-gray-600">Head Steward</h4>
             </motion.div>
+
+          
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
               className="w-full"
             >
               <img
-                src={srilankanFood}
-                alt="Sri Lankan Cuisine"
+                src={roomsteward}
+                alt="Food Service"
                 className="w-[300px] h-[400px] object-cover rounded-lg shadow-lg mx-auto"
               />
+              <h3 className="text-xl text-gray-700 pt-2 font-semibold">Charith</h3>
+              <h4 className="text-gray-600">Room Steward</h4>
             </motion.div>
 
             <motion.div
@@ -131,24 +153,16 @@ const Team = () => {
               className="w-full"
             >
               <img
-                src={drinksAreaView}
+                src={gardener}
                 alt="Drinks Area"
                 className="w-[300px] h-[400px] object-cover rounded-lg shadow-lg mx-auto"
               />
+              <h3 className="text-xl text-gray-700 pt-2 font-semibold">Sampath</h3>
+              <h4 className="text-gray-600">Gardener</h4>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="w-full"
-            >
-              <img
-                src={foodServed}
-                alt="Food Service"
-                className="w-[300px] h-[400px] object-cover rounded-lg shadow-lg mx-auto"
-              />
-            </motion.div>
+
+           
           </div>
         </div>
       </section>

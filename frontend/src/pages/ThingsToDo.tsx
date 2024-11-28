@@ -53,18 +53,27 @@ const ThingsToDo: React.FC = () => {
           >
             A perfect blend of adventure, relaxation, and nature.
           </motion.p>
+
+        
+
+
         </div>
       </section>
 
       {/* Facilities & Amenities Section */}
       <section className="py-20 bg-gray-50">
+        
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
+        <p className='text-center text-gray-700 mb-8'>We aim to run a concierge service through our wonderful manager, Ranga, who can organise
+almost anything, tailor-made to suit you. From cars to motorbikes to fireworks - some of the
+offerings are listed here but there are many more possibilities. He will discuss your requirements
+on arrival and then... MAGIC!</p>
           <h2 className="text-4xl font-bold text-gray-500 mb-8 text-center">Facilities & Amenities at The Lake House</h2>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             
             {/* Swimming Pool */}
             <motion.div 
-              className="col-span-8 p-8 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg" 
+              className="col-span-1 lg:col-span-8 p-8 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg" 
               style={{ backgroundImage: `url(${poolImage})`, backgroundPositionY: yRange }} 
               initial={{ opacity: 0, y: 50 }} 
               animate={{ opacity: 1, y: 0 }} 
@@ -77,7 +86,7 @@ const ThingsToDo: React.FC = () => {
 
             {/* Houseboat */}
             <motion.div 
-              className="col-span-4 p-8 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg" 
+              className="col-span-1 lg:col-span-4 p-8 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg" 
               style={{ backgroundImage: `url(${houseboatImage})`, backgroundPositionY: yRange }}
               initial={{ opacity: 0, y: 50 }} 
               animate={{ opacity: 1, y: 0 }} 
@@ -90,7 +99,7 @@ const ThingsToDo: React.FC = () => {
 
             {/* Surfing */}
             <motion.div 
-              className="col-span-4 p-8 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg" 
+              className="col-span-1 lg:col-span-4 p-8 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg" 
               style={{ backgroundImage: `url(${surfingImage})`, backgroundPositionY: yRange }}
               initial={{ opacity: 0, y: 50 }} 
               animate={{ opacity: 1, y: 0 }} 
@@ -103,7 +112,7 @@ const ThingsToDo: React.FC = () => {
 
             {/* Sunbeds */}
             <motion.div 
-              className="col-span-8 p-8 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg" 
+              className="col-span-1 lg:col-span-8 p-8 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg" 
               style={{ backgroundImage: `url(${sunbedsImage})`, backgroundPositionY: yRange }}
               initial={{ opacity: 0, y: 50 }} 
               animate={{ opacity: 1, y: 0 }} 
@@ -116,7 +125,7 @@ const ThingsToDo: React.FC = () => {
 
             {/* Cocktails by the Lake */}
             <motion.div 
-              className="col-span-8 p-8 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg" 
+              className="col-span-1 lg:col-span-8 p-8 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg" 
               style={{ backgroundImage: `url(${cocktailsImage})`, backgroundPositionY: yRange }}
               initial={{ opacity: 0, y: 50 }} 
               animate={{ opacity: 1, y: 0 }} 
@@ -129,15 +138,19 @@ const ThingsToDo: React.FC = () => {
 
             {/* Personalized Services */}
             <motion.div 
-              className="col-span-4 p-8 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg" 
+              className="col-span-1 lg:col-span-4 p-8 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg" 
               style={{ backgroundImage: `url(${servicesImage})`, backgroundPositionY: yRange }}
               initial={{ opacity: 0, y: 50 }} 
               animate={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.6, delay: 1 }}
             >
              
-              <h3 className="text-2xl font-semibold mb-2 text-white">Personalized Services</h3>
-              <p className="text-white">Let our experienced staff make this holiday even more memorable with a personal cooking lesson, bird-watching tour, tuk-tuk ride, or yoga at sunrise. All this and more, tailored to your needs. </p>
+              <h3 className="text-2xl font-semibold mb-2 text-white">Personalised Services</h3>
+              <p className="text-white">Let our experienced staff make this holiday
+even more memorable with a personal
+cooking lesson, bird-watching tour, tuk-tuk
+ride, or yoga by the pool. All this and more,
+tailored to your needs.</p>
             </motion.div>
 
           </div>
@@ -147,7 +160,7 @@ const ThingsToDo: React.FC = () => {
       {/* Nearby Attractions Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
-          <h2 className="text-4xl font-bold text-gray-500 mb-8 text-center">Activities Neary By</h2>
+          <h2 className="text-4xl font-bold text-gray-500 mb-8 text-center">Activities near by</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             
             {/* Koggala Kayaking */}
@@ -290,9 +303,11 @@ Located just 10 minutes from The Lake House.
                 effect="blur"
                 className="rounded-lg mb-4 h-64 w-full object-cover"
               />
-              <h3 className="text-2xl font-semibold mb-2">Sundowner Cocktails</h3>
-              <p className="text-gray-600">Enjoy cocktails while watching the sunset and one of the many beach bars or restaurants nearby or in the high spots of Galle.  Or ask our steward to bring you something special wherever you are in the house or garden.
-
+              <h3 className="text-2xl font-semibold mb-2">Table Tennis</h3>
+              <p className="text-gray-600">Get competitive, have fun and enjoy
+a game of outdoor Table Tennis
+with our custom built table located
+in the gardens.
               </p>
             </motion.div>
 
@@ -311,6 +326,43 @@ Located just 10 minutes from The Lake House.
               />
               <h3 className="text-2xl font-semibold mb-2">White Tea Estate</h3>
               <p className="text-gray-600">Visit the Handunungoda white tea estate where the luxury white tea is grown and picked.  Tour around the plantation and factory and sample the many different teas. 20 minutes from The Lake House</p>
+            </motion.div>
+
+            <motion.div 
+              className="relative p-8 bg-white rounded-lg shadow-lg" 
+              initial={{ opacity: 0, y: 50 }} 
+              animate={{ opacity: 1, y: 0 }} 
+              transition={{ duration: 0.6, delay: 1 }}
+            >
+              <LazyLoadImage
+                src={habaraduwa}
+                alt="Virgin White Tea Plantations"
+                effect="blur"
+                className="rounded-lg mb-4 h-64 w-full object-cover"
+              />
+              <h3 className="text-2xl font-semibold mb-2">Habaraduwa Beach</h3>
+              <p className="text-gray-600">Although it is not safe to swim at this glorious beach, the long stretch of white sand down to the rolling waves is a wonderful spot for a stroll or a sunbathe and there are a number of chilled out bars with good casual food right on the sand.  Sunsets here are spectacular if the clouds are obliging!
+
+              </p>
+            </motion.div>
+
+
+            <motion.div 
+              className="relative p-8 bg-white rounded-lg shadow-lg" 
+              initial={{ opacity: 0, y: 50 }} 
+              animate={{ opacity: 1, y: 0 }} 
+              transition={{ duration: 0.6, delay: 1 }}
+            >
+              <LazyLoadImage
+                src={habaraduwa}
+                alt="Virgin White Tea Plantations"
+                effect="blur"
+                className="rounded-lg mb-4 h-64 w-full object-cover"
+              />
+              <h3 className="text-2xl font-semibold mb-2">Kabalama Beach</h3>
+              <p className="text-gray-600">Although it is not safe to swim at this glorious beach, the long stretch of white sand down to the rolling waves is a wonderful spot for a stroll or a sunbathe and there are a number of chilled out bars with good casual food right on the sand.  Sunsets here are spectacular if the clouds are obliging!
+
+              </p>
             </motion.div>
 
             <motion.div 

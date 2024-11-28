@@ -115,7 +115,10 @@ const Home: React.FC = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 1.5 }}
               >
-                Constructed in 2010 and designed by a British architect, The Lake House stands as a tranquil, modern and environmentally conscious villa nestled along the calm waters of Koggala Lake.
+                Constructed in 2010 and designed by a British architect, The Lake House
+stands as a tranquil, modern and environmentally conscious villa nestled
+along the calm waters of Koggala Lake conveniently located at
+Habaraduwa, close to the sea and to the enchanting and lively town of Galle.
               </motion.p>
             </div>
 
@@ -159,13 +162,18 @@ const Home: React.FC = () => {
                 className="w-full md:w-1/2 px-4 md:px-8"
               >
                 <h2 className="md:text-center  lg:text-center text-gray-500 font-bold mb-6 text-2xl text-center md:text-left">
-                  LUXURIOUS ROOMS & AMENITIES
+                  OUR ROOMS & AMENITIES
                 </h2>
                 <p className="text-gray-700 mb-6">
-                  The villa includes four double bedrooms with en-suite bathrooms, three of which have outdoor showers. An additional twin room is available on request. Our guests are offered the choice of renting the entire estate, or individual rooms offering tailored elegance for every lifestyle.
+                The villa includes four double bedrooms with en-suite bathrooms, three of which have outdoor showers. An additional twin room
+is available on request. Our guests are offered the choice of renting the entire estate, or individual rooms offering tailored
+elegance for every lifestyle.
                 </p>
                 <p className="text-gray-700 mb-6">
-                  The villa amenities are truly inviting and well-suited for a relaxing and rejuvenating stay. The combination of indoor and outdoor living spaces ensures a wonderful experience with nature surrounding you. The open-plan dining and sitting area with panoramic views, offers a seamless connection to the natural surroundings and Koggala Lake. The emphasis we have made on outdoor showers, private garden, and a dedicated massage room further enhances the feeling of tranquillity. These thoughtful touches align with the villa's sustainable ethos.
+                The villa amenities are well-suited for a relaxing and rejuvenating stay. The combination of indoor and outdoor living spaces
+ensures a wonderful experience with nature surrounding you. The open-plan dining and sitting area offers delightful views of the
+natural surroundings and Koggala Lake. The emphasis we have made on outdoor showers, private garden, and a dedicated
+massage room further enhances the feeling of tranquillity. These thoughtful touches align with the villa's sustainable ethos.
                 </p>
               </motion.div>
               <motion.div 
@@ -216,14 +224,17 @@ const Home: React.FC = () => {
 
         <Suspense fallback={<div className="text-center pt-16">Loading gallery...</div>}>
           <section id="gallery" className={`section-padding ${isVisible.gallery ? 'animate-fadeIn' : 'opacity-0'}`}>
-            <div className="container bg-gray-100 pt-6 pb-16 mx-auto px-6 md:px-12 lg:px-24 text-center">
+            <div className="container bg-gray-100 pt-6  pb-16 mx-auto px-6 md:px-12 lg:px-24 text-center">
               <div className='w-fit mx-auto px-2 mb-2'>
                 <h2 className="text-3xl font-bold text-gray-500 mb-2">GALLERY</h2>
                 <p className="text-gray-500 mb-10 max-w-2xl mx-auto">Explore our gallery of selected images.
                 </p>
               </div>
               <Gallery images={galleryImages} />
+              <h4 className='text-center text-gray-500 underline underline-offset-1 pt-10'>
+              <a href='/gallery' className=''>View more images</a></h4>
             </div>
+           
           </section>
         </Suspense>
 
@@ -243,7 +254,7 @@ const Home: React.FC = () => {
                   {/* <AiOutlineMail className="w-12 h-12 mx-auto" aria-hidden="true" /> */}
                 </div>
                 {/* <h2 className="text-2xl text-gray-500 font-bold mb-2">Ready to Book Your Stay?</h2> */}
-                <p className="mb-6 text-gray-600">Reach out to us via email for any inquiries or bookings.</p>
+                <p className="mb-6 text-gray-600">Reach out to us via email for any enquiries or bookings.</p>
                 <a
                   href="mailto:your-email@example.com"
                   className="inline-block bg-gray-500 hover:bg-gray-200 hover:text-gray-800 text-white py-3 px-6 rounded-md transition-transform duration-300 hover:scale-105"

@@ -55,7 +55,7 @@ const Events: React.FC = () => {
               details and help bring your vision to life.
             </p>
             <a href="/contact" className="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-md transition transform hover:scale-105">
-              Contact Us for Event Inquiries
+              Contact Us for Event Enquiries
             </a>
           </div>
 

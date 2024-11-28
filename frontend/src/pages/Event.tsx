@@ -85,7 +85,7 @@ const Events: React.FC = () => {
               href="/contact"
               className="bg-darkGreen hover:bg-lightGreen text-white py-3 px-6 rounded-md transition-transform duration-300 hover:scale-105"
             >
-              Contact Us for Event Inquiries
+              Contact Us for Event Enquiries
             </motion.a>
           </motion.div>
 
