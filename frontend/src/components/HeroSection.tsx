@@ -52,10 +52,15 @@ const HeroSection: React.FC = () => {
             boxShadow: "0px 4px 10px rgba(0, 0, 0, 0)",
           }}
         >
-          <h1 className="text-[50px] sm:text-[60px] sm:pb-20 sm:mb-6 lg:text-[90px] mx-auto md:mx-0 -mt-10 lg:-mt-20 md:-mt-20 text-center outfit-lake text-white bg-clip-text text-transparent">
-            <br /> THE LAKE HOUSE <br />
-            KOGGALA
-          </h1>
+         <h1 
+          className="text-[50px] sm:text-[60px] sm:pb-20 sm:mb-6 lg:text-[90px] mx-auto md:mx-0 font-display"
+          style={{
+            contentVisibility: 'auto',
+            containIntrinsicSize: '50px'
+          }}
+        >
+          THE LAKE HOUSE
+        </h1>
         </motion.h1>
 
         <motion.button
