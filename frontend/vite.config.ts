@@ -10,6 +10,13 @@ export default defineConfig({
       '@components': resolve(__dirname, 'src/components'),
       '@assets': resolve(__dirname, 'src/assets'),
       '@utils': resolve(__dirname, 'src/utils'),
+      '@pages': resolve(__dirname, 'src/pages'),
+      '@hooks': resolve(__dirname, 'src/hooks'),
+      '@contexts': resolve(__dirname, 'src/contexts'),
+      '@routes': resolve(__dirname, 'src/routes'),
+      '@types': resolve(__dirname, 'src/types'),
+      '@styles': resolve(__dirname, 'src/styles'),
+      
     },
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },

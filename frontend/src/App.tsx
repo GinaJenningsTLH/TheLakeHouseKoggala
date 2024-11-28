@@ -24,7 +24,7 @@ import CookieConsentBanner from './components/CookieConsent';
 const App: React.FC = () => {
   return (
     <>
-      <Router>
+      <Router basename="/">
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
