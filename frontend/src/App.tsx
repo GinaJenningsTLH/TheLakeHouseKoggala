@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy, Suspense, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ScrollToTop from './components/ScrollTotop'; // Import the component
 import Home from './pages/Home';
@@ -19,10 +19,32 @@ import Gallery from './pages/Gallery';
 import Team from './pages/Team';
 import Rates from './pages/Rates';
 import Privacy from './pages/Privacy';
-import CookieConsentBanner from './components/CookieConsent';
 
+// Lazy load the CookieConsentBanner
+const CookieConsentBanner = lazy(() => 
+  new Promise<{ default: React.FC }>(resolve => {
+    setTimeout(() => {
+      resolve(import('./components/CookieConsent'));
+    }, 2000);
+  })
+);
 
 const App: React.FC = () => {
+  const [showCookieBanner, setShowCookieBanner] = useState(false);
+
+  useEffect(() => {
+    // Wait for initial page load before showing cookie banner
+    window.addEventListener('load', () => {
+      setShowCookieBanner(true);
+    });
+
+    return () => {
+      window.removeEventListener('load', () => {
+        setShowCookieBanner(true);
+      });
+    };
+  }, []);
+
   return (
     <>
       <Router basename="/">
@@ -49,7 +71,12 @@ const App: React.FC = () => {
           
         </Routes>
       </Router>
-      <CookieConsentBanner />
+      
+      {showCookieBanner && (
+        <Suspense fallback={null}>
+          <CookieConsentBanner />
+        </Suspense>
+      )}
     </>
   );
 };
