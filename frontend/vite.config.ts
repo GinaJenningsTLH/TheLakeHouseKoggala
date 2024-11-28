@@ -30,7 +30,13 @@ export default defineConfig({
       input: {
         main: './index.html',
       },
+      output: {
+        manualChunks: {
+          'critical': ['./src/styles/critical.css'],
+        },
+      },
     },
+    cssMinify: true,
   },
   server: {
     open: true, // Automatically open the browser when the dev server starts
