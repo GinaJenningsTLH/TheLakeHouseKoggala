@@ -14,48 +14,64 @@ const Footer: React.FC = () => {
               {/* Column 1 */}
               <ul className="space-y-2">
                 <li>
-                  <a href="/" className="text-gray-300 hover:text-gray-300">
+                  <Link to="/about">
+                  <a className="text-gray-300 hover:text-gray-300">
                     ABOUT US
-                  </a>
+                    </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/villa" className="text-gray-300 hover:text-gray-300">
+                  <Link to="/villa">        
+                  <a  className="text-gray-300 hover:text-gray-300">
                     VILLA
                   </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/dining" className="text-gray-300 hover:text-gray-300">
+                  <Link to="/dining">
+                  <a className="text-gray-300 hover:text-gray-300">
                     DINING
                   </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/things-to-do" className="text-gray-300 hover:text-gray-300">
+                  <Link to="/things-to-do"> 
+                  <a className="text-gray-300 hover:text-gray-300">
                     THINGS TO DO
                   </a>
+                  </Link>
                 </li>
               </ul>
 
               {/* Column 2 */}
               <ul className="space-y-2">
                 <li>
-                  <a href="/places-to-visit" className="text-gray-300 hover:text-gray-300">
+                  <Link to="/places-to-visit">
+                  <a className="text-gray-300 hover:text-gray-300">
                     PLACES TO VISIT
                   </a>
+                  </Link>
                 </li>
                 <li>
+                  <Link to="/gallery">
                   <a href="/gallery" className="text-gray-300 hover:text-gray-300">
                     GALLERY
                   </a>
+                  </Link>
                 </li>
                 <li>
+                  <Link to="/rates">
                   <a href="/rates" className="text-gray-300 hover:text-gray-300">
                     RATES
                   </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/team" className="text-gray-300 hover:text-gray-300">
+                  <Link to="/team">
+                  <a className="text-gray-300 hover:text-gray-300">
                     TEAM
                   </a>
+                  </Link>
                 </li>
               </ul>
             </div>
