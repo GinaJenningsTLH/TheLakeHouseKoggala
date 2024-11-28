@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://thelakehousekoggala.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10 
