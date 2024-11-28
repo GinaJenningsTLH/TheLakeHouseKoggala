@@ -113,13 +113,13 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-700 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="mb-4 md:mb-0">&copy; 2024 The Lake House Koggala. All rights reserved.</p>
-            <div className="flex space-x-6">
+            <div className="flex space-x-12">
               <Link  to="/privacy">      
                 <a href='/privacy' className="text-gray-100 hover:text-gray-300">Privacy Policy</a>
               </Link>
-              <Link to="/terms">
+              {/* <Link to="/terms">
                 <a href='/terms' className="text-gray-100 hover:text-gray-300">Terms of Service</a>
-              </Link>
+              </Link> */}
               <Link to="/contact">  
                 <a href='/contact' className="text-gray-100 hover:text-gray-300">Contact Us</a>
               </Link>
