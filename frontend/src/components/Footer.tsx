@@ -15,28 +15,28 @@ const Footer: React.FC = () => {
               <ul className="space-y-2">
                 <li>
                   <Link to="/about">
-                  <a className="text-gray-300 hover:text-gray-300">
+                  <a className="text-gray-100 hover:text-gray-300">
                     ABOUT US
                     </a>
                   </Link>
                 </li>
                 <li>
                   <Link to="/villa">        
-                  <a  className="text-gray-300 hover:text-gray-300">
+                  <a  className="text-gray-100 hover:text-gray-300">
                     VILLA
                   </a>
                   </Link>
                 </li>
                 <li>
                   <Link to="/dining">
-                  <a className="text-gray-300 hover:text-gray-300">
+                    <a className="text-gray-100 hover:text-gray-300">
                     DINING
                   </a>
                   </Link>
                 </li>
                 <li>
                   <Link to="/things-to-do"> 
-                  <a className="text-gray-300 hover:text-gray-300">
+                  <a className="text-gray-100 hover:text-gray-300">
                     THINGS TO DO
                   </a>
                   </Link>
@@ -47,28 +47,28 @@ const Footer: React.FC = () => {
               <ul className="space-y-2">
                 <li>
                   <Link to="/places-to-visit">
-                  <a className="text-gray-300 hover:text-gray-300">
+                  <a className="text-gray-100 hover:text-gray-300">
                     PLACES TO VISIT
                   </a>
                   </Link>
                 </li>
                 <li>
                   <Link to="/gallery">
-                  <a href="/gallery" className="text-gray-300 hover:text-gray-300">
+                  <a className="text-gray-100 hover:text-gray-300">
                     GALLERY
                   </a>
                   </Link>
                 </li>
                 <li>
                   <Link to="/rates">
-                  <a href="/rates" className="text-gray-300 hover:text-gray-300">
+                  <a className="text-gray-100 hover:text-gray-300">
                     RATES
                   </a>
                   </Link>
                 </li>
                 <li>
                   <Link to="/team">
-                  <a className="text-gray-300 hover:text-gray-300">
+                  <a className="text-gray-100 hover:text-gray-300">
                     TEAM
                   </a>
                   </Link>
@@ -95,13 +95,16 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
             <div className="flex justify-center md:justify-start space-x-4">
-              <a href="https://facebook.com" className="text-gray-400 hover:text-gray-300" aria-label="Facebook">
+              <Link to="https://facebook.com">
+              <a className="text-gray-100 hover:text-gray-300" aria-label="Facebook">
                 <FaFacebookF size={20} />
               </a>
-              <a href="https://instagram.com" className="text-gray-400 hover:text-gray-300" aria-label="Instagram">
+              </Link>
+              <Link to="https://instagram.com">
+            <a  className="text-gray-100 hover:text-gray-300" aria-label="Instagram">
                 <FaInstagram size={20} />
               </a>
-             
+              </Link>
             </div>
           </div>
         </div>
@@ -112,13 +115,13 @@ const Footer: React.FC = () => {
             <p className="mb-4 md:mb-0">&copy; 2024 The Lake House Koggala. All rights reserved.</p>
             <div className="flex space-x-6">
               <Link to="/privacy">      
-                <a className="text-gray-400 hover:text-gray-300">Privacy Policy</a>
+                <a className="text-gray-100 hover:text-gray-300">Privacy Policy</a>
               </Link>
               <Link to="/terms">
-                <a  className="text-gray-400 hover:text-gray-300">Terms of Service</a>
+                <a  className="text-gray-100 hover:text-gray-300">Terms of Service</a>
               </Link>
               <Link to="/contact">  
-                <a className="text-gray-400 hover:text-gray-300">Contact Us</a>
+                <a className="text-gray-100 hover:text-gray-300">Contact Us</a>
               </Link>
             </div>
           </div>

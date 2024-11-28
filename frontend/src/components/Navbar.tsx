@@ -56,6 +56,8 @@ const Navbar: React.FC = () => {
           <button
             type="button"
             onClick={toggleMenu}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
             className="text-lightestGreen md:hidden lg:hidden focus:outline-none hover:text-yellow-100"
           >
             {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -207,6 +209,7 @@ const Navbar: React.FC = () => {
         <button
           onClick={toggleMenu}
           className="absolute top-4 right-4 text-white focus:outline-none hover:text-gray-200"
+          aria-label="Close menu"
         >
           <FaTimes size={24} />
         </button>

@@ -15,6 +15,7 @@ import lakeViewIndoor from '../assets/images/lakeview(indoor).jpg';
 import galleryImages from '../data/galleryData';
 import RoomsTypeCard from '../components/RoomTypeCard';
 import BookingForm from '../components/BookingForm';
+import { Link } from 'react-router-dom';
 
 const Gallery = lazy(() => import('../components/Gallery'));
 const WhyBookWithUs = lazy(() => import('../components/WhyBookWithUs'));
@@ -231,8 +232,10 @@ massage room further enhances the feeling of tranquillity. These thoughtful touc
                 </p>
               </div>
               <Gallery images={galleryImages} />
-              <h4 className='text-center text-gray-500 underline underline-offset-1 pt-10'>
-              <a href='/gallery' className=''>View more images</a></h4>
+              <Link to="/gallery">
+              <p className='text-center text-gray-500 underline underline-offset-1 pt-10'>
+              <a href='/gallery' className=''>View more images</a></p>
+              </Link>
             </div>
            
           </section>
