@@ -82,7 +82,7 @@ const About: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="md:w-1/2 order-2 md:order-1 md:pr-8"
             >
-              <h3 className="text-darkGreen font-bold mb-4">Luxurious Rooms & Amenities</h3>
+              <h3 className="text-darkGreen font-bold mb-4">Our Rooms & Amenities</h3>
               <p className="text-gray-700 mb-4">
                 The villa includes 4 double bedrooms with en-suite bathrooms, 3 of which have outdoor showers, and an additional twin room on request. 
                 The open-plan dining, sitting, and games area offers stunning views of the pool and lake.

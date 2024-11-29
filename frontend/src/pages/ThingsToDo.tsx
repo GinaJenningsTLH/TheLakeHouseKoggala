@@ -19,7 +19,7 @@ import martinMuseumImage from '../assets/images/things-to-do/Martin.png';
 import surfImage from '../assets/images/things-to-do/surfing.png';
 import teaPlantImage from '../assets/images/things-to-do/tea-plant.jpg';
 import bikeride from '../assets/images/things-to-do/bikeride.jpg';
-import sundowner from '../assets/images/things-to-do/sundowner.jpg';
+import tabletennis from '../assets/images/things-to-do/table-tennis.jpg';
 import habaraduwa from '../assets/images/things-to-do/habaraduwa.jpg';
 import whalewatching from '../assets/images/things-to-do/whale-watching.jpg';
 
@@ -298,7 +298,7 @@ Located just 10 minutes from The Lake House.
               transition={{ duration: 0.6, delay: 1 }}
             >
               <LazyLoadImage
-                src={sundowner}
+                src={tabletennis}
                 alt="Virgin White Tea Plantations"
                 effect="blur"
                 className="rounded-lg mb-4 h-64 w-full object-cover"

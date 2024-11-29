@@ -18,7 +18,7 @@ const roomsData = [
   },
   {
     title: 'Luxury Suite',
-    description: 'Our most luxurious room with private pool access.',
+    description: 'Our most comfortable room with private pool access.',
     image: '/luxury-suite.jpg',
     price: '$350 per night',
   },

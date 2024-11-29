@@ -211,7 +211,7 @@ const GardenViewIndoor: React.FC = () => {
       <LazyLoadImage src={relatedRoom1} alt="Lake View Indoor" effect="blur" className="w-full h-48 object-cover" />
       <div className="p-6">
         <h4 className="font-bold text-h3 text-[#5F9540] drop-shadow-lg mb-2">Lake View (Indoor Shower)</h4>
-        <p className="text-gray-600 mt-2">Luxurious room with stunning lake views.</p>
+        <p className="text-gray-600 mt-2">Comfortable room with stunning lake views.</p>
         <a href="/lake-view-indoor" className="block mt-4 bg-darkGreen hover:bg-lightGreen text-white py-2 px-4 rounded-lg transition transform hover:scale-105">View Details</a>
       </div>
     </div>

@@ -83,10 +83,10 @@ const Home: React.FC = () => {
     <>
       <Helmet>
         <title>Lake House Villa - Luxury Stay by Koggala Lake</title>
-        <meta name="description" content="Experience the serene beauty of Koggala Lake at the Lake House Villa. A contemporary, sustainable villa with luxurious amenities and stunning views." />
+        <meta name="description" content="Experience the serene beauty of Koggala Lake at the Lake House Villa. A contemporary, sustainable villa with many amenities and stunning views." />
         <meta name="keywords" content="The Lake House Villa, Koggala Lake, Luxury Villa, Sustainable Accommodation, Sri Lanka Villas, Book Lake Villa" />
         <meta property="og:title" content="The Lake House Villa - Kogalla Villas" />
-        <meta property="og:description" content="Experience the serene beauty of Koggala Lake at the Lake House Villa. A contemporary, sustainable villa with luxurious amenities and stunning views." />
+        <meta property="og:description" content="Experience the serene beauty of Koggala Lake at the Lake House Villa. A contemporary, sustainable villa with many amenities and stunning views." />
         <meta property="og:image" content="/assets/images/Gallery/villa-front-view-2.jpg" />
         <meta property="og:url" content="https://yourwebsite.com/" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -203,7 +203,7 @@ massage room further enhances the feeling of tranquillity. These thoughtful touc
         >
           <div className="py-20 bg-gray-100 mx-auto px-10 md:px-12 lg:px-24 text-center">
             <h2 className="text-3xl font-bold text-gray-500 mb-4">OUR ROOMS</h2>
-            <p className="text-darkGreen mb-10 max-w-2xl mx-auto">Enjoy a variety of luxurious accommodation with stunning views over the landscape or lake. </p>
+            <p className="text-darkGreen mb-10 max-w-2xl mx-auto">Enjoy a variety of com accommodation with stunning views over the landscape or lake. </p>
             <motion.div
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
               initial={{ opacity: 0 }}

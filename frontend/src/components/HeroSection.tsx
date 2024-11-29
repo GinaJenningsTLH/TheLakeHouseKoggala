@@ -1,91 +1,63 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { IoArrowDownCircle } from "react-icons/io5";
+import '../styles/critical.css';
 import sittingView from '../assets/images/Gallery/sitting-area.jpg';
 
 const HeroSection: React.FC = () => {
-  const textVariant = {
-    hidden: { opacity: 0, x: -200 },
-    visible: { opacity: 1, x: 0, transition: { duration: 1, ease: "easeOut" } }
-  };
-
-  const arrowVariant = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
-        duration: 1, 
-        delay: 1.2, 
-        ease: "easeOut",
-        repeat: Infinity,
-        repeatType: "reverse",
-        repeatDelay: 0.5
-      } 
-    }
-  };
+  // Preload hero image
+  React.useEffect(() => {
+    const img = new Image();
+    img.src = sittingView;
+  }, []);
 
   const scrollToNextSection = () => {
-    const overviewSection = document.getElementById('overview');
-    if (overviewSection) {
-      overviewSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    document.getElementById('overview')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <section
-      className="relative bg-cover bg-center h-screen"
-      style={{ backgroundImage: `url(${sittingView})` }}
+      className="hero-section"
+      style={{
+        backgroundImage: `url(${sittingView})`,
+        contentVisibility: 'auto',
+        containIntrinsicSize: '100vh'
+      }}
     >
-      <div className="absolute inset-0 bg-black bg-opacity-0"></div>
+      <div className="hero-overlay" />
 
-      <div className="relative z-10 flex flex-col justify-center items-center h-full px-4 sm:px-6 md:px-12 text-left">
+      <div className="hero-content">
         <motion.h1
-          className="text-white text-4xl sm:text-6xl rethink-sans-lake font-bold mb-4"
-          initial="hidden"
-          animate="visible"
-          variants={textVariant}
-          style={{
-            background: "linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent)",
-            padding: "10px",
-            borderRadius: "8px",
-            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0)",
-          }}
-        >
-         <h1 
-          className="text-[50px] sm:text-[60px] sm:pb-20 sm:mb-6 lg:text-[90px] mx-auto md:mx-0 font-display"
-          style={{
-            contentVisibility: 'auto',
-            containIntrinsicSize: '50px'
+          className="hero-title"
+          initial={{ opacity: 0, x: -200 }}
+          animate={{ 
+            opacity: 1, 
+            x: 0, 
+            transition: { duration: 1, ease: "easeOut" } 
           }}
         >
           THE LAKE HOUSE
-        </h1>
         </motion.h1>
 
         <motion.button
           onClick={scrollToNextSection}
           className="absolute bottom-12 text-white hover:text-gray-500 transition-colors duration-300"
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: {
-                duration: 1,
-                delay: 1.2,
-                ease: "easeOut",
-                repeat: Infinity,
-                repeatType: "reverse" as const,
-                repeatDelay: 0.5
-              }
+          initial={{ opacity: 0, y: 20 }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 1,
+              delay: 0.5,
+              ease: "easeOut",
+              repeat: Infinity,
+              repeatType: "reverse",
+              repeatDelay: 0.5
             }
           }}
           aria-label="Scroll to next section"
         >
-          <IoArrowDownCircle className="w-12 h-12" />
+         <IoArrowDownCircle style={{ width: '4rem', height: '4rem' }} />
         </motion.button>
       </div>
     </section>

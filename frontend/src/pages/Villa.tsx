@@ -37,7 +37,7 @@ const AllRoomsPage: React.FC = () => {
       <div className="relative h-[400px] bg-cover bg-center" style={{ backgroundImage: `url(${room1})` }}>
         <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-center">
           <h1 className="text-5xl font-bold text-white mb-2"> Villa Experience</h1>
-          <p className="text-xl text-gray-200 mt-2">Book the entire villa with 4 luxurious rooms, 6 dedicated staff, and private lake views.</p>
+          <p className="text-xl text-gray-200 mt-2">Book the entire villa with 4 comfortable rooms, 6 dedicated staff, and private lake views.</p>
           <a
             onClick={scrollToBooking}
             className="mt-6 bg-gray-500 hover:bg-gray-200 hover:text-gray-500 text-white py-3 px-8 rounded-lg text-lg font-semibold transition transform hover:scale-105 cursor-pointer"

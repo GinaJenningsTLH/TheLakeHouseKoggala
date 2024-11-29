@@ -148,21 +148,3 @@ body, html {
   padding-bottom: 5rem;
 }
 
-@media (max-width: 768px) {
-  .custom-slider-mobile .awssld__wrapper {
-    border: none !important;
-  }
-
-  .custom-slider-mobile .awssld__controls button {
-    width: 40px !important;
-    height: 40px !important;
-    background: rgba(0, 0, 0, 0.5) !important;
-    border-radius: 50% !important;
-    margin: 0 10px !important;
-  }
-
-  .custom-slider-mobile .awssld__controls__arrow-left,
-  .custom-slider-mobile .awssld__controls__arrow-right {
-    opacity: 1 !important;
-  }
-}
