@@ -50,8 +50,8 @@ const Navbar: React.FC = () => {
           <img 
   src="/logo-white.webp" 
   className="h-9 mt-2 w-auto"
-  width={144}  // Set this to your logo's actual width
-  height={36}  // h-9 = 36px
+  width={200}  // Set this to your logo's actual width
+  height={40}  // h-9 = 36px
   alt="Lake House Logo"
 />
           </Link>
