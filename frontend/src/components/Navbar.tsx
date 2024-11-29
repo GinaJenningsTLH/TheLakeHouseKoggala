@@ -47,11 +47,13 @@ const Navbar: React.FC = () => {
       >
         <div className="flex items-center justify-between md:px-12 py-3">
           <Link to="/" className="flex items-center">
-            <img
-              src="/logo-white.png"
-              className="h-9 mt-2"
-              alt="Lake House Logo"
-            />
+          <img 
+  src="/logo-white.png" 
+  className="h-9 mt-2 w-auto"
+  width={144}  // Set this to your logo's actual width
+  height={36}  // h-9 = 36px
+  alt="Lake House Logo"
+/>
           </Link>
           <button
             type="button"

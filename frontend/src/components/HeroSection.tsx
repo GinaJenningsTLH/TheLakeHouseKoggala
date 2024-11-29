@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { IoArrowDownCircle } from "react-icons/io5";
 import '../styles/critical.css';
-import sittingView from '../assets/images/Gallery/sitting-area.jpg';
+import sittingView from '../assets/images/Gallery/sitting-area.webp';
 
 const HeroSection: React.FC = () => {
   // Preload hero image
