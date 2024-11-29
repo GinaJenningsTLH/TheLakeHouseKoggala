@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
           <Link to="/" className="flex items-center">
           <img 
   src="/logo-white.webp" 
-  className="h-9 mt-2 w-auto"
+  className="h-[40px] mt-2 w-auto"
   width={200}  // Set this to your logo's actual width
   height={40}  // h-9 = 36px
   alt="Lake House Logo"

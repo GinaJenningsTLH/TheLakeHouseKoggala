@@ -1,5 +1,20 @@
-/* Add only the most critical styles needed for above-the-fold content */
-/* For example: */
+/* Critical fonts for initial render */
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/outfit-v11-latin-300.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Rethink Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/rethink-sans-v1-latin-regular.woff2') format('woff2');
+}
+
 :root {
   --primary-font: 'Lexend', sans-serif;
 }
