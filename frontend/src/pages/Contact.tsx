@@ -107,10 +107,9 @@ const Contact: React.FC = () => {
           <div className="mt-16">
             <h2 className="text-3xl font-bold text-gray-500 text-center mb-8">Our Location</h2>
             {/* <div className="h-[400px] rounded-lg overflow-hidden">
-              <GoogleMap 
-                center={{ lat: 6.0174, lng: 80.1155 }} // Koggala Lake coordinates
-                zoom={15}
-              />
+              <Suspense fallback={<div>Loading map...</div>}>
+      <GoogleMap />
+    </Suspense>
             </div> */}
           </div>
         </div>

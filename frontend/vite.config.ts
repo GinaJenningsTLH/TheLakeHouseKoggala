@@ -33,6 +33,10 @@ export default defineConfig({
       output: {
         manualChunks: {
           'critical': ['./src/styles/critical.css'],
+          'vendor': ['react', 'react-dom'],
+          'motion': ['framer-motion'],
+          'slider': ['react-awesome-slider'],
+          'icons': ['@fortawesome/fontawesome-svg-core'],
         },
       },
     },

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
@@ -13,6 +13,8 @@ interface GalleryProps {
 }
 
 const Gallery: React.FC<GalleryProps> = ({ images }) => {
+  const AwesomeSlider = lazy(() => import('react-awesome-slider'));
+
   return (
     <Swiper
       modules={[Navigation, Pagination, Autoplay]}
