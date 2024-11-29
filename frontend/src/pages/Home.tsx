@@ -90,7 +90,7 @@ const Home: React.FC = () => {
         <meta property="og:image" content="/assets/images/Gallery/villa-front-view-2.jpg" />
         <meta property="og:url" content="https://yourwebsite.com/" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="preload" as="image" href="/logo-white.png" />
+        <link rel="preload" as="image" href="/logo-white.webp" />
       </Helmet>
 
       <Navbar />
