@@ -81,7 +81,7 @@ those seeking a peaceful and rejuvenating retreat, but with easy access to the m
         <div className="w-full">
           <AwesomeSlider 
             animation="foldOutAnimation"
-            className="h-[300px] md:h-[500px] lg:h-[760px] custom-slider"
+            className="h-[260px] md:h-[500px] lg:h-[760px] custom-slider"
             bullets={false}
             organicArrows={true}
             infinite={true}
@@ -103,12 +103,13 @@ those seeking a peaceful and rejuvenating retreat, but with easy access to the m
                   src={image}
                   alt={`Room ${idx + 1}`}
                   effect="blur"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full  object-cover"
                   style={{
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    objectPosition: 'center'
+                    objectPosition: 'center',
+                    backgroundColor: 'transparent'
                   }}
                 />
               </div>
@@ -121,7 +122,7 @@ those seeking a peaceful and rejuvenating retreat, but with easy access to the m
             {roomNames.map((name, index) => (
               <div
                 key={index}
-                className="flex items-center justify-center p-6 bg-gray-100 rounded-lg shadow-lg border border-gray-200"
+                className="flex items-center justify-start p-6 bg-gray-100 rounded-lg shadow-lg border border-gray-200"
               >
                 <FontAwesomeIcon icon={faBed} className="text-gray-500 mr-2" />
                 <span className="text-lg text-gray-600">{name}</span>

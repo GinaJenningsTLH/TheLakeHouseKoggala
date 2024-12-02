@@ -22,6 +22,8 @@ import bikeride from '../assets/images/things-to-do/bikeride.jpg';
 import tabletennis from '../assets/images/things-to-do/table-tennis.jpg';
 import habaraduwa from '../assets/images/things-to-do/habaraduwa.jpg';
 import whalewatching from '../assets/images/things-to-do/whale-watching.jpg';
+import kabalamabeach from '../assets/images/things-to-do/kabalana_surfers_sunset.webp'
+import bars from '../assets/images/things-to-do/bars.jpg'
 
 const ThingsToDo: React.FC = () => {
   const { scrollYProgress } = useScroll();
@@ -354,13 +356,18 @@ in the gardens.
               transition={{ duration: 0.6, delay: 1 }}
             >
               <LazyLoadImage
-                src={habaraduwa}
+                src={kabalamabeach}
                 alt="Virgin White Tea Plantations"
                 effect="blur"
                 className="rounded-lg mb-4 h-64 w-full object-cover"
               />
               <h3 className="text-2xl font-semibold mb-2">Kabalama Beach</h3>
-              <p className="text-gray-600">Although it is not safe to swim at this glorious beach, the long stretch of white sand down to the rolling waves is a wonderful spot for a stroll or a sunbathe and there are a number of chilled out bars with good casual food right on the sand.  Sunsets here are spectacular if the clouds are obliging!
+              <p className="text-gray-600">Experience the pristine shores of
+Kabalama Beach, where golden sands
+meet the turquoise waters of the Indian
+Ocean. This coastline is a tropical
+haven perfect for relaxation, adventure
+and unforgettable memories.
 
               </p>
             </motion.div>
@@ -372,13 +379,17 @@ in the gardens.
               transition={{ duration: 0.6, delay: 1 }}
             >
               <LazyLoadImage
-                src={habaraduwa}
+                src={bars}
                 alt="Virgin White Tea Plantations"
                 effect="blur"
                 className="rounded-lg mb-4 h-64 w-full object-cover"
               />
-              <h3 className="text-2xl font-semibold mb-2">Habaraduwa Beach</h3>
-              <p className="text-gray-600">Although it is not safe to swim at this glorious beach, the long stretch of white sand down to the rolling waves is a wonderful spot for a stroll or a sunbathe and there are a number of chilled out bars with good casual food right on the sand.  Sunsets here are spectacular if the clouds are obliging!
+              <h3 className="text-2xl font-semibold mb-2">Explore the bars and restaurants of Ahangama</h3>
+              <p className="text-gray-600">Explore the vibrant restaurants,
+bars and beach clubs located
+along the coastline of Ahangama
+beach offering a mix of culinary
+trills and social excitement.
 
               </p>
             </motion.div>

@@ -159,3 +159,26 @@ h3{
     font-size: 10px;
   }
 }
+
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ffffff !important;
+  background: rgba(0, 0, 0, 0.5);
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 20px !important;
+}
+
+.swiper-pagination-bullet {
+  background: #ffffff !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ffffff !important;
+}

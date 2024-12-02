@@ -36,6 +36,13 @@ import tabletennis from '../assets/images/GalleryMain/table-tennis-outside.webp'
 import villasittingview from '../assets/images/GalleryMain/view-from-villa-sitting-area.webp';
 import villapoolview from '../assets/images/GalleryMain/vila-pool-lake-view.webp';
 import villasideviewland from '../assets/images/GalleryMain/villa-side-view-land.webp';
+import sunbeamsvilla from '../assets/images/GalleryMain/sunbeams-villa.webp';
+import villatreefullgrown from '../assets/images/GalleryMain/villa-center-tree-fully-grown.webp';
+import villaentranceview from '../assets/images/GalleryMain/villa-entrance-side-view.webp';
+import sunbeamlake from '../assets/images/GalleryMain/villa-sunbeam-lake-view.webp';
+import peacock from '../assets/images/GalleryMain/peacock.webp';
+import birdtree from '../assets/images/GalleryMain/bird-on-tree.webp';
+
 import dronshot2 from '../assets/images/GalleryMain/drone-shot-2.webp';
 import dronshot3 from '../assets/images/GalleryMain/drone-shot-3.webp';
 import droneshot from '../assets/images/GalleryMain/drone-shot.webp';
@@ -56,6 +63,14 @@ import ptlakeboatview from '../assets/images/GalleryMain/pt-lake-boat-view.webp'
 import ptshowerview from '../assets/images/GalleryMain/pt-shower.webp';
 import pttuk from '../assets/images/GalleryMain/pt-tuk.webp';
 import ptview2 from '../assets/images/GalleryMain/pt-view-2.webp';
+import ptcraft from '../assets/images/GalleryMain/pt-craft.webp';
+import ptdoorview from '../assets/images/GalleryMain/pt-doorview.webp';
+import ptflowerred from '../assets/images/GalleryMain/pt-flower-red.webp';
+import ptsittingchair from '../assets/images/GalleryMain/pt-sitting-chairs.webp';
+import pttennis from '../assets/images/GalleryMain/pt-tennis-table.webp';
+import ptvillaside from '../assets/images/GalleryMain/pt-villa-side.webp';
+
+
 
 const Gallery: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -95,6 +110,12 @@ const Gallery: React.FC = () => {
     { src: dronshot2, category: 'villa', title: 'Drone Shot 2' },
     { src: dronshot3, category: 'villa', title: 'Drone Shot 3' },
     { src: droneshot, category: 'villa', title: 'Drone Shot' },
+    { src: sunbeamsvilla, category: 'villa', title: 'Sunbeams Villa' },
+    { src: villatreefullgrown, category: 'villa', title: 'Villa Center Tree Fully Grown' },
+    { src: villaentranceview, category: 'villa', title: 'Villa Entrance View' },
+    { src: sunbeamlake, category: 'lake', title: 'Villa Sunbeam Lake View' },
+    { src: peacock, category: 'villa', title: 'Peacock' },
+    { src: birdtree, category: 'villa', title: 'Bird on Tree' },
   ];
 
   const portraitImages = [
@@ -115,6 +136,12 @@ const Gallery: React.FC = () => {
     { src: ptshowerview, category: 'villa', title: 'Shower View' },
     { src: pttuk, category: 'villa', title: 'Tuk Tuk View' },
     { src: ptview2, category: 'villa', title: 'View 2' },
+    { src: ptdoorview, category: 'villa', title: 'Door View' },
+    { src: ptflowerred, category: 'villa', title: 'Flower Red' },
+    { src: ptsittingchair, category: 'villa', title: 'Sitting Chair' },
+    { src: pttennis, category: 'villa', title: 'Table Tennis' },
+    { src: ptvillaside, category: 'villa', title: 'Villa Side' },
+    { src: ptcraft, category: 'villa', title: 'Craft' },
   ];
 
   const allImages = [...landscapeImages, ...portraitImages];
