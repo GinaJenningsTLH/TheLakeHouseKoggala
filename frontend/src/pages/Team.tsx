@@ -9,6 +9,7 @@ import headsteward from '../assets/images/Team/team-1.jpg';
 import chef from '../assets/images/Team/team-2.jpg';
 import gardener from '../assets/images/Team/team-3.jpg';
 import roomsteward from '../assets/images/Team/team-4.jpg';
+import nightduty from '../assets/images/Team/lal.jpg';
 
 const Team = () => {
   return (
@@ -97,7 +98,7 @@ const Team = () => {
       {/* Four Images Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
 
           <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -144,6 +145,21 @@ const Team = () => {
               />
               <h3 className="text-xl text-gray-700 pt-2 font-semibold">Charith</h3>
               <h4 className="text-gray-600">Room Steward</h4>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="w-full"
+            >
+              <img
+                src={nightduty}
+                alt="Night Duty"
+                className="w-[300px] h-[400px] object-cover rounded-lg shadow-lg mx-auto"
+              />
+              <h3 className="text-xl text-gray-700 pt-2 font-semibold">Lal</h3>
+              <h4 className="text-gray-600">Night Duty</h4>
             </motion.div>
 
             <motion.div
