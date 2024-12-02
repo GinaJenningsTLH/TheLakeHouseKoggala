@@ -13,7 +13,7 @@ import room1 from '../assets/images/room1-large.jpg';
 import room2 from '../assets/images/room2-large.jpg';
 import room3 from '../assets/images/room3-large.jpg';
 import room4 from '../assets/images/room4-large.jpg';
-import room5 from '../assets/images/rooms/twin-room.webp';
+import room5 from '../assets/images/Rooms/twin-room.webp';
 import BookingForm from '../components/BookingForm';
 
 const roomNames = [
