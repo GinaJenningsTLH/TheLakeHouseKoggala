@@ -147,20 +147,7 @@ const Team = () => {
               <h4 className="text-gray-600">Room Steward</h4>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="w-full"
-            >
-              <img
-                src={nightduty}
-                alt="Night Duty"
-                className="w-[300px] h-[400px] object-cover rounded-lg shadow-lg mx-auto"
-              />
-              <h3 className="text-xl text-gray-700 pt-2 font-semibold">Lal</h3>
-              <h4 className="text-gray-600">Night Duty</h4>
-            </motion.div>
+      
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -177,6 +164,20 @@ const Team = () => {
               <h4 className="text-gray-600">Gardener</h4>
             </motion.div>
 
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="w-full"
+            >
+              <img
+                src={nightduty}
+                alt="Night Duty"
+                className="w-[300px] h-[400px] object-cover rounded-lg shadow-lg mx-auto"
+              />
+              <h3 className="text-xl text-gray-700 pt-2 font-semibold">Lal</h3>
+              <h4 className="text-gray-600">Night Duty</h4>
+            </motion.div>
 
            
           </div>

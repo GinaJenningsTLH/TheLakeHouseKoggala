@@ -13,13 +13,14 @@ import room1 from '../assets/images/room1-large.jpg';
 import room2 from '../assets/images/room2-large.jpg';
 import room3 from '../assets/images/room3-large.jpg';
 import room4 from '../assets/images/room4-large.jpg';
+import room5 from '../assets/images/rooms/twin-room.webp';
 import BookingForm from '../components/BookingForm';
 
 const roomNames = [
   "Lake View Room (Indoor Shower)",
   "Lake View Room (Outdoor Shower)",
   "Courtyard Room (Indoor shower )",
-  "Courtyard Room (outdoor shower )",
+  "Courtyard Room (Outdoor shower )",
   "Twin Room"
 ];
 
@@ -97,7 +98,7 @@ those seeking a peaceful and rejuvenating retreat, but with easy access to the m
               </div>
             }
           >
-            {[room1, room2, room3, room4].map((image, idx) => (
+            {[room1, room2, room3, room4, room5].map((image, idx) => (
               <div key={idx} className="w-full h-full">
                 <LazyLoadImage
                   src={image}
