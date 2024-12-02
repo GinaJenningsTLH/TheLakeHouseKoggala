@@ -37,7 +37,7 @@ const AllRoomsPage: React.FC = () => {
       <div className="relative h-[400px] bg-cover bg-center" style={{ backgroundImage: `url(${room1})` }}>
         <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-center">
           <h1 className="text-5xl font-bold text-white mb-2"> Villa Experience</h1>
-          <p className="text-xl text-gray-200 mt-2">Book the entire villa with 4 comfortable rooms, 6 dedicated staff, and private lake views.</p>
+          <p className="text-xl text-gray-200 px-4 mt-2">Book the entire villa with 4 comfortable rooms, 6 dedicated staff, and private lake views.</p>
           <a
             onClick={scrollToBooking}
             className="mt-6 bg-gray-500 hover:bg-gray-200 hover:text-gray-500 text-white py-3 px-8 rounded-lg text-lg font-semibold transition transform hover:scale-105 cursor-pointer"
@@ -81,7 +81,7 @@ those seeking a peaceful and rejuvenating retreat, but with easy access to the m
         <div className="w-full">
           <AwesomeSlider 
             animation="foldOutAnimation"
-            className="h-[260px] md:h-[500px] lg:h-[760px] custom-slider"
+            className="h-full md:h-[500px] lg:h-[760px] custom-slider"
             bullets={false}
             organicArrows={true}
             infinite={true}
@@ -103,7 +103,7 @@ those seeking a peaceful and rejuvenating retreat, but with easy access to the m
                   src={image}
                   alt={`Room ${idx + 1}`}
                   effect="blur"
-                  className="w-full h-full  object-cover"
+                  className="w-full h-full"
                   style={{
                     width: '100%',
                     height: '100%',
@@ -124,8 +124,8 @@ those seeking a peaceful and rejuvenating retreat, but with easy access to the m
                 key={index}
                 className="flex items-center justify-start p-6 bg-gray-100 rounded-lg shadow-lg border border-gray-200"
               >
-                <FontAwesomeIcon icon={faBed} className="text-gray-500 mr-2" />
-                <span className="text-lg text-gray-600">{name}</span>
+                <FontAwesomeIcon icon={faBed} className=" text-gray-500 mr-2" />
+                <span className="text-sm md:text-lg lg:text-xl text-gray-600">{name}</span>
               </div>
             ))}
           </div>

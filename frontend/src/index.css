@@ -142,6 +142,18 @@ h3{
   height: 100%;
 }
 
+.awssld__wrapper {
+  background-color: transparent !important;
+}
+
+.awssld__content {
+  background-color: transparent !important;
+}
+
+.awssld__container {
+  background-color: transparent !important;
+}
+
 
 @media (max-width: 768px) {
   .custom-slider .awssld__controls {
