@@ -38,9 +38,7 @@ const BookingForm: React.FC = () => {
 
     try {
       const response = await fetch(
-        process.env.NODE_ENV === 'production'
-          ? 'https://thelakehousekoggala.com'
-          : '/api/send-email',
+        `${import.meta.env.VITE_BACKEND_URL}/api/send-email`,
         {
           method: 'POST',
           headers: {
