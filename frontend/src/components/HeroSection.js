@@ -1,21 +1,37 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import React from 'react';
 import { motion } from 'framer-motion';
-import sittingView from '../assets/images/Gallery/sitting-area.jpg';
+import { IoArrowDownCircle } from "react-icons/io5";
+import '../styles/critical.css';
+import sittingView from '../assets/images/Gallery/sitting-area.webp';
 const HeroSection = () => {
-    const textVariant = {
-        hidden: { opacity: 0, x: -200 },
-        visible: { opacity: 1, x: 0, transition: { duration: 1, ease: "easeOut" } }
+    // Preload hero image
+    React.useEffect(() => {
+        const img = new Image();
+        img.src = sittingView;
+    }, []);
+    const scrollToNextSection = () => {
+        document.getElementById('overview')?.scrollIntoView({ behavior: 'smooth' });
     };
-    const buttonVariant = {
-        hidden: { opacity: 0, y: 50 },
-        visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 1.2, ease: "easeOut" } }
-    };
-    return (_jsxs("section", { className: "relative bg-cover bg-center h-screen", style: { backgroundImage: `url(${sittingView})` }, children: [_jsx("div", { className: "absolute inset-0 bg-black bg-opacity-0 " }), _jsxs("div", { className: "relative z-10 flex flex-col justify-center items-center  md:items-center h-full px-4 sm:px-6 md:px-12 text-left", children: [_jsx(motion.h1, { className: "text-white text-4xl sm:text-6xl rethink-sans-lake font-bold mb-4", initial: "hidden", animate: "visible", variants: textVariant, style: {
-                            background: "linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent)",
-                            padding: "10px",
-                            borderRadius: "8px",
-                            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0)",
-                        }, children: _jsxs("h1", { className: "text-[50px] sm:text-[60px] sm:pb-20 sm:mb-6 lg:text-[90px] mx-auto md:mx-0 -mt-10 lg:-mt-20 md:-mt-20 text-center outfit-lake text-white bg-clip-text text-transparent", children: [_jsx("br", {}), " THE LAKE HOUSE ", _jsx("br", {}), "KOGGALA"] }) }), _jsx(motion.div, { className: "flex justify-center md:justify-start mt-4 md:mb-19 md:mx-72 absolute bottom-10 md:static" // Positioned at bottom for mobile, normal for desktop
-                        , initial: "hidden", animate: "visible", variants: buttonVariant, children: _jsx("a", { href: "/villa", className: "bg-gradient-to-r from-teal-400 to-teal-500 hover:bg-darkGreen text-white text-2xl py-3 px-6 rounded-md transition duration-300 ease-in-out transform hover:scale-105", children: "Explore" }) })] })] }));
+    return (_jsxs("section", { className: "hero-section", style: {
+            backgroundImage: `url(${sittingView})`,
+            contentVisibility: 'auto',
+            containIntrinsicSize: '100vh'
+        }, children: [_jsx("div", { className: "hero-overlay" }), _jsxs("div", { className: "hero-content", children: [_jsx(motion.h1, { className: "hero-title", initial: { opacity: 0, x: -200 }, animate: {
+                            opacity: 1,
+                            x: 0,
+                            transition: { duration: 1, ease: "easeOut" }
+                        }, children: "THE LAKE HOUSE" }), _jsx(motion.button, { onClick: scrollToNextSection, className: "absolute bottom-12 text-white hover:text-gray-500 transition-colors duration-300", initial: { opacity: 0, y: 20 }, animate: {
+                            opacity: 1,
+                            y: 0,
+                            transition: {
+                                duration: 1,
+                                delay: 0.5,
+                                ease: "easeOut",
+                                repeat: Infinity,
+                                repeatType: "reverse",
+                                repeatDelay: 0.5
+                            }
+                        }, "aria-label": "Scroll to next section", children: _jsx(IoArrowDownCircle, { style: { width: '4rem', height: '4rem' } }) })] })] }));
 };
 export default HeroSection;

@@ -9,12 +9,24 @@ const cors_1 = __importDefault(require("cors"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
-app.use((0, cors_1.default)());
+// CORS configuration
+const corsOptions = {
+    origin: process.env.NODE_ENV === 'production'
+        ? 'https://www.thelakehousekoggala.com'
+        : 'http://localhost:5173',
+    credentials: true,
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+};
+// Middleware
+app.use((0, cors_1.default)(corsOptions));
 app.use(express_1.default.json());
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+    res.status(200).json({ status: 'ok' });
+});
 const transporter = nodemailer_1.default.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
+    service: 'gmail',
     auth: {
         user: process.env.GMAIL_USER,
         pass: process.env.GMAIL_APP_PASSWORD,
@@ -58,6 +70,21 @@ const createEmailHTML = (data) => {
 app.post('/api/send-email', async (req, res) => {
     try {
         const formData = req.body;
+        // Validate environment variables
+        if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD || !process.env.RECIPIENT_EMAIL) {
+            console.error('Missing email configuration');
+            return res.status(500).json({
+                error: 'Server configuration error',
+                details: 'Missing email configuration'
+            });
+        }
+        // Validate request data
+        if (!formData.name || !formData.email || !formData.checkIn || !formData.checkOut) {
+            return res.status(400).json({
+                error: 'Invalid request',
+                details: 'Missing required fields'
+            });
+        }
         const mailOptions = {
             from: process.env.GMAIL_USER,
             to: process.env.RECIPIENT_EMAIL,
@@ -69,10 +96,15 @@ app.post('/api/send-email', async (req, res) => {
     }
     catch (error) {
         console.error('Error sending email:', error);
-        res.status(500).json({ error: 'Failed to send email' });
+        res.status(500).json({
+            error: 'Failed to send email',
+            details: error instanceof Error ? error.message : 'Unknown error'
+        });
     }
 });
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
+    console.log(`Environment: ${process.env.NODE_ENV}`);
+    console.log(`CORS origin: ${corsOptions.origin}`);
 });
