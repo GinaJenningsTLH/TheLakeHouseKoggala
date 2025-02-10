@@ -48,7 +48,13 @@ export default defineConfig({
     open: true, // Automatically open the browser when the dev server starts
     port: 5173, // Specify the port if needed, adjust as per your preference
     proxy: {
-      '/api': 'http://localhost:3001'
+      '/api': {
+        target: process.env.NODE_ENV === 'production'
+          ? 'https://thelakehousekoggala-api.onrender.com'
+          : 'http://localhost:3001',
+        changeOrigin: true,
+        secure: true,
+      }
     }
   },
   publicDir: 'public'
