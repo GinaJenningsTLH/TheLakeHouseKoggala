@@ -3,7 +3,9 @@ import react from '@vitejs/plugin-react-swc';
 import { resolve } from 'path';
 
 export default defineConfig({
-  base: '/', // Adjust if deploying to a subdirectory
+  base: process.env.NODE_ENV === 'production' 
+    ? 'https://www.thelakehousekoggala.com'
+    : '/',// Adjust if deploying to a subdirectory
   plugins: [react()],
   resolve: {
     alias: {
@@ -46,7 +48,7 @@ export default defineConfig({
     open: true, // Automatically open the browser when the dev server starts
     port: 5173, // Specify the port if needed, adjust as per your preference
     proxy: {
-      '/api': 'https://www.thelakehousekoggala.com'
+      '/api': 'http://localhost:3001'
     }
   },
   publicDir: 'public'
