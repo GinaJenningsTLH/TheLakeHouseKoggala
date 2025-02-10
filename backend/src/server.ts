@@ -7,9 +7,24 @@ dotenv.config();
 
 const app = express();
 
+// CORS configuration
+const corsOptions = {
+  origin: process.env.NODE_ENV === 'production'
+    ? 'https://www.thelakehousekoggala.com'
+    : 'http://localhost:5173',
+  credentials: true,
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
+
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
+
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
 
 interface BookingFormData {
   name: string;
@@ -68,8 +83,21 @@ app.post('/api/send-email', async (req, res) => {
   try {
     const formData: BookingFormData = req.body;
     
+    // Validate environment variables
     if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD || !process.env.RECIPIENT_EMAIL) {
-      throw new Error('Missing email configuration');
+      console.error('Missing email configuration');
+      return res.status(500).json({ 
+        error: 'Server configuration error',
+        details: 'Missing email configuration'
+      });
+    }
+
+    // Validate request data
+    if (!formData.name || !formData.email || !formData.checkIn || !formData.checkOut) {
+      return res.status(400).json({ 
+        error: 'Invalid request',
+        details: 'Missing required fields'
+      });
     }
 
     const mailOptions = {
@@ -94,4 +122,6 @@ const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+  console.log(`Environment: ${process.env.NODE_ENV}`);
+  console.log(`CORS origin: ${corsOptions.origin}`);
 });

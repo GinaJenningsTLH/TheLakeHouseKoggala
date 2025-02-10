@@ -37,13 +37,18 @@ const BookingForm: React.FC = () => {
     setError(null);
 
     try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        process.env.NODE_ENV === 'production'
+          ? 'https://www.thelakehousekoggala.com/api/send-email'
+          : '/api/send-email',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (!response.ok) {
         throw new Error('Failed to send booking request');
