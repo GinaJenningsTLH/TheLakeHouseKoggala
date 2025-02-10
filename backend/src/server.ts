@@ -9,12 +9,10 @@ const app = express();
 
 // CORS configuration
 const corsOptions = {
-  origin: process.env.NODE_ENV === 'production'
-    ? 'https://www.thelakehousekoggala.com'
-    : 'http://localhost:5173',
-  credentials: true,
+  origin: ['https://www.thelakehousekoggala.com', 'http://localhost:5173'],
   methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  credentials: true,
+  allowedHeaders: ['Content-Type']
 };
 
 // Middleware

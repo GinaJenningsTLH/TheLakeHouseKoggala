@@ -38,12 +38,13 @@ const BookingForm: React.FC = () => {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/send-email`,
+        'https://thelakehousekoggala-api.onrender.com/api/send-email',
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
+          credentials: 'include',
           body: JSON.stringify(formData),
         }
       );
