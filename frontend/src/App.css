@@ -22,8 +22,8 @@ body, html {
 
 @media (max-width: 768px) {
   .container {
-    padding-left: 0.0rem;
-    padding-right: 0.0rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 }
 #root {

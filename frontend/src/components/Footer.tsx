@@ -87,7 +87,7 @@ const Footer: React.FC = () => {
               <FaPhoneAlt className="mr-2" /> +44 7710 634 540 (UK)
             </p>
             <p className="flex items-center justify-center md:justify-start">
-              <FaEnvelope className="mr-2" /> info@lakehouse.com
+              <FaEnvelope className="mr-2" /> ginajenningstlh@gmail.com
             </p>
           </div>
 
@@ -96,12 +96,12 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
             <div className="flex justify-center md:justify-start space-x-4">
               <Link to="https://facebook.com">
-              <a href='https://facebook.com' className="text-gray-100 hover:text-gray-300" aria-label="Facebook">
+              <a href='https://web.facebook.com/people/The-Lake-House-Koggala/61567020746766' className="text-gray-100 hover:text-gray-300" aria-label="Facebook">
                 <FaFacebookF size={20} />
               </a>
               </Link>
               <Link to="https://instagram.com">
-            <a href='https://instagram.com' className="text-gray-100 hover:text-gray-300" aria-label="Instagram">
+            <a href='https://www.instagram.com/thelakehousekoggalasrilanka/' className="text-gray-100 hover:text-gray-300" aria-label="Instagram">
                 <FaInstagram size={20} />
               </a>
               </Link>
