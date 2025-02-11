@@ -88,13 +88,11 @@ app.post('/api/send-email', async (req, res) => {
   try {
     const formData: BookingFormData = req.body;
     console.log('Received form data:', formData);
-
-    // Add environment variable logging
-    console.log('Environment variables:', {
-      GMAIL_USER: process.env.GMAIL_USER ? 'Set' : 'Not set',
-      GMAIL_APP_PASSWORD: process.env.GMAIL_APP_PASSWORD ? 'Set' : 'Not set',
-      RECIPIENT_EMAIL: process.env.RECIPIENT_EMAIL ? 'Set' : 'Not set',
-      NODE_ENV: process.env.NODE_ENV
+    console.log('Current environment:', process.env.NODE_ENV);
+    console.log('Gmail configuration:', {
+      user: process.env.GMAIL_USER ? 'Set' : 'Not set',
+      password: process.env.GMAIL_APP_PASSWORD ? 'Set' : 'Not set',
+      recipient: process.env.RECIPIENT_EMAIL ? 'Set' : 'Not set'
     });
 
     // Validate environment variables
@@ -126,6 +124,7 @@ app.post('/api/send-email', async (req, res) => {
     res.status(200).json({ message: 'Email sent successfully' });
   } catch (error) {
     console.error('Detailed error:', error);
+    console.error('Error stack:', error instanceof Error ? error.stack : 'No stack trace');
     res.status(500).json({ 
       error: 'Failed to send email',
       details: error instanceof Error ? error.message : 'Unknown error'
