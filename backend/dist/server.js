@@ -11,16 +11,20 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 // CORS configuration
 const corsOptions = {
-    origin: process.env.NODE_ENV === 'production'
-        ? 'https://www.thelakehousekoggala.com'
-        : 'http://localhost:5173',
-    credentials: true,
+    origin: [
+        'https://www.thelakehousekoggala.com',
+        'https://thelakehousekoggala-api.onrender.com',
+        'http://localhost:5173'
+    ],
     methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Accept', 'Origin', 'Authorization']
 };
 // Middleware
 app.use((0, cors_1.default)(corsOptions));
 app.use(express_1.default.json());
+// Add explicit OPTIONS handling
+app.options('*', (0, cors_1.default)(corsOptions)); // Enable pre-flight for all routes
 // Health check endpoint
 app.get('/api/health', (req, res) => {
     res.status(200).json({ status: 'ok' });
@@ -70,6 +74,13 @@ const createEmailHTML = (data) => {
 app.post('/api/send-email', async (req, res) => {
     try {
         const formData = req.body;
+        console.log('Received form data:', formData);
+        console.log('Current environment:', process.env.NODE_ENV);
+        console.log('Gmail configuration:', {
+            user: process.env.GMAIL_USER ? 'Set' : 'Not set',
+            password: process.env.GMAIL_APP_PASSWORD ? 'Set' : 'Not set',
+            recipient: process.env.RECIPIENT_EMAIL ? 'Set' : 'Not set'
+        });
         // Validate environment variables
         if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD || !process.env.RECIPIENT_EMAIL) {
             console.error('Missing email configuration');
@@ -92,10 +103,12 @@ app.post('/api/send-email', async (req, res) => {
             html: createEmailHTML(formData),
         };
         await transporter.sendMail(mailOptions);
+        console.log('Email sent successfully');
         res.status(200).json({ message: 'Email sent successfully' });
     }
     catch (error) {
-        console.error('Error sending email:', error);
+        console.error('Detailed error:', error);
+        console.error('Error stack:', error instanceof Error ? error.stack : 'No stack trace');
         res.status(500).json({
             error: 'Failed to send email',
             details: error instanceof Error ? error.message : 'Unknown error'

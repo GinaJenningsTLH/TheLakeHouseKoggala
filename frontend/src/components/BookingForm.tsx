@@ -50,7 +50,6 @@ const BookingForm: React.FC = () => {
             'Accept': 'application/json',
           },
           mode: 'cors',
-          credentials: 'include',
           body: JSON.stringify(formData),
         }
       );

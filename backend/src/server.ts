@@ -16,7 +16,7 @@ const corsOptions = {
   ],
   methods: ['GET', 'POST', 'OPTIONS'],
   credentials: true,
-  allowedHeaders: ['Content-Type', 'Accept', 'Origin']
+  allowedHeaders: ['Content-Type', 'Accept', 'Origin', 'Authorization']
 };
 
 // Middleware
