@@ -9,15 +9,22 @@ const app = express();
 
 // CORS configuration
 const corsOptions = {
-  origin: ['https://www.thelakehousekoggala.com', 'http://localhost:5173'],
+  origin: [
+    'https://www.thelakehousekoggala.com',
+    'https://thelakehousekoggala-api.onrender.com',
+    'http://localhost:5173'
+  ],
   methods: ['GET', 'POST', 'OPTIONS'],
   credentials: true,
-  allowedHeaders: ['Content-Type']
+  allowedHeaders: ['Content-Type', 'Accept', 'Origin']
 };
 
 // Middleware
 app.use(cors(corsOptions));
 app.use(express.json());
+
+// Add explicit OPTIONS handling
+app.options('*', cors(corsOptions)); // Enable pre-flight for all routes
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
