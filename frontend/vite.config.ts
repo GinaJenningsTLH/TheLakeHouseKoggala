@@ -50,7 +50,7 @@ export default defineConfig({
     proxy: {
       '/api': {
         target: process.env.NODE_ENV === 'production'
-          ? 'https://thelakehousekoggala-api.onrender.com'
+          ? 'https://www.thelakehousekoggala.com'
           : 'http://localhost:3001',
         changeOrigin: true,
         secure: true,
