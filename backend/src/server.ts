@@ -87,7 +87,16 @@ const createEmailHTML = (data: BookingFormData) => {
 app.post('/api/send-email', async (req, res) => {
   try {
     const formData: BookingFormData = req.body;
-    
+    console.log('Received form data:', formData);
+
+    // Add environment variable logging
+    console.log('Environment variables:', {
+      GMAIL_USER: process.env.GMAIL_USER ? 'Set' : 'Not set',
+      GMAIL_APP_PASSWORD: process.env.GMAIL_APP_PASSWORD ? 'Set' : 'Not set',
+      RECIPIENT_EMAIL: process.env.RECIPIENT_EMAIL ? 'Set' : 'Not set',
+      NODE_ENV: process.env.NODE_ENV
+    });
+
     // Validate environment variables
     if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD || !process.env.RECIPIENT_EMAIL) {
       console.error('Missing email configuration');
@@ -113,9 +122,10 @@ app.post('/api/send-email', async (req, res) => {
     };
 
     await transporter.sendMail(mailOptions);
+    console.log('Email sent successfully');
     res.status(200).json({ message: 'Email sent successfully' });
   } catch (error) {
-    console.error('Error sending email:', error);
+    console.error('Detailed error:', error);
     res.status(500).json({ 
       error: 'Failed to send email',
       details: error instanceof Error ? error.message : 'Unknown error'
