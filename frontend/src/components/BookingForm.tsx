@@ -36,9 +36,13 @@ const BookingForm: React.FC = () => {
     setLoading(true);
     setError(null);
 
+    const apiUrl = import.meta.env.PROD 
+      ? 'https://www.thelakehousekoggala.com/api/send-email'
+      : 'http://localhost:3001/api/send-email';
+
     try {
       const response = await fetch(
-        'https://thelakehousekoggala-api.onrender.com/api/send-email',
+        apiUrl,
         {
           method: 'POST',
           headers: {
@@ -115,7 +119,7 @@ const BookingForm: React.FC = () => {
           type="email"
           id="email"
           name="email"
-          value={formData.email}
+          value={formData.email}  
           onChange={handleChange}
           required
           className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#14C2DD]"
