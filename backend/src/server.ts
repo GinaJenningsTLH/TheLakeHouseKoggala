@@ -9,7 +9,10 @@ const app = express();
 
 // CORS configuration
 const corsOptions = {
-  origin: '*',
+  origin: [
+    'https://www.thelakehousekoggala.com',
+    'http://localhost:5173'
+  ],
   methods: ['GET', 'POST', 'OPTIONS'],
   credentials: true,
   allowedHeaders: ['Content-Type', 'Accept', 'Origin', 'Authorization']
