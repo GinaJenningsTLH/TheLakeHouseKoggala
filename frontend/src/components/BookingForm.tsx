@@ -36,9 +36,9 @@ const BookingForm: React.FC = () => {
     setLoading(true);
     setError(null);
 
-    const apiUrl = import.meta.env.PROD 
-      ? 'https://www.thelakehousekoggala.com/api/send-email'
-      : 'http://localhost:3001/api/send-email';
+    const apiUrl = import.meta.env.VITE_BACKEND_URL
+  ? `${import.meta.env.VITE_BACKEND_URL}/api/send-email`
+  : 'http://localhost:3001/api/send-email';
 
     try {
       const response = await fetch(

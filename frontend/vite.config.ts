@@ -49,11 +49,9 @@ export default defineConfig({
     port: 5173, // Specify the port if needed, adjust as per your preference
     proxy: {
       '/api': {
-        target: process.env.NODE_ENV === 'production'
-          ? 'https://www.thelakehousekoggala.com'
-          : 'http://localhost:3001',
+        target: process.env.VITE_BACKEND_URL,
         changeOrigin: true,
-        secure: true,
+        secure: false,
       }
     }
   },
