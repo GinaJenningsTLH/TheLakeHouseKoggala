@@ -11,6 +11,7 @@ const app = express();
 const corsOptions = {
   origin: [
     'https://www.thelakehousekoggala.com',
+    'https://thelakehousekoggala.onrender.com',
     'http://localhost:5173'
   ],
   methods: ['GET', 'POST', 'OPTIONS'],
