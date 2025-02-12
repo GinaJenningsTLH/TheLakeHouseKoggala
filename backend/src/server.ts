@@ -9,9 +9,7 @@ const app = express();
 
 // CORS configuration
 const corsOptions = {
-  origin: [
-    'https://www.thelakehousekoggala.com',
-    'http://localhost:5173'
+  origin: ['*'
   ],
   methods: ['GET', 'POST', 'OPTIONS'],
   credentials: true,
@@ -85,6 +83,19 @@ const createEmailHTML = (data: BookingFormData) => {
 };
 
 app.post('/api/send-email', async (req, res) => {
+
+  console.log('Received request at /api/send-email');
+
+  // ✅ Log request headers to check if Content-Type is correct
+  console.log('Request Headers:', req.headers);
+
+  // ✅ Log incoming request body (check if it's empty)
+  console.log('Received form data:', req.body);
+
+  if (!req.body || Object.keys(req.body).length === 0) {
+    console.error('Error: Request body is empty.');
+    return res.status(400).json({ error: 'Empty request body' });
+  }
   try {
     const formData: BookingFormData = req.body;
     console.log('Received form data:', formData);
