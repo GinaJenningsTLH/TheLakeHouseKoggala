@@ -33,33 +33,45 @@ const BookingForm: React.FC = () => {
     e.preventDefault();
     setLoading(true);
     setError(null);
-
+  
     const apiUrl = import.meta.env.PROD
       ? 'https://www.thelakehousekoggala.com/api/send-email'
       : 'http://localhost:3001/api/send-email';
-
-    // ✅ Log the data being sent
+  
     console.log('Submitting Booking Data:', formData);
-
+  
     try {
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json', // ✅ Ensure JSON format
+          'Content-Type': 'application/json',
           'Accept': 'application/json',
         },
         mode: 'cors',
         body: JSON.stringify(formData),
       });
-
-      // ✅ Log server response
-      const responseData = await response.json();
-      console.log('Server Response:', responseData);
-
+  
+      // ✅ Log the full response
+      console.log('Raw Response:', response);
+  
+      // ✅ Ensure response is valid before parsing JSON
+      const textResponse = await response.text();
+      console.log('Response as Text:', textResponse);
+  
+      let responseData;
+      try {
+        responseData = JSON.parse(textResponse);
+      } catch (jsonError) {
+        console.error('❌ JSON Parse Error:', jsonError);
+        throw new Error('Invalid JSON response from server');
+      }
+  
+      console.log('Parsed JSON Response:', responseData);
+  
       if (!response.ok) {
         throw new Error(responseData.error || 'Failed to send booking request');
       }
-
+  
       setSubmitted(true);
     } catch (err) {
       setError('Failed to send booking request. Please try again later.');
@@ -68,6 +80,7 @@ const BookingForm: React.FC = () => {
       setLoading(false);
     }
   };
+  
 
   if (submitted) {
     return (
