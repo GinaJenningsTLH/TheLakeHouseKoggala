@@ -9,8 +9,7 @@ const app = express();
 
 // CORS configuration
 const corsOptions = {
-  origin: ['*'
-  ],
+  origin: '*',
   methods: ['GET', 'POST', 'OPTIONS'],
   credentials: true,
   allowedHeaders: ['Content-Type', 'Accept', 'Origin', 'Authorization']
