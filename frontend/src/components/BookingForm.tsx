@@ -35,7 +35,7 @@ const BookingForm: React.FC = () => {
     setError(null);
   
     const apiUrl = import.meta.env.PROD
-      ? 'https://www.thelakehousekoggala.com/api/send-email'
+      ? 'https://thelakehousekoggala.com/api/send-email'
       : 'http://localhost:3001/api/send-email';
   
     console.log('Submitting Booking Data:', formData);
@@ -45,37 +45,27 @@ const BookingForm: React.FC = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json',
         },
         mode: 'cors',
         body: JSON.stringify(formData),
       });
   
-      // ✅ Log the full response
-      console.log('Raw Response:', response);
-  
-      // ✅ Ensure response is valid before parsing JSON
-      const textResponse = await response.text();
-      console.log('Response as Text:', textResponse);
-  
-      let responseData;
-      try {
-        responseData = JSON.parse(textResponse);
-      } catch (jsonError) {
-        console.error('❌ JSON Parse Error:', jsonError);
-        throw new Error('Invalid JSON response from server');
-      }
-  
-      console.log('Parsed JSON Response:', responseData);
-  
       if (!response.ok) {
-        throw new Error(responseData.error || 'Failed to send booking request');
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
   
+      const contentType = response.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        throw new TypeError("Response was not JSON");
+      }
+  
+      const data = await response.json();
+      console.log('Response data:', data);
       setSubmitted(true);
     } catch (err) {
-      setError('Failed to send booking request. Please try again later.');
-      console.error('Error:', err);
+      console.error('Detailed error:', err);
+      setError(err instanceof Error ? err.message : 'An unknown error occurred');
+      setSubmitted(false);
     } finally {
       setLoading(false);
     }
