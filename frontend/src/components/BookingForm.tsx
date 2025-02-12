@@ -1,3 +1,5 @@
+// BookingForm.tsx
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
@@ -33,44 +35,37 @@ const BookingForm: React.FC = () => {
     e.preventDefault();
     setLoading(true);
     setError(null);
-  
-    const apiUrl = import.meta.env.PROD
-      ? 'https://thelakehousekoggala.com/api/send-email'
+
+    const apiUrl = import.meta.env.PROD 
+      ? 'https://www.thelakehousekoggala.com/api/send-email'
       : 'http://localhost:3001/api/send-email';
-  
-    console.log('Submitting Booking Data:', formData);
-  
+
     try {
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        mode: 'cors',
-        body: JSON.stringify(formData),
-      });
-  
+      const response = await fetch(
+        apiUrl,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          mode: 'cors',
+          body: JSON.stringify(formData),
+        }
+      );
+
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error('Failed to send booking request');
       }
-  
-      const contentType = response.headers.get("content-type");
-      if (!contentType || !contentType.includes("application/json")) {
-        throw new TypeError("Response was not JSON");
-      }
-  
-      const data = await response.json();
-      console.log('Response data:', data);
+
       setSubmitted(true);
     } catch (err) {
-      console.error('Detailed error:', err);
-      setError(err instanceof Error ? err.message : 'An unknown error occurred');
-      setSubmitted(false);
+      setError('Failed to send booking request. Please try again later.');
+      console.error('Error:', err);
     } finally {
       setLoading(false);
     }
   };
-  
 
   if (submitted) {
     return (
@@ -123,7 +118,7 @@ const BookingForm: React.FC = () => {
           type="email"
           id="email"
           name="email"
-          value={formData.email}
+          value={formData.email}  
           onChange={handleChange}
           required
           className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#14C2DD]"
@@ -195,8 +190,8 @@ const BookingForm: React.FC = () => {
         type="submit"
         disabled={loading}
         className={`w-full ${
-          loading
-            ? 'bg-gray-300 cursor-not-allowed'
+          loading 
+            ? 'bg-gray-300 cursor-not-allowed' 
             : 'bg-gray-500 hover:bg-gray-200 hover:text-gray-800'
         } text-white py-2 px-4 rounded-md transition-colors duration-300`}
       >
