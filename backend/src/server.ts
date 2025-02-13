@@ -9,11 +9,16 @@ const app = express();
 
 // CORS configuration
 const corsOptions = {
-  origin: ['https://www.thelakehousekoggala.com', 'https://thelakehousekoggala.onrender.com'],
+  origin: [
+    'https://www.thelakehousekoggala.com',
+    'https://thelakehousekoggala.com',
+    'https://thelakehousekoggala.onrender.com',
+    'http://localhost:5173'
+  ],
   methods: ['GET', 'POST', 'OPTIONS'],
+  credentials: false,
   allowedHeaders: ['Content-Type', 'Accept', 'Origin', 'Authorization']
 };
-
 
 // Middleware
 app.use(cors(corsOptions));
