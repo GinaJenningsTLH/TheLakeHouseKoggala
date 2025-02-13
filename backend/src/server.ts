@@ -31,7 +31,7 @@ app.use((req, _res, next) => {
 });
 
 // Move health check before other routes to ensure it's not blocked
-app.get('/health', (_, res) => {  // Remove /api prefix
+app.get('/api/health', (_, res) => {  // Remove /api prefix
   res.status(200).json({ status: 'ok' });
 });
 
