@@ -14,6 +14,13 @@ app.use(express.json());
 app.options('*', cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
 
+// Add logging middleware
+app.use((req, _res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  console.log('Body:', req.body);
+  next();
+});
+
 // Health check endpoint
 app.get('/api/health', (_, res) => {
   res.status(200).json({ status: 'ok' });

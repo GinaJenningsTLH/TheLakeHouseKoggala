@@ -10,15 +10,16 @@ export const transporter = nodemailer.createTransport({
   tls: {
     rejectUnauthorized: false
   },
-  debug: true // Enable debug logs
+  debug: true
 });
 
-// Add verification
+// Add more detailed error logging
 transporter.verify(function(error, success) {
   if (error) {
-    console.log('SMTP verification error:', error);
+    console.error('SMTP Error:', error);
+    console.error('SMTP Error Stack:', error.stack);
   } else {
-    console.log('Server is ready to take our messages');
+    console.log('SMTP Connection Verified');
   }
 });
 
