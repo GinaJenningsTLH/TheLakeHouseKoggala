@@ -4,27 +4,17 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-  console.error('Missing email credentials in environment variables!');
+// Add validation for required environment variables
+if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) {
+  console.error('Missing required email configuration');
+  throw new Error('Missing email configuration');
 }
 
 export const transporter = nodemailer.createTransport({
-  host: process.env.EMAIL_HOST || 'smtp.gmail.com',
-  port: parseInt(process.env.EMAIL_PORT || '587'),
-  secure: false, // true for 465, false for other ports
+  service: 'gmail',
   auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  },
-  debug: true // Add this for debugging
-});
-
-// Verify transporter configuration
-transporter.verify(function (error, success) {
-  if (error) {
-    console.log('SMTP Error:', error);
-  } else {
-    console.log('Server is ready to take our messages');
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_APP_PASSWORD
   }
 });
 

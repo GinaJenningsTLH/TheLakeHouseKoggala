@@ -6,11 +6,6 @@ const router = Router();
 
 router.post('/send-email', async (req, res) => {
   try {
-    // Verify we have credentials before attempting to send
-    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      throw new Error('Email credentials not configured');
-    }
-
     const formData: BookingFormData = req.body;
     console.log('Received form data:', formData);
     console.log('Current environment:', process.env.NODE_ENV);
@@ -36,24 +31,21 @@ router.post('/send-email', async (req, res) => {
     }
 
     const mailOptions = {
-      from: process.env.EMAIL_USER,
+      from: process.env.GMAIL_USER,
       to: process.env.RECIPIENT_EMAIL,
       subject: `New Booking Request from ${formData.name}`,
       html: createEmailHTML(formData),
     };
 
-    console.log('Attempting to send email with options:', mailOptions);
-    const info = await transporter.sendMail(mailOptions);
-    console.log('Email sent:', info.response);
-    
-    res.status(200).json({ message: 'Email sent successfully', messageId: info.messageId });
-  } catch (error: unknown) {
-    console.error('Email sending failed:', error);
+    await transporter.sendMail(mailOptions);
+    console.log('Email sent successfully');
+    res.status(200).json({ message: 'Email sent successfully' });
+  } catch (error) {
+    console.error('Detailed error:', error);
+    console.error('Error stack:', error instanceof Error ? error.stack : 'No stack trace');
     res.status(500).json({ 
       error: 'Failed to send email',
-      details: process.env.NODE_ENV === 'development' ? 
-        error instanceof Error ? error.message : 'Unknown error' 
-        : undefined
+      details: error instanceof Error ? error.message : 'Unknown error'
     });
   }
 });
