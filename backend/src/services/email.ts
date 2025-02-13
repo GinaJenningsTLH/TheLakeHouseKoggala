@@ -1,25 +1,30 @@
 import nodemailer from 'nodemailer';
 import { BookingFormData } from '../types/index';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+  console.error('Missing email credentials in environment variables!');
+}
 
 export const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: process.env.EMAIL_HOST || 'smtp.gmail.com',
+  port: parseInt(process.env.EMAIL_PORT || '587'),
+  secure: false, // true for 465, false for other ports
   auth: {
-    user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_APP_PASSWORD,
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
   },
-  tls: {
-    rejectUnauthorized: false
-  },
-  debug: true
+  debug: true // Add this for debugging
 });
 
-// Add more detailed error logging
-transporter.verify(function(error, success) {
+// Verify transporter configuration
+transporter.verify(function (error, success) {
   if (error) {
-    console.error('SMTP Error:', error);
-    console.error('SMTP Error Stack:', error.stack);
+    console.log('SMTP Error:', error);
   } else {
-    console.log('SMTP Connection Verified');
+    console.log('Server is ready to take our messages');
   }
 });
 
