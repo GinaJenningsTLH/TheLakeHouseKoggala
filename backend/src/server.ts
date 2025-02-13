@@ -9,16 +9,11 @@ const app = express();
 
 // CORS configuration
 const corsOptions = {
-  origin: [
-    'https://www.thelakehousekoggala.com',
-    'https://thelakehousekoggala.com',
-    'https://thelakehousekoggala.onrender.com',
-    'http://localhost:5173'
-  ],
+  origin: ['https://www.thelakehousekoggala.com', 'https://thelakehousekoggala.onrender.com'],
   methods: ['GET', 'POST', 'OPTIONS'],
-  credentials: false,
   allowedHeaders: ['Content-Type', 'Accept', 'Origin', 'Authorization']
 };
+
 
 // Middleware
 app.use(cors(corsOptions));
@@ -85,6 +80,13 @@ const createEmailHTML = (data: BookingFormData) => {
     </table>
   `;
 };
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://www.thelakehousekoggala.com');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, Origin, Authorization');
+  next();
+});
 
 app.post('/api/send-email', async (req, res) => {
   try {
