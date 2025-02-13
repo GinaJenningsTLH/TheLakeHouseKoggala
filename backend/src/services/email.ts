@@ -7,6 +7,19 @@ export const transporter = nodemailer.createTransport({
     user: process.env.GMAIL_USER,
     pass: process.env.GMAIL_APP_PASSWORD,
   },
+  tls: {
+    rejectUnauthorized: false
+  },
+  debug: true // Enable debug logs
+});
+
+// Add verification
+transporter.verify(function(error, success) {
+  if (error) {
+    console.log('SMTP verification error:', error);
+  } else {
+    console.log('Server is ready to take our messages');
+  }
 });
 
 export const createEmailHTML = (data: BookingFormData) => {

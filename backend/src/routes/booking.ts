@@ -37,12 +37,14 @@ router.post('/send-email', async (req, res) => {
       html: createEmailHTML(formData),
     };
 
-    await transporter.sendMail(mailOptions);
-    console.log('Email sent successfully');
-    res.status(200).json({ message: 'Email sent successfully' });
+    console.log('Attempting to send email with options:', mailOptions);
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Email sent successfully:', info);
+    
+    res.status(200).json({ message: 'Email sent successfully', messageId: info.messageId });
   } catch (error) {
-    console.error('Detailed error:', error);
-    console.error('Error stack:', error instanceof Error ? error.stack : 'No stack trace');
+    console.error('Failed to send email:', error);
+    console.error('Detailed error:', error instanceof Error ? error.stack : 'No stack trace');
     res.status(500).json({ 
       error: 'Failed to send email',
       details: error instanceof Error ? error.message : 'Unknown error'
