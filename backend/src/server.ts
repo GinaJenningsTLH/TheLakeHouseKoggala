@@ -24,6 +24,18 @@ app.use((req, _res, next) => {
   next();
 });
 
+// Add before your routes
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://thelakehousekoggala.com');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, Origin, Authorization');
+  
+  if (req.method === 'OPTIONS') {
+    return res.status(204).end();
+  }
+  next();
+});
+
 // Move health check before other routes to ensure it's not blocked
 app.get('/api/health', (_, res) => {  // Remove /api prefix
   res.status(200).json({ status: 'ok' });

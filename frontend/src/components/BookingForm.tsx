@@ -37,7 +37,7 @@ const BookingForm: React.FC = () => {
     setError(null);
 
     const apiUrl = import.meta.env.PROD
-      ? 'https://www.thelakehousekoggala.com/api/send-email'
+      ? 'https://thelakehousekoggala.com/api/send-email'
       : 'http://localhost:3001/api/send-email';
 
     try {
