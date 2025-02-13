@@ -21,18 +21,17 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization', 'Cookie']
 }));
 app.use(express.json());
-app.options('*', cors(corsOptions));
-app.use(express.urlencoded({ extended: true }));
 
-// Add logging middleware
+// Add more detailed logging middleware
 app.use((req, _res, next) => {
-  console.log(`${req.method} ${req.url}`);
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+  console.log('Headers:', req.headers);
   console.log('Body:', req.body);
   next();
 });
 
-// Health check endpoint
-app.get('/api/health', (_, res) => {
+// Move health check before other routes to ensure it's not blocked
+app.get('/health', (_, res) => {  // Remove /api prefix
   res.status(200).json({ status: 'ok' });
 });
 
@@ -44,5 +43,8 @@ const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Environment: ${process.env.NODE_ENV}`);
-  console.log(`CORS origin: ${corsOptions.origin}`);
+  // Only log if corsOptions.origin exists
+  if (corsOptions?.origin) {
+    console.log(`CORS origin: ${corsOptions.origin}`);
+  }
 });
