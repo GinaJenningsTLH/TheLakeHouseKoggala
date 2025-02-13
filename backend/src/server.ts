@@ -1,40 +1,137 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
+import nodemailer from 'nodemailer';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { corsOptions } from './config/cors';
-import bookingRoutes from './routes/booking';
-import path from 'path';
 
 dotenv.config();
 
 const app = express();
 
+// CORS configuration
+const corsOptions = {
+  origin: [
+    'https://www.thelakehousekoggala.com',
+    'https://thelakehousekoggala.com',
+    'https://thelakehousekoggala.onrender.com',
+    'http://localhost:5173'
+  ],
+  methods: ['GET', 'POST', 'OPTIONS'],
+  credentials: false,
+  allowedHeaders: ['Content-Type', 'Accept', 'Origin', 'Authorization']
+};
+
 // Middleware
 app.use(cors(corsOptions));
 app.use(express.json());
 
-// Serve static files from the frontend build directory
-app.use(express.static(path.join(__dirname, '../../frontend/dist')));
 
-// Add more detailed logging middleware
-app.use((req, _res, next) => {
-  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
-  console.log('Headers:', req.headers);
-  console.log('Body:', req.body);
-  next();
-});
+// Add explicit OPTIONS handling
+app.options('*', cors(corsOptions)); // Enable pre-flight for all routes
 
-// Move health check before other routes to ensure it's not blocked
-app.get('/api/health', (_, res) => {  // Remove /api prefix
+// Health check endpoint
+app.get('/api/health', (req, res) => {
   res.status(200).json({ status: 'ok' });
 });
 
-// Routes
-app.use('/api', bookingRoutes);
+interface BookingFormData {
+  name: string;
+  email: string;
+  checkIn: string;
+  checkOut: string;
+  guests: number;
+  comments: string;
+}
 
-// Handle all other routes by serving the frontend
-app.get('*', (_req, res) => {
-  res.sendFile(path.join(__dirname, '../../frontend/dist/index.html'));
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_APP_PASSWORD,
+  },
+});
+
+const createEmailHTML = (data: BookingFormData) => {
+  return `
+    <h2>New Booking Request from The Lake House Website</h2>
+    <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+      <tr>
+        <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #f8f8f8;">Field</th>
+        <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #f8f8f8;">Details</th>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 12px;">Name</td>
+        <td style="border: 1px solid #ddd; padding: 12px;">${data.name}</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 12px;">Email</td>
+        <td style="border: 1px solid #ddd; padding: 12px;">${data.email}</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 12px;">Check-in Date</td>
+        <td style="border: 1px solid #ddd; padding: 12px;">${data.checkIn}</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 12px;">Check-out Date</td>
+        <td style="border: 1px solid #ddd; padding: 12px;">${data.checkOut}</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 12px;">Number of Guests</td>
+        <td style="border: 1px solid #ddd; padding: 12px;">${data.guests}</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 12px;">Additional Comments</td>
+        <td style="border: 1px solid #ddd; padding: 12px;">${data.comments || 'No comments provided'}</td>
+      </tr>
+    </table>
+  `;
+};
+
+app.post('/api/send-email', async (req, res) => {
+  try {
+    const formData: BookingFormData = req.body;
+    console.log('Received form data:', formData);
+    console.log('Current environment:', process.env.NODE_ENV);
+    console.log('Gmail configuration:', {
+      user: process.env.GMAIL_USER ? 'Set' : 'Not set',
+      password: process.env.GMAIL_APP_PASSWORD ? 'Set' : 'Not set',
+      recipient: process.env.RECIPIENT_EMAIL ? 'Set' : 'Not set'
+    });
+
+    // Validate environment variables
+    if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD || !process.env.RECIPIENT_EMAIL) {
+      console.error('Missing email configuration');
+      return res.status(500).json({ 
+        error: 'Server configuration error',
+        details: 'Missing email configuration'
+      });
+    }
+
+    // Validate request data
+    if (!formData.name || !formData.email || !formData.checkIn || !formData.checkOut) {
+      return res.status(400).json({ 
+        error: 'Invalid request',
+        details: 'Missing required fields'
+      });
+    }
+
+    const mailOptions = {
+      from: process.env.GMAIL_USER,
+      to: process.env.RECIPIENT_EMAIL,
+      subject: `New Booking Request from ${formData.name}`,
+      html: createEmailHTML(formData),
+    };
+
+    await transporter.sendMail(mailOptions);
+    console.log('Email sent successfully');
+    res.status(200).json({ message: 'Email sent successfully' });
+  } catch (error) {
+    console.error('Detailed error:', error);
+    console.error('Error stack:', error instanceof Error ? error.stack : 'No stack trace');
+    res.status(500).json({ 
+      error: 'Failed to send email',
+      details: error instanceof Error ? error.message : 'Unknown error'
+    });
+  }
 });
 
 const PORT = process.env.PORT || 3001;
@@ -42,8 +139,5 @@ const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Environment: ${process.env.NODE_ENV}`);
-  // Only log if corsOptions.origin exists
-  if (corsOptions?.origin) {
-    console.log(`CORS origin: ${corsOptions.origin}`);
-  }
+  console.log(`CORS origin: ${corsOptions.origin}`);
 });
