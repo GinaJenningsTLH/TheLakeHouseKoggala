@@ -9,7 +9,16 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors(corsOptions));
+app.use(cors({
+  origin: [
+    'http://thelakehousekoggala.com',
+    'https://localhost:5173',
+    // Add any other allowed origins
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 app.options('*', cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
