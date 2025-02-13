@@ -12,6 +12,7 @@ const app = express();
 app.use(cors({
   origin: [
     'http://thelakehousekoggala.com',
+    'https://www.thelakehousekoggala.com',
     'https://localhost:5173',
     // Add any other allowed origins
   ],
