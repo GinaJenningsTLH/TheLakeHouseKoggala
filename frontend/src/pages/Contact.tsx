@@ -9,6 +9,7 @@ import contactHero from '../assets/images/GalleryMain/jetty-with-lake-view.webp'
 // import GoogleMap from '../components/GoogleMap';
 import BookingForm from '../components/BookingForm';
 
+
 const Contact: React.FC = () => {
   return (
     <>
@@ -108,11 +109,19 @@ const Contact: React.FC = () => {
           {/* Google Map */}
           <div className="mt-16">
             <h2 className="text-3xl font-bold text-gray-500 text-center mb-8">Our Location</h2>
-            {/* <div className="h-[400px] rounded-lg overflow-hidden">
-              <Suspense fallback={<div>Loading map...</div>}>
-      <GoogleMap />
-    </Suspense>
-            </div> */}
+            <div className="h-full rounded-lg overflow-hidden">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15871.783205795744!2d80.312204815394!3d6.002180799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae16db2b0386177%3A0x1f3ec99294ca599d!2sThe%20Lake%20House!5e0!3m2!1sen!2suk!4v1739902894092!5m2!1sen!2suk"
+                width="100%"
+                height="400px"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="The Lake House Location"
+              />
+            {/* <img src={map} alt="map" className='w-full h-full'></img> */}
+            </div>
           </div>
         </div>
       </section>
