@@ -52,7 +52,7 @@ const AllRoomsPage: React.FC = () => {
       <section className="container mx-auto py-16 px-6 text-center">
         <h2 className="text-3xl font-bold text-gray-500 mb-4">About Our Villa</h2>
         <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
-        Indulge in the calm and comfort of our exquisite villa. Boasting four distinct bedrooms with direct lake views or private
+        Indulge in the calm and comfort of our exquisite villa. Boasting five distinct bedrooms with direct lake views or private
 garden courtyards and a further twin room is available on request. A dedicated team of six professional staff members
 will be at your service. This sanctuary is ideal for families, groups, or couples in search of seclusion and privacy and
 sophisticated surroundings, while being close to the action of Galle and Ahangama nearby.
