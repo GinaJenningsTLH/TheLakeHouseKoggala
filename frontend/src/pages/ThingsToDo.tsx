@@ -3,7 +3,6 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css'; 
-import { FaSwimmer, FaBicycle, FaGlassCheers, FaFish, FaTree, FaUtensils } from 'react-icons/fa';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import heroImage from '../assets/images/things-to-do.png';
 import poolImage from '../assets/images/Gallery/Pool-overview.jpg';
@@ -361,7 +360,7 @@ in the gardens.
                 effect="blur"
                 className="rounded-lg mb-4 h-64 w-full object-cover"
               />
-              <h3 className="text-2xl font-semibold mb-2">Kabalama Beach</h3>
+              <h3 className="text-2xl font-semibold mb-2">Kabalana Beach</h3>
               <p className="text-gray-600">Experience the pristine shores of
 Kabalama Beach, where golden sands
 meet the turquoise waters of the Indian
