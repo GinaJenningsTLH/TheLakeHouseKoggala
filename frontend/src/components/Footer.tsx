@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaPhoneAlt, FaEnvelope, FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope, FaFacebookF, FaInstagram} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
@@ -81,10 +81,14 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <p className="flex items-center justify-center md:justify-start mb-2">
-              <FaPhoneAlt className="mr-2" /> +94 776 197 728 (Sri Lanka)
+              <FaPhoneAlt className="mr-2" /><a href="tel:+94776197728" className=" transition-colors duration-300">
+        +94 776 197 728
+      </a>  (Sri Lanka)
             </p>
             <p className="flex items-center justify-center md:justify-start mb-2">
-              <FaPhoneAlt className="mr-2" /> +44 7710 634 540 (UK)
+              <FaPhoneAlt className="mr-2" /><a href="tel:+447710634540" className=" transition-colors duration-300">
+        +44 7710 634 540
+      </a> (UK)
             </p>
             <p className="flex items-center justify-center md:justify-start">
               <FaEnvelope className="mr-2" /> ginajenningstlh@gmail.com

@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { FaPhoneAlt, FaEnvelope, FaWhatsapp } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import DatePicker from 'react-datepicker';
+// import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import contactHero from '../assets/images/GalleryMain/jetty-with-lake-view.webp'; // Importing the hero image
 // import GoogleMap from '../components/GoogleMap';
@@ -66,7 +66,9 @@ const Contact: React.FC = () => {
                   <FaPhoneAlt className="text-3xl mt-auto text-gray-500 mr-4" />
                   <div >
                     <h3 className="text-xl font-semibold">Call Us</h3>
-                    <p className="text-gray-600">+1 234 567 890</p>
+                    <p className="text-gray-600"><a href="tel:+94776197728" className="hover:text-gray-800 transition-colors duration-300">
+        +94 776 197 728
+      </a></p>
                   </div>
                 </div>
               </motion.div>
@@ -81,7 +83,7 @@ const Contact: React.FC = () => {
                   <FaEnvelope className="text-3xl mt-auto text-gray-500 mr-4" />
                   <div>
                     <h3 className="text-xl font-semibold">Email Us</h3>
-                    <p className="text-gray-600">info@lakehouse.com</p>
+                    <p className="text-gray-600">ginajenningstlh@gmail.com</p>
                   </div>
                 </div>
               </motion.div>
@@ -96,7 +98,7 @@ const Contact: React.FC = () => {
                   <FaWhatsapp className="text-3xl mt-auto text-gray-500 mr-4" />
                   <div>
                     <h3 className="text-xl font-semibold">WhatsApp</h3>
-                    <p className="text-gray-600"><a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">Chat with us</a></p>
+                    <p className="text-gray-600"><a href="https://wa.me/94776197728" target="_blank" rel="noopener noreferrer">Chat with us</a></p>
                   </div>
                 </div>
               </motion.div>
