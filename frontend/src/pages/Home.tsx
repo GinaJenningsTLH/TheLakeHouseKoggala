@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, Suspense, lazy } from 'react';
+import React, { useEffect, useRef, useState, Suspense } from 'react';
 import { Helmet } from 'react-helmet';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -7,26 +7,26 @@ import { motion } from 'framer-motion';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 // import roomData from '../data/roomData';
 // import { AiOutlineMail } from "react-icons/ai";
-import { IoCallSharp, IoArrowUpSharp } from "react-icons/io5";
+import { IoArrowUpSharp } from "react-icons/io5";
 import '../App.css';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import villaFrontView from '../assets/images/Gallery/villa-front-view-2.jpg';
-import lakeViewIndoor from '../assets/images/lakeview(indoor).jpg';
+// import { LazyLoadImage } from 'react-lazy-load-image-component';
+// import villaFrontView from '../assets/images/Gallery/villa-front-view-2.jpg';
+// import lakeViewIndoor from '../assets/images/lakeview(indoor).jpg';
 import galleryImages from '../data/galleryData';
 // import RoomsTypeCard from '../components/RoomTypeCard';
 import BookingForm from '../components/BookingForm';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import OverviewSection from '../components/OverviewSection';
 import GallerySection from '../components/GallerySection';
 
-const Gallery = lazy(() => import('../components/Gallery'));
-const WhyBookWithUs = lazy(() => import('../components/WhyBookWithUs'));
+// const Gallery = lazy(() => import('../components/Gallery'));
+// const WhyBookWithUs = lazy(() => import('../components/WhyBookWithUs'));
 
 // Animation Variants for Reusability
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 }, 
-  animate: { opacity: 1, y: 0 },
-};
+// const fadeInUp = {
+//   initial: { opacity: 0, y: 20 }, 
+//   animate: { opacity: 1, y: 0 },
+// };
 
 const Home: React.FC = () => {
   const observer = useRef<IntersectionObserver | null>(null);
@@ -84,7 +84,7 @@ const Home: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Lake House Villa - Luxury Stay by Koggala Lake</title>
+        <title>The Lake House Koggala - Villa Stay by Koggala Lake</title>
         <meta name="description" content="Experience the serene beauty of Koggala Lake at the Lake House Villa. A contemporary, sustainable villa with many amenities and stunning views." />
         <meta name="keywords" content="The Lake House Villa, Koggala Lake, Luxury Villa, Sustainable Accommodation, Sri Lanka Villas, Book Lake Villa" />
         <meta property="og:title" content="The Lake House Villa - Kogalla Villas" />

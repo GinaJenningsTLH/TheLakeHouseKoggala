@@ -5,7 +5,7 @@ import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBed, faShower, faWifi, faConciergeBell, faLeaf, faFan, faCouch, faUtensils, faSwimmer, faSpa, faTableTennis, faCocktail } from '@fortawesome/free-solid-svg-icons';
+import { faBed, faLeaf, faFan, faCouch } from '@fortawesome/free-solid-svg-icons';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
