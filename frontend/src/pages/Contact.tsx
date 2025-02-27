@@ -67,8 +67,8 @@ const Contact: React.FC = () => {
                   <FaPhoneAlt className="text-3xl mt-auto text-gray-500 mr-4" />
                   <div >
                     <h3 className="text-xl font-semibold">Call Us</h3>
-                    <p className="text-gray-600"><a href="tel:+94776197728" className="hover:text-gray-800 transition-colors duration-300">
-        +94 776 197 728
+                    <p className="text-gray-600"><a href="tel:+447710634540" className="hover:text-gray-800 transition-colors duration-300">
+        44 7710 634 540
       </a></p>
                   </div>
                 </div>
