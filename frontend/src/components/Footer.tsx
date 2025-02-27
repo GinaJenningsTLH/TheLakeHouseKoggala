@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
       </a> (UK)
             </p>
             <p className="flex items-center justify-center md:justify-start">
-              <FaEnvelope className="mr-2" /> ginajenningstlh@gmail.com
+              <FaEnvelope className="mr-2" /> ginajennings10@gmail.com
             </p>
           </div>
 

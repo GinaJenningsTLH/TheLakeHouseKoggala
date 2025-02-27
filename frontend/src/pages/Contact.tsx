@@ -84,7 +84,7 @@ const Contact: React.FC = () => {
                   <FaEnvelope className="text-3xl mt-auto text-gray-500 mr-4" />
                   <div>
                     <h3 className="text-xl font-semibold">Email Us</h3>
-                    <p className="text-gray-600">ginajenningstlh@gmail.com</p>
+                    <p className="text-gray-600">ginajennings10@gmail.com</p>
                   </div>
                 </div>
               </motion.div>
@@ -99,7 +99,7 @@ const Contact: React.FC = () => {
                   <FaWhatsapp className="text-3xl mt-auto text-gray-500 mr-4" />
                   <div>
                     <h3 className="text-xl font-semibold">WhatsApp</h3>
-                    <p className="text-gray-600"><a href="https://wa.me/94776197728" target="_blank" rel="noopener noreferrer">Chat with us</a></p>
+                    <p className="text-gray-600"><a href="https://wa.me/447710634540" target="_blank" rel="noopener noreferrer">Chat with us</a></p>
                   </div>
                 </div>
               </motion.div>
