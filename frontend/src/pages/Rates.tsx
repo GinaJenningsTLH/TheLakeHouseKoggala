@@ -63,7 +63,7 @@ const Rates: React.FC = () => {
                 className="bg-gray-50 p-6 rounded-lg shadow-md"
               >
                 <h3 className="text-2xl font-bold text-gray-500 mb-4">High Season</h3>
-                <p className="text-gray-700 mb-2">15th December 2024 to 06th January 2025</p>
+                <p className="text-gray-700 mb-2">15th December 2025 to 06th January 2026</p>
                 <p className="text-gray-700 text-i mb-2">Minimum stay 1 week</p>
                 <p className="text-gray-700">$1500 per night</p>
                
@@ -78,7 +78,7 @@ const Rates: React.FC = () => {
               >
                 <h3 className="text-2xl font-bold text-gray-500 mb-4">Mid Season</h3>
                 <p className="text-gray-700 mb-2">6 January to 30 April 2025</p>
-                <p className="text-gray-700 mb-2">15 June to 15 November 2025</p>
+                <p className="text-gray-700 mb-2">1 July to 15 November 2025</p>
                 <p className="text-gray-700 mb-2">Minimum stay 3 nights</p>
                 <p className="text-gray-700">$660 per night</p>
               </motion.div>
@@ -91,8 +91,8 @@ const Rates: React.FC = () => {
                 className="bg-gray-50 p-6 rounded-lg shadow-md"
               >
                 <h3 className="text-2xl font-bold text-gray-500 mb-4">Low Season</h3>
-                <p className="text-gray-700 mb-2">1 October to 15 December 2024</p>
-                <p className="text-gray-700 mb-2">1 May 2025 to 15 June 2025</p>
+                <p className="text-gray-700 mb-2">16 November to 15 December 2025</p>
+                <p className="text-gray-700 mb-2">1 May 2025 to 1 July 2025</p>
                 <p className="text-gray-700 mb-2">Minimum stay 3 nights</p>
                 <p className="text-gray-700">$500 per night</p>
               </motion.div>
